@@ -11,7 +11,8 @@ let sequence = [
 		'vendors'
 	], [
 		'sass',
-		'js'
+		'js',
+		'vue-js'
 	]
 ];
 
@@ -21,6 +22,7 @@ gulp.task('default', (callback) => {
 		[
 			'watch-sass',
 			'watch-js',
+			'watch-vue-js',
 			'watch'
 		],
 		callback

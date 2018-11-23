@@ -1,13 +1,30 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <title>Frigus Machina</title>
+	<meta charset="UTF-8">
+	<title>Frigus Machina</title>
+	<script>
+		window.ENV = {}
+	</script>
 </head>
 <body>
-    <canvas id="app-canvas"></canvas>
 
-    <script src="assets/dist/front/js/libs.js"></script>
-    <script src="assets/dist/front/js/game.js"></script>
+<div id="Game"></div>
+
+<!-- Libs -->
+<script src="assets/dist/front/js/libs.js"></script>
+<script src="assets/dist/front/js/libs-jquery.js"></script>
+<script src="assets/dist/front/js/libs-vue.js"></script>
+
+<!-- App -->
+<script src="assets/vue/Game/GameApp.js"></script>
+<script>
+	try {
+		GameApp.init();
+	} catch (e) {
+		console.log('Something went wrong while trying to initialize GameApp');
+		throw e;
+	}
+</script>
 </body>
 </html>

@@ -35,6 +35,9 @@ module.exports = {
 	"libs-serviceworker-modules": [
 		"node_modules/upup/dist/upup.min.js"
 	],
+	"libs-vue": [
+		"node_modules/vue/dist/vue.js"
+	],
 	"helpers": [
 		"js/helpers/Helpers.js", //Helpers have to be first and must not depend on anything
 		"js/helpers/Cookies.js",

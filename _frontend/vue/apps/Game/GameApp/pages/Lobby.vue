@@ -1,7 +1,7 @@
 <template>
 	<div class="vue-app">
 		<navigation/>
-		Hello Index
+		Hello Lobby
 	</div>
 </template>
 
@@ -10,7 +10,7 @@
 
 <script>
 	module.exports = {
-		name: 'Index',
+		name: 'Lobby',
 		components: {
 			'navigation': require('../../../../components/Navigation.vue')
 		},

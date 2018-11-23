@@ -1,0 +1,51 @@
+.page {
+	display: flex; // fixed problem when IE11 dont respect min-height on `display: flex; flex-direction: column;`
+
+	&__scrollbar-spacer {
+		display: none;
+		height: 100vh;
+		margin-top: 1px;
+	}
+
+	&__wrap {
+		width: 100%;
+		height: auto;
+		min-width: 300px;
+		min-height: 100vh;
+		display: flex;
+		flex-direction: column;
+		overflow: hidden;
+	}
+
+	// when screen is bigger than content - footer will stay at the bottom of viewport
+	&__content {
+		flex: 1 1 auto;
+	}
+}
+
+// foundation flexbox grid correction
+
+.row {
+	justify-content: center;
+	// at rows nejsou nalepené úplně na okraj viewportu
+	padding-left: map_get($grid-column-gutter, tablet-landscape)/2;
+	padding-right: map_get($grid-column-gutter, tablet-landscape)/2;
+	// 1190 2*20 (padding) - 2*5 (column gutter) = 1240
+	max-width: calc(#{$grid-row-width} + #{rem-calc(30)});
+
+	.row {
+		padding-left: 0;
+		padding-right: 0;
+	}
+
+	&--fullwidth {
+		max-width: none;
+	}
+}
+
+@include breakpoint(tablet-portrait down) {
+	.row {
+		padding-left: map_get($grid-column-gutter, tiny);
+		padding-right: map_get($grid-column-gutter, tiny);
+	}
+}

@@ -1,0 +1,92 @@
+// colors
+$cBodycopy: #ffffff;
+$cOrange: #F74902;
+
+// borders
+$brDefault:	 2px;
+
+// typo (specific typo combination like headings or bodycopy define in `typo.scss`)
+$fwBlack: 900;
+$fwBold: 700;
+$fwRegular: 400;
+$fwLight: 300;
+
+$ffBodycopy: Helvetica, Arial, sans-serif;
+$ffHeading: Helvetica, Arial, sans-serif;
+$ffMonospace: 'Andale', monospace;
+
+// vertical rythm
+// use `spacer(lg);` custom scss function
+$vrBase: 1rem; // expecting default browser font-size is 16px, ready to by changed
+$vrSpacers: (
+	xxs: $vrBase * .25, // 4px
+	xs: $vrBase * .5, // 8px
+	sm: $vrBase * 1, // 16px
+	md: $vrBase * 1.5, // 24px
+	lg: $vrBase * 2, // 32px
+	xl: $vrBase * 4, // 64px
+	xxl: $vrBase * 6 // 96px
+);
+
+// dimensions
+$dhSomething: 100px; // $dimensionHeightSomething
+$borderTableStroke: 3px;
+
+// transitions
+$tdDefault: .2s;
+
+// paths
+$pAssets: '../..';
+
+//  Foundation for Sites Settings
+//  -----------------------------
+//
+//  Table of Contents:
+//
+//   1. Global
+//   2. Breakpoints
+//   3. The Grid
+
+@import 'util/util';
+
+// 1. Global
+// ---------
+
+$global-font-size: 100%;
+$global-width: rem-calc(1380);
+$global-text-direction: ltr;
+$global-flexbox: true;
+$print-transparent-backgrounds: true;
+
+// Internal variables used for text direction
+$global-left: if($global-text-direction == rtl, right, left);
+$global-right: if($global-text-direction == rtl, left, right);
+
+// 2. Breakpoints
+// --------------
+// https://medium.freecodecamp.com/the-100-correct-way-to-do-css-breakpoints-88d6a5ba1862
+// @media (max-width: 1200px) { ... } ==> @include breakpoint(tablet-landscape down) { ... }
+$breakpoints: (
+	tiny: 0,
+	phone: 461px,
+	tablet-portrait: 601px,
+	tablet-landscape: 901px,
+	desktop: 1201px,
+	desktop-medium: 1501px,
+	desktop-large: 1801px,
+	desktop-ales: 2561px
+);
+$breakpoint-classes: ();
+
+// 3. The Grid
+// -----------
+
+$grid-row-width: $global-width;
+$grid-column-count: 12;
+$grid-column-gutter: (
+	tiny: 15px,
+	tablet-landscape: 20px,
+);
+
+$grid-column-align-edge: true;
+$block-grid-max: 12;

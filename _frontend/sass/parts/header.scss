@@ -1,0 +1,8 @@
+.header {
+	&__menu {
+		height: spacer(lg);
+		@include flex-grid-row();
+		justify-content: space-around;
+		align-items: center;
+	}
+}

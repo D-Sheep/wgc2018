@@ -1,0 +1,33 @@
+/*
+	utils class for very specific usecase
+	it is like !important, better do not use this
+ */
+
+// DISPLAY HELPERS
+.u-hide {
+	display: none !important;
+}
+
+@include breakpoint(desktop up) {
+	.u-hide-on-desktop {
+		display: none !important;
+	}
+}
+
+@include breakpoint(tablet-portrait down) {
+	.u-hide-on-tablet-portrait {
+		display: none !important;
+	}
+}
+
+@include breakpoint(desktop down) {
+	.u-hide-on-desktop-portrait {
+		display: none !important;
+	}
+}
+
+@include breakpoint(phone down) {
+	.u-hide-on-phone {
+		display: none;
+	}
+}

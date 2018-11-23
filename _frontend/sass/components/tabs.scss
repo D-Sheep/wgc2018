@@ -1,0 +1,56 @@
+@import "_global";
+
+.js-tabs-items {
+	position: relative;
+}
+
+.js-tabs-item {
+	overflow: hidden;
+}
+
+.js-tabs-anchors {
+	display: flex;
+}
+
+.js-tabs-anchor {
+	flex: 1 1 auto;
+}
+
+// show the first slide as fallback
+.js-tabs:not(.is-inited) {
+	.js-tabs-item:not(:first-child) {
+		display: none;
+	}
+}
+
+// template example, should be deleted
+
+.js-tabs {
+	&-items {
+		background-color: #3a3a3a;
+	}
+
+	&-item {
+		flex-direction: column;
+		align-items: center;
+		justify-content: center;
+
+		&:nth-child(1) {
+			background-color: #0d71bb;
+		}
+		&:nth-child(2) {
+			background-color: #0e8c8c;
+		}
+		&:nth-child(3) {
+			background-color: #0e566c;
+		}
+	}
+
+	&-controls {
+		text-align: center;
+	}
+
+	&-anchors {
+		text-align: center;
+	}
+}

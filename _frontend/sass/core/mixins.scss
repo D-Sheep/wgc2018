@@ -1,0 +1,86 @@
+@mixin imgRetina($small, $retina, $width: auto, $height: auto, $path: '#{$pAssets}/img/') {
+	background-image: url('#{$path}#{$small}');
+	@if $width == cover or $width == contain {
+		@if $width != false {
+			background-size: $width;
+		}
+	} @else {
+		@if $width != false {
+			background-size: $width $height;
+		}
+	}
+	@if $small != $retina {
+		@media
+		only screen and (-webkit-min-device-pixel-ratio: 2),
+		only screen and (   min--moz-device-pixel-ratio: 2),
+		only screen and (     -o-min-device-pixel-ratio: 2/1),
+		only screen and (        min-device-pixel-ratio: 2),
+		only screen and (                min-resolution: 192dpi),
+		only screen and (                min-resolution: 2dppx) {
+			background-image: url('#{$path}#{$retina}');
+		}
+	}
+}
+
+@mixin bg($img, $width, $height) {
+	width: ($width / 2);
+	padding-top: ($height / 2);
+	background: url('#{$pAssets}/img/#{$img}') no-repeat;
+	background-size: ($width / 2) ($height / 2);
+	height: 0;
+	overflow: hidden;
+}
+
+@mixin paddingHeight($height) {
+	padding-top: $height;
+	overflow: hidden;
+	height: 0;
+}
+
+@mixin addPreloadSpinner($variant: image, $cBg: $cBlue, $cIcon: $cWhite){
+	&:before {
+		content: '';
+		@if ($variant == image) {
+			position: relative;
+			padding-top: $drPictures;
+		} @else {
+			@include position(absolute, 0);
+		}
+		display: block;
+		z-index: 2;
+		background: $cBg;
+		opacity: 1;
+		transition: opacity $tdDefault*4, background $tdDefault*2;
+	}
+
+	&:after {
+		content: icon-char(spinner);
+		@include position(absolute, 50% null null 50%);
+		z-index: 3;
+		font-family: svgicons;
+		width: 40px;
+		height: 40px;
+		line-height: 40px;
+		margin: -20px 0 0 -20px;
+		font-size: 40px;
+		text-align: center;
+		color: $cIcon;
+		animation: spinner 3s infinite;
+		opacity: 1;
+		transition: opacity $tdDefault*4, color $tdDefault*2;
+	}
+
+	&.is-loaded {
+		&:after,
+		&:before {
+			opacity: 0;
+		}
+	}
+}
+
+@mixin transitionFix() {
+	-webkit-backface-visibility: hidden;
+	-moz-backface-visibility: hidden;
+	-webkit-transform: translate3d(0, 0, 0);
+	-moz-transform: translate3d(0, 0, 0);
+}

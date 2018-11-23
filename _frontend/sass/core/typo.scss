@@ -1,0 +1,117 @@
+/* typo utility classes */
+
+// this will generate .typo-dm classes
+@mixin typoSetUtilityClasses($font-sizes: (dm d1 d2 d3 d4 b1 b2 b3 b4 b5)) {
+	@each $fsName in $font-sizes {
+		.typo-#{$fsName} {
+			@if (str-index($fsName, 'd') == 1) {
+				@include typoDisplay($fsName);
+			} @else {
+				@include typoBodycopy($fsName);
+			}
+		}
+	}
+}
+
+/* display sizes */
+
+// display mega
+%typo-dm {
+	font-size: rem(72px);
+	line-height: 1.125;
+	letter-spacing: -0.024em;
+
+	@include breakpoint(tablet-landscape down) {
+		// ... different font-size / line-height / letter-spacing
+	}
+}
+
+%typo-d1 {
+	font-size: rem(56px);
+	line-height: 1.172;
+	letter-spacing: 0.04em;
+
+	small {
+		font-size: 0.5em;
+	}
+}
+
+%typo-d2 {
+	font-size: rem(48px);
+	line-height: 1.166;
+	letter-spacing: 0.05em;
+}
+
+%typo-d3 {
+	font-size: rem(40px);
+	line-height: 1.28;
+	letter-spacing: 0.05em;
+}
+
+%typo-d4 {
+	font-size: rem(26px);
+	line-height: 1.2;
+	letter-spacing: 0.05em;
+}
+
+@mixin typoDisplay($font-size: d1, $font-family: $ffHeading) {
+	font-family: $font-family;
+	font-weight: $fwRegular;
+	@extend %typo-#{$font-size};
+}
+
+/* display body copy */
+
+// hero perexes (...write usecase in to the comment)
+%typo-b1 {
+	font-size: rem(24px);
+	line-height: 1.48;
+	letter-spacing: 0;
+
+	@include breakpoint(tablet-landscape down) {
+		// ... different font-size / line-height / letter-spacing
+	}
+}
+
+%typo-b2 {
+	font-size: rem(20px);
+	line-height: 1.638;
+	letter-spacing: 0;
+
+	@include breakpoint(desktop down) {
+		// ...
+	}
+}
+
+%typo-b3 {
+	font-size: rem(16px);
+	line-height: 1.618;
+	letter-spacing: 0.028em;
+}
+
+%typo-b4 {
+	font-size: rem(14px);
+	line-height: 1.618;
+	letter-spacing: 0.028em;
+}
+
+%typo-b5 {
+	font-size: rem(12px);
+	line-height: 1.618;
+	letter-spacing: 0.028em;
+}
+
+@mixin typoBodycopy($font-size: b1) {
+	font-family: $ffBodycopy;
+	font-weight: $fwRegular;
+	@extend %typo-#{$font-size};
+}
+
+@mixin typoAnchors() {
+	color: inherit;
+
+	&:hover,
+	&:active {
+		// ...
+	}
+}

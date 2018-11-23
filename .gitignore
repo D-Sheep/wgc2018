@@ -1,0 +1,26 @@
+/_frontend/_env.json
+/_frontend/node_modules
+/_frontend/sass/_generated
+/_frontend/semantic
+/_frontend/regulated-packages.json
+
+/backend/.env
+/backend/composer.phar
+/backend/composer.json.bak
+/backend/vendor
+
+/assets/admin/elfinder
+/assets/dist
+/assets/semantic
+/.htaccess
+/index.php
+/robots.txt
+/storage
+
+/_frontend/cypress/videos
+/_frontend/cypress/screenshots
+
+# you should have this in global gitignore already!
+.idea
+/assets/admin/dist/
+.DS_Store

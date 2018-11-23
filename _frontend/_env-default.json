@@ -1,0 +1,11 @@
+{
+	"PROXY": "localhost/bistro/internal/tady-laravel-template",
+	"PROXY_OPEN": "false",
+	"DISABLE_MINIFY_NOTIFIER": false,
+	"BUILD_ES5_ON_DEVELOPMENT": false,
+	"browsersync": {
+		"clicks": false,
+		"forms": false,
+		"scroll": false
+	}
+}

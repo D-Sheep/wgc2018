@@ -1,0 +1,65 @@
+@import "_global";
+
+.js-carousel {
+	$this: &;
+
+	&-items {
+		position: relative;
+
+		&:before {
+			content: '';
+			display: block;
+			padding-top: 100%;
+		}
+	}
+
+	&-item {
+		@include position(absolute, 0);
+		display: none;
+	}
+
+	&.is-inited {
+		#{$this}-item.is-active {
+			display: flex;
+		}
+	}
+
+	// show the first slide as fallback
+	&:not(.is-inited) {
+		#{$this}-item:first-child {
+			display: flex;
+		}
+	}
+}
+
+// template example, should be deleted
+
+.js-carousel {
+	&-items {
+		background-color: #3a3a3a;
+	}
+
+	&-item {
+		flex-direction: column;
+		align-items: center;
+		justify-content: center;
+
+		&:nth-child(1) {
+			background-color: #0d71bb;
+		}
+		&:nth-child(2) {
+			background-color: #0e8c8c;
+		}
+		&:nth-child(3) {
+			background-color: #0e566c;
+		}
+	}
+
+	&-controls {
+		text-align: center;
+	}
+
+	&-anchors {
+		text-align: center;
+	}
+}

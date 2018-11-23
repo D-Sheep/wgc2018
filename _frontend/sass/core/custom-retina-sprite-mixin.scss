@@ -1,0 +1,62 @@
+@mixin custom-sprite-init() {
+	[class^=sprite-], [class*=sprite-] {
+		display: inline-block;
+		vertical-align: middle;
+		height: 0;
+		overflow: hidden;
+	}
+}
+
+@mixin custom-sprite-width($sprite) {
+	width: nth($sprite, 5) / 2;
+}
+
+@mixin custom-sprite-height($sprite) {
+	padding-top: nth($sprite, 6) / 2;
+}
+
+@mixin custom-sprite-position($sprite) {
+	$sprite-offset-x: nth($sprite, 3);
+	$sprite-offset-y: nth($sprite, 4);
+	background-position: $sprite-offset-x/2  $sprite-offset-y/2;
+}
+
+@mixin custom-sprite-image($sprite) {
+	$sprite-image: nth($sprite, 9);
+	background-image: url('../sprites/#{$sprite-image}');
+	background-size: $spritesheet-width/2 $spritesheet-height/2;
+}
+
+@mixin custom-sprite($sprite) {
+	@include custom-sprite-image($sprite);
+	@include custom-sprite-position($sprite);
+	@include custom-sprite-width($sprite);
+	@include custom-sprite-height($sprite);
+}
+
+/*
+The `sprites` mixin generates identical output to the CSS template
+  but can be overridden inside of SCSS
+
+@include sprites($spritesheet-sprites);
+*/
+
+@mixin custom-sprites($sprites, $prefix: '') {
+	@each $sprite in $sprites {
+		$sprite-name: nth($sprite, 10);
+		.sprite-#{$prefix}#{$sprite-name} {
+			@include custom-sprite($sprite);
+		}
+	}
+}
+
+@mixin custom-sprites-mobile($sprites, $prefix: '') {
+	@each $sprite in $sprites {
+		$sprite-name: nth($sprite, 10);
+		.sprite-#{$prefix}#{$sprite-name} {
+			@include breakpoint(phone down) {
+				@include custom-sprite($sprite);
+			}
+		}
+	}
+}

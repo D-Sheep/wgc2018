@@ -1,0 +1,49 @@
+// COLORS
+//-----------
+$cBodycopy: 	#fff;
+$cHeading: 		#23E7A4;
+//bg-colors
+$cColorBlue: 	#1053cb;
+$cColorGreen: 	#10e8a3;
+
+$cBlue: 		#1053cb !default;
+$cIndigo: 		#6610f2 !default;
+$cPurple: 		#6f42c1 !default;
+$cPink: 		#e83e8c !default;
+$cRed: 			#dc3545 !default;
+$cOrange: 		#fd7e14 !default;
+$cYellow: 		#ffc107 !default;
+$cGreen: 		#10e8a3 !default;
+$cTeal: 		#20c997 !default;
+$cCyan: 		#17a2b8 !default;
+$cWhite: 		#ffffff !default;
+
+$colors: () !default;
+$colors: map-merge((
+	"blue": 	$cBlue,
+	"indigo": 	$cIndigo,
+	"purple": 	$cPurple,
+	"pink": 	$cPink,
+	"red": 		$cRed,
+	"orange": 	$cOrange,
+	"yellow": 	$cYellow,
+	"green": 	$cGreen,
+	"teal": 	$cTeal,
+	"cyan": 	$cCyan,
+	"white":	$cWhite
+), $colors);
+
+// 4. The Spacers
+// --------------
+// Define inside spacers map how many spacers you need.
+$spacer: 1rem !default;
+$spacers: () !default;
+$spacers: map-merge((
+	0: 0,
+	1: ($spacer * .25),
+	2: ($spacer * .5),
+	3: $spacer,
+	4: ($spacer * 1.5),
+	5: ($spacer * 3),
+	6: ($spacer * 3.5)
+), $spacers);

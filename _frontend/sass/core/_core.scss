@@ -1,0 +1,21 @@
+// Init
+@import "bourbon";
+@import "normalize";
+
+// CORE
+@import "variables";
+@import "functions";
+@import "mixins";
+@import "typo";
+
+// Foundation Grid system
+// http://foundation.zurb.com/sites/docs/flex-grid.html
+@import "util/util";
+@import "grid/grid";
+@import 'components/flex';
+
+// ICONS
+// for some reason deploybot does not generate the file into "build container",
+// although being directed to, only solution seems to generate the file to "dist",
+// even it means it will be present on server
+@import "../../../assets/dist/front/svg_icons/_generated/svg-icons";

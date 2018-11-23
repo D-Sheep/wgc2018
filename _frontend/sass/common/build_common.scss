@@ -1,0 +1,61 @@
+@import "../core/_core";
+
+@include normalize();
+
+// set basic spacings
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+main,
+menu,
+nav,
+section,
+summary,
+p,
+ul,
+ol,
+li,
+h1, h2, h3, h4, h5, h6 {
+	margin-top: spacer(sm);
+	margin-bottom: 0;
+	line-height: 1;
+
+}
+
+*:first-child {
+	margin-top: 0;
+}
+
+p,
+li {
+	line-height: 1.5
+}
+
+ul,
+ol {
+	margin-top: spacer(md);
+}
+
+li {
+	margin-top: spacer(xs);
+}
+
+h1, h2, h3, h4, h5, h6 {
+	line-height: 1.5;
+	margin-top: spacer(xl);
+}
+
+@include foundation-flex-grid;
+@include typoSetUtilityClasses;
+
+@import "fonts";
+@import "animations";
+@import "common";
+@import "utils";
+@import "page";
+@import "section";

@@ -1,0 +1,74 @@
+@import "_global";
+
+.js-modal {
+	@include position(fixed, 0);
+	overflow: hidden;
+}
+
+.js-modal-backdrop {
+	@include position(absolute, 0 null null 0);
+	width: 100%;
+	height: 100%;
+	background-color: rgba(#000000, 0.4);
+}
+
+.js-modal-scroller {
+	position: relative;
+	width: 100%;
+	height: 100%;
+	overflow: auto;
+}
+
+.js-modal-items {
+	position: relative;
+	margin: 10vh auto;
+}
+
+.js-modal-item {
+	overflow: hidden;
+}
+
+.js-modal-anchors {
+	display: flex;
+}
+
+.js-modal-anchor {
+	flex: 1 1 auto;
+}
+
+.js-modal:not(.is-inited) {
+	display: none;
+}
+
+// template example, should be deleted
+
+.js-modal {
+
+	&-items {
+		max-width: 800px;
+	}
+
+	&-item {
+		flex-direction: column;
+		align-items: center;
+		justify-content: center;
+
+		&:nth-child(1) {
+			background-color: #0d71bb;
+		}
+		&:nth-child(2) {
+			background-color: #0e8c8c;
+		}
+		&:nth-child(3) {
+			background-color: #0e566c;
+		}
+	}
+
+	&-controls {
+		text-align: center;
+	}
+
+	&-anchors {
+		text-align: center;
+	}
+}

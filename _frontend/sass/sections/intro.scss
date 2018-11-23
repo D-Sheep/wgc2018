@@ -1,0 +1,12 @@
+@import "_global";
+
+.intro {
+	background: white;
+	min-height: (spacer(xxl) * 5);
+	padding-top: spacer(xxl);
+	padding-bottom: spacer(xl);
+
+	.column {
+		@include flex-grid-column(8, false);
+	}
+}

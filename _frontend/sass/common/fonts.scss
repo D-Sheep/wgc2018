@@ -1,0 +1,9 @@
+//ANDALE Mono
+@font-face{
+	font-family:"Andale";
+	src:url("#{$pAssets}/font/andale/2851a39a-fe5c-4b4c-9d40-73770b226a7b.eot?#iefix");
+	src:url("#{$pAssets}/font/andale/2851a39a-fe5c-4b4c-9d40-73770b226a7b.eot?#iefix") format("eot"),
+	url("#{$pAssets}/font/andale/c85ae45f-3577-40b8-a56d-ad05bb88d6a6.woff2") format("woff2"),
+	url("#{$pAssets}/font/andale/4901d588-cef4-49ae-9f1b-b16ea4b4cf94.woff") format("woff"),
+	url("#{$pAssets}/font/andale/3311dc70-4c38-40fb-b054-34b90aecef0e.ttf") format("truetype");
+}

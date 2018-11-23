@@ -1,0 +1,74 @@
+@import "_global";
+
+.sample-full-hd-marker {
+	width: 1920px;
+	left: 50%;
+	position: fixed;
+	margin-left: -960px;
+	outline: 1px solid red;
+	top: 0;
+	bottom: 0;
+	z-index: 9999;
+	display: none;
+	pointer-events: none;
+}
+
+.sample-grid {
+	position: fixed;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	z-index: 9999;
+	pointer-events: none;
+	display: none;
+	/*mix-blend-mode: exclusion;*/
+
+	.row--basecols {
+		height: 70vh;
+		height: 100vh;
+	}
+
+	.column {
+		background: rgba(0,0,0,0.2);
+		text-align: center;
+	}
+	.column:after {
+		content: '';
+		width: 100%;
+		height: 100vh;
+		border-left: 1px solid rgba(68, 254, 255, 0.75);
+		border-right: 1px solid rgba(68, 254, 255, 0.75);
+		display: block;
+	}
+	.column:nth-child(odd) {
+		background: rgba(175,175,175,0.25);
+	}
+}
+
+.sample-vr {
+	$vrSampleBg1: rgba(0,0,0,0.2);
+	$vrSampleBg2: rgba(175,175,175,0.25);
+	$vrSampleLine1: rgba(68, 254, 255, 0.3);
+	$vrSampleLine2: rgba(68, 254, 255, 0.6);
+
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	z-index: 9999;
+	pointer-events: none;
+	display: none;
+
+	// lines
+	background: repeating-linear-gradient(
+			$vrSampleBg1, $vrSampleBg1 calc(#{spacer()} - 1px),
+			$vrSampleLine1 calc(#{spacer()} - 1px), $vrSampleLine1 calc(#{spacer()}),
+			$vrSampleBg1 calc(#{spacer()}), $vrSampleBg1 calc(#{spacer()} * 2 - 1px),
+			$vrSampleLine2 calc(#{spacer()} * 2 - 1px), $vrSampleLine2 calc(#{spacer()} * 2),
+			$vrSampleBg2 calc(#{spacer()} * 2), $vrSampleBg2 calc(#{spacer()} * 3 - 1px),
+			$vrSampleLine1 calc(#{spacer()} * 3 - 1px), $vrSampleLine1 calc(#{spacer()} * 3),
+			$vrSampleBg2 calc(#{spacer()} * 3), $vrSampleBg2 calc(#{spacer()} * 4 - 1px),
+			$vrSampleLine2 calc(#{spacer()} * 4 - 1px), $vrSampleLine2 calc(#{spacer()} * 4)
+	);
+}

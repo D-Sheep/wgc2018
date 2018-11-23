@@ -14,7 +14,8 @@ module.exports = {
 		"node_modules/lodash/lodash.min.js",
 		"node_modules/moment/min/moment-with-locales.js",
 		"node_modules/css-element-queries/src/ResizeSensor.js",
-		"node_modules/css-element-queries/src/ElementQueries.js"
+		"node_modules/css-element-queries/src/ElementQueries.js",
+        "node_modules/pixi.js/dist/pixi.js"
 	],
 	"libs-gsap": [
 		"js/libs/gsap/TweenMax.min.js",
@@ -54,6 +55,11 @@ module.exports = {
 		"js/components/Carousel.js",
 		"js/components/Modal.js",
 		"js/components/Tabs.js",
+	],
+	"game": [
+		"js/game/Application.js",
+		"js/game/AssetStorage.js",
+		"js/game/init.js"
 	],
 	"init": [
 		"js/init.js"

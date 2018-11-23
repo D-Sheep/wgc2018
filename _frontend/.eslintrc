@@ -3,32 +3,6 @@
 		"es6": true,
 		"browser": true
 	},
-	"rules": {
-		"comma-dangle": "off",
-		"quotes": "off",
-		"no-undef": "off",
-		"no-console": "off",
-		"no-case-declarations": "off",
-		"no-unused-vars": "off",
-		"semi": "warn",
-		"semi-style": "off",
-		"no-tabs": "off",
-		"no-underscore-dangle": "off",
-		"indent": ["error", "tab", {"SwitchCase": 1}],
-		"spaced-comment": "off",
-		"object-curly-newline": "off",
-		"object-curly-spacing": ["error", "never"],
-		"no-multi-assign": "off",
-		"no-plusplus": "off",
-		"no-param-reassign": "off",
-		"no-use-before-define": "off",
-		"implicit-arrow-linebreak": "off",
-		"class-methods-use-this": "off",
-		"no-nested-ternary": "off",
-		"arrow-parens": ["error", "always"],
-		"max-len": "off"
-	},
-	"extends": "airbnb-base",
 	"parserOptions": {
 		"ecmaVersion": 2018
 	}

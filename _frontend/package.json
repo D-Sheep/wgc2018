@@ -17,6 +17,7 @@
     "jquery-ui-dist": "1.12.1",
     "moment": "2.20.1",
     "normalize-scss": "4.0.3",
+    "pixi.js": "^4.8.2",
     "promise-polyfill": "8.1.0",
     "regenerator-runtime": "0.12.1",
     "semantic-ui": "2.2.13",

@@ -60,8 +60,11 @@ module.exports = {
 		"js/components/Tabs.js",
 	],
 	"game": [
+		"js/game/vars.js",
 		"js/game/Application.js",
 		"js/game/AssetStorage.js",
+		"js/game/Controls.js",
+		"js/game/Player.js",
 		"js/game/init.js"
 	],
 	"init": [

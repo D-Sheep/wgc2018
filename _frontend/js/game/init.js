@@ -2,9 +2,11 @@ const application = new Application({
     view: document.getElementById('app-canvas')
 });
 const assetStorage = new AssetStorage();
+const controls = new Controls();
 
 assetStorage.loadSprites().then(() => {
-    const sheepSprite = new PIXI.Sprite(assetStorage.get('sheep'));
-    application.stage.addChild(sheepSprite);
+    const player = new Player(assetStorage.get('sheep'));
+    player.position.set(200, 600);
+    application.stage.addChild(player);
 });
 

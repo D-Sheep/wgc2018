@@ -25,18 +25,31 @@
 		},
 		mounted() {
             window.assetStorage = new AssetStorage();
+            window.mapSectionStorage = new MapSectionStorage();
             window.controls = new Controls();
             window.application = new Application({
                 view: this.$refs.canvas,
                 width: ROOM_WIDTH,
                 height: ROOM_HEIGHT
             });
+            window.collisionManager = new CollisionManager();
             window.stats = new Stats();
-            assetStorage.loadSprites().then(() => {
+            Promise.all([
+                assetStorage.loadSprites(),
+                mapSectionStorage.loadMapSections()
+			]).then(() => {
+                window.stats.update(this.$store.state.player.stats);
+
                 const player = new Player(assetStorage.get('sheep'));
                 player.position.set(200, 600);
                 application.world.addChild(player);
-                window.stats.update(this.$store.state.player.stats);
+
+                for (let i = 0; i < 5; i++) {
+                    const mapSection = new MapSection();
+                    mapSection.useSection('city01');
+                    application.addMapSection(mapSection);
+                }
+
             });
         },
 		methods: {}

@@ -10,6 +10,7 @@ class AssetStorage {
             const loader = new PIXI.loaders.Loader();
 
             loader.add('sheep', 'assets/img/sheep.png');
+            loader.add('AirConditioning', 'assets/img/AirConditioning.png');
 
             loader
                 .load((ldr, resources) => {

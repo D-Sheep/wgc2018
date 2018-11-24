@@ -38,6 +38,11 @@ module.exports = {
 	"libs-vue": [
 		"node_modules/vue/dist/vue.js"
 	],
+	"libs-pixi": [
+        "js/libs/pixi/pixi-rectangle-intersects.js",
+        "js/libs/pixi/pixi-point-distance.js",
+        "js/libs/pixi/pixi-point-add.js"
+	],
 	"helpers": [
 		"js/helpers/Helpers.js", //Helpers have to be first and must not depend on anything
 		"js/helpers/Cookies.js",
@@ -60,12 +65,19 @@ module.exports = {
 		"js/components/Tabs.js",
 	],
 	"game": [
-		"js/game/vars.js",
-		"js/game/Application.js",
-		"js/game/AssetStorage.js",
-		"js/game/Controls.js",
-		"js/game/Player.js",
-		"js/game/Stats.js"
+        "js/game/gameobjects/GameObject.js",
+        "js/game/gameobjects/AirConditioning.js",
+
+        "js/game/vars.js",
+        "js/game/Application.js",
+        "js/game/AssetStorage.js",
+        "js/game/Controls.js",
+        "js/game/Player.js",
+        "js/game/Stats.js",
+        "js/game/CollisionManager.js",
+        "js/game/MapSection.js",
+        "js/game/MapSectionStorage.js",
+		"js/game/GameObjectFactory.js"
 	],
 	"init": [
 		"js/init.js"

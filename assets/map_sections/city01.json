@@ -1,0 +1,6 @@
+{
+  "width": 600,
+  "objects": [
+    {"type":  "AirConditioning", "position": [400, 200]}
+  ]
+}

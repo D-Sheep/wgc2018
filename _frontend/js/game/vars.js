@@ -1,3 +1,4 @@
+const LEVEL_STRINGIFY_VERSION = 1;
 const KEY_LEFT = 37;
 const KEY_UP = 38;
 const KEY_RIGHT = 39;

@@ -40,6 +40,11 @@ class Player extends PIXI.Sprite {
                 this.jump();
             }
         });
+
+        collisionManager.on(this, AirConditioning, (object) => {
+            console.log('hit', object);
+            object.isCollisionEnabled = false;
+        });
     }
 
     jump() {

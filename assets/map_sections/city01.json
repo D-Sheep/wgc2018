@@ -4,5 +4,12 @@
     {"type":  "AirConditioning", "position": [400, 200]},
     {"type":  "GreenTurtle", "position": [400, 600], "limit":  [100, 500]},
     {"type":  "GreenTurtle", "position": [120, 600], "limit":  [100, 300]}
+  ],
+  "ledges": [
+    {"position":  [0, 350], "length":  100}
+  ],
+  "blocks": [
+    {"position":  [400, 200], "size":  [100, 90]},
+    {"position":  [0, 500], "size":  [100, 100]}
   ]
 }

@@ -6,7 +6,7 @@ class CollisionManager {
             this.callbacks.forEach((cb) => {
                 const bounds = cb.object.getBounds(false);
                 gameObjects.forEach((gameObject) => {
-                    if (!gameObject instanceof cb.otherClass) {
+                    if (!(gameObject instanceof cb.otherClass)) {
                         return;
                     }
 

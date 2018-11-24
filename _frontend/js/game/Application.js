@@ -12,16 +12,34 @@ class Application extends PIXI.Application {
 
         this.mapSections = [];
         this.worldWidth = 0;
+        this.ledges = [];
+        this.blocks = [];
     }
 
     addMapSection(section) {
         this.mapSections.push(section);
-        section.x = this.worldWidth;
-        this.worldWidth += section.sectionWidth;
         this.world.addChild(section);
+        section.x = this.worldWidth;
+        section.ledges.forEach((ledge) => {
+            ledge.x += this.worldWidth;
+            this.ledges.push(ledge);
+        });
+        section.blocks.forEach((block) => {
+            this.blocks.push(block);
+        });
+
+        this.worldWidth += section.sectionWidth;
     }
 
     getGameObjects() {
         return this.mapSections.reduce((res, section) => res.concat(section.children), []);
+    }
+
+    getLedges() {
+        return this.ledges;
+    }
+
+    getBlocks() {
+        return this.blocks;
     }
 }

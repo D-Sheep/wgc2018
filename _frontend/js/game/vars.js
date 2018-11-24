@@ -16,3 +16,9 @@ const BASE_ENERGY = 100;
 
 const BASE_HAPPINESS = 0;
 const BASE_LIFES = 6;
+
+const ROUTES = [
+	'index',
+	'stage',
+	'lobby'
+];

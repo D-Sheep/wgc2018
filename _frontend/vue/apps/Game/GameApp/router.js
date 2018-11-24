@@ -14,16 +14,6 @@ const router = new VueRouter({
 			component: require('./pages/Index.vue'),
 		},
 		{
-			name: 'lobby',
-			path: '/lobby',
-			component: require('./pages/Lobby.vue'),
-		},
-		{
-			name: 'stage',
-			path: '/stage',
-			component: require('./pages/Stage.vue'),
-		},
-		{
 			name: 'error',
 			path: '*',
 			component: require('./pages/Error.vue'),

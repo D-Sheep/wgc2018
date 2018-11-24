@@ -1,6 +1,5 @@
 <template>
 	<div class="vue-app">
-		<navigation/>
 		<canvas ref="canvas" id="app-canvas"></canvas>
 	</div>
 </template>
@@ -11,9 +10,6 @@
 <script>
 	module.exports = {
 		name: 'Stage',
-		components: {
-			'navigation': require('../../../../components/Navigation.vue')
-		},
 		data() {
 			return {
 				isLoading: false,

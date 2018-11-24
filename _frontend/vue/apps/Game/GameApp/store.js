@@ -18,6 +18,7 @@ module.exports = new Vuex.Store({
 				lifes: BASE_LIFES
 			}
 		},
+		route: 'index'
 	},
 	mutations: {
 		updatePlayerStat(state, payload) {
@@ -25,6 +26,9 @@ module.exports = new Vuex.Store({
 		},
 		updatePlayerStats(state, payload) {
 			state.player.stats = payload;
+		},
+		navigateTo(state, payload) {
+			state.route = payload;
 		}
 	},
 	actions: {}

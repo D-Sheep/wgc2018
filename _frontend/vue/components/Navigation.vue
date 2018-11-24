@@ -1,17 +1,38 @@
 <template>
-	<nav>
-		<router-link :to="{name: 'index'}">Index</router-link>
-		<router-link :to="{name: 'lobby'}">Lobby</router-link>
-		<router-link :to="{name: 'stage'}">Stage</router-link>
+	<nav class="navigation">
+		<a href="#" @click.prevent="route = slug" v-for="slug in routes">{{ slug }}</a>
 	</nav>
 </template>
 
 <style lang="scss" scoped>
+	.navigation {
+		a {
+			margin-right: 5px;
 
+			&:last-child {
+				margin-right: 0;
+			}
+		}
+	}
 </style>
 
 <script>
 	module.exports = {
 		name: 'Navigation',
+		data() {
+			return {
+				routes: ROUTES
+			};
+		},
+		computed: {
+			route: {
+				get() {
+					return this.$store.state.route;
+				},
+				set($event) {
+					this.$store.commit('navigateTo', $event);
+				}
+			}
+		}
 	}
 </script>

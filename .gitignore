@@ -11,7 +11,7 @@
 
 /assets/admin/elfinder
 /assets/dist
-/assets/semantic
+/assets/vue
 /.htaccess
 /index.php
 /robots.txt

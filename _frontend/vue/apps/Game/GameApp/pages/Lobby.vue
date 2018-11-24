@@ -19,6 +19,11 @@
 				isLoading: false,
 			};
 		},
+		computed: {
+			player() {
+				return this.$store.state.player;
+			}
+		},
 		mounted() {
 		},
 		methods: {}

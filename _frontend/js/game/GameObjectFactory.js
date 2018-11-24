@@ -9,6 +9,7 @@ class GameObjectFactory {
 GameObjectFactory.classList = {
     'AirConditioning': AirConditioning,
     'GreenTurtle': GreenTurtle,
+    'RedTurtle': RedTurtle,
     'Coins': Coins,
     'FinishHouse': FinishHouse,
     'Finish': Finish

@@ -1,6 +1,7 @@
 <template>
 	<div class="player__states">
 		<ul>
+			<li>Lives: {{ lives }}</li>
 			<li v-for="(value, slug) in states">
 				{{ slug + ': ' + value }}
 			</li>
@@ -21,6 +22,6 @@
 <script>
 	module.exports = {
 		name: 'PlayerStates',
-		props: ['states'],
+		props: ['states', 'lives'],
 	}
 </script>

@@ -9,17 +9,20 @@ const STATS_BAR_HEIGHT = 20;
 const STATS_BAR_WIDTH = 200;
 const STATS_ROW_HEIGHT = 60;
 
+//routes
+const ROUTES = [
+	'index',
+	'stage',
+	'lobby',
+	'shop'
+];
+
+//player stats
 const BASE_MONEY = 0;
 const BASE_INJURY = 0;
 const BASE_HUNGER = 0;
 const BASE_STRENGTH = 0;
 const BASE_ENERGY = 100;
 
+//player states
 const BASE_HAPPINESS = 0;
-const BASE_LIFES = 6;
-
-const ROUTES = [
-	'index',
-	'stage',
-	'lobby'
-];

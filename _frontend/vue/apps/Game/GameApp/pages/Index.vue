@@ -1,9 +1,10 @@
 <template>
-	<div class="vue-app">
+	<div class="vue-container">
 		<navigation/>
 		<welcome v-if="route === 'index'"/>
-		<lobby v-if="route === 'lobby'"/>
 		<stage v-if="route === 'stage'"/>
+		<lobby v-if="route === 'lobby'"/>
+		<shop v-if="route === 'shop'"/>
 	</div>
 </template>
 
@@ -16,8 +17,9 @@
 		components: {
 			navigation: require('../../../../components/Navigation.vue'),
 			welcome: require('./Welcome.vue'),
+			stage: require('./Stage.vue'),
 			lobby: require('./Lobby.vue'),
-			stage: require('./Stage.vue')
+			shop: require('./Shop.vue')
 		},
 		data() {
 			return {
@@ -30,11 +32,13 @@
 					return this.$store.state.route;
 				},
 				set($event) {
-					this.$store.commit('updateRoute', $event);
+					this.$store.commit('navigateTo', $event);
 				}
 			}
 		},
 		mounted() {
+			this.$store.commit('updatePlayerState', {state: 'money', value: 30});
+			this.$store.commit('updatePlayerStat', {stat: 'hunger', value: 91});
 		},
 		methods: {}
 	}

@@ -1,7 +1,7 @@
 <template>
 	<div class="vue-app">
 		<player-stats :stats="player.stats"/>
-		<player-states :states="player.states"/>
+		<player-states :states="player.states" :lives="player.ownedItems.length"/>
 	</div>
 </template>
 

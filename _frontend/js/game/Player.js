@@ -25,10 +25,10 @@ class Player extends PIXI.Sprite {
                 this.vSpeed += PLAYER_GRAVITY;
                 this.y += this.vSpeed;
 
-                if (this.y >= ROOM_HEIGHT) {
+                if (this.y >= VIEW_HEIGHT) {
                     this.isInAir = false;
                     this.vSpeed = 0;
-                    this.y = ROOM_HEIGHT;
+                    this.y = VIEW_HEIGHT;
                 }
             }
         };

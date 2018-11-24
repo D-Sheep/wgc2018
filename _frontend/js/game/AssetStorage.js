@@ -15,6 +15,10 @@ class AssetStorage {
 			loader.add('GreenTurtle', 'assets/img/GreenTurtle.png');
 			loader.add('RedTurtle', 'assets/img/RedTurtle.png');
 			loader.add('Coins', 'assets/img/Coins.png');
+			loader.add('animated:Player:0', 'assets/img/Player0.png');
+			loader.add('animated:Player:1', 'assets/img/Player1.png');
+			loader.add('animated:Player:2', 'assets/img/Player2.png');
+			loader.add('animated:Player:3', 'assets/img/Player3.png');
 
 			loader
 				.load((ldr, resources) => {

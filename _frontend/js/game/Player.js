@@ -1,11 +1,13 @@
-class Player extends PIXI.Sprite {
-	constructor(...args) {
-		super(...args);
+class Player extends PIXI.extras.AnimatedSprite {
+	constructor(textures) {
+		super(textures);
 
 		this.vSpeed = 0;
 		this.isInAir = false;
+		this.animationSpeed = 0.1;
 		this.anchor.y = 1;
 		this.anchor.x = 0.5;
+		this.play();
 		this.stats = {};
 
 		const tickerHandler = () => {

@@ -32,8 +32,8 @@
 			window.player = null;
 
 			this.$store.dispatch('fetchAssets').then(() => {
-				window.player = new Player(assetStorage.getTexture('sheep'));
-				window.player.position.set(200, 600);
+				window.player = new Player(assetStorage.getAnimatedTexture('Player'));
+				window.player.position.set(200, 400);
 				application.world.addChild(window.player);
 
 				let mapSection = new MapSection();

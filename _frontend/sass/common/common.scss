@@ -6,12 +6,6 @@ html { height: 100%; }
 	-webkit-tap-highlight-color: rgba(0,0,0,0);
 }
 
-*,
-*:before,
-*:after {
-	box-sizing: border-box;
-}
-
 html {
 	font-size: 100%;
 	width: 100%;
@@ -71,32 +65,3 @@ svg {
 
 // COMMON MIXINS INITS
 @include css-icons-init();
-
-// FOR DEVEL PURPOSE
-/* @if NODE_ENV='devel' */
-
-// for debug only vuejs Data storage object
-pre {
-	font-size: 10px;
-	line-height: 0.9em;
-}
-
-// visual helper for definition of mediaquery
-body {
-	&:after {
-		content: '';
-		@include position(fixed, null 0 0 null);
-		z-index: 999;
-		background: rgba(255,255,255, 0.75);
-		color: #000;
-		padding: 5px 10px;
-		font-size: 11px;
-		line-height: 1em;
-	}
-
-	@each $breakpoint, $size in reverse($breakpoints) {
-		@include breakpoint($breakpoint down) { &:after { content: '#{$breakpoint} [#{$size} +]'; } }
-	}
-}
-
-/* @endif */

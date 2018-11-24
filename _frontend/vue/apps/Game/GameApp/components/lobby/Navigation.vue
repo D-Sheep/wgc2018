@@ -83,7 +83,7 @@
 			},
 			warnAboutFee() {
 				swal({
-					html: `You are about to enter the gym, it this will cost you ${BASE_GYM_FEE} coins.<br> Are you sure you want to go to the gym?`,
+					html: `Entering the GYM will cost you ${BASE_GYM_FEE} coins.`,
 					showCancelButton: true,
 					focusConfirm: false,
 

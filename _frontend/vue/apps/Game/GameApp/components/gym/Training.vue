@@ -1,6 +1,6 @@
 <template>
 	<div class="training">
-		<div class="training__help" :style="{backgroundPositionX: -trained + '%'}">
+		<div class="training__progress" :style="{backgroundPositionX: -trained + '%'}">
 			keep pressing the 'UP' arrow
 		</div>
 	</div>
@@ -8,7 +8,7 @@
 
 <style lang="scss" scoped>
 	.training {
-		&__help {
+		&__progress {
 			background: linear-gradient(to left, greenyellow 50%, white 50%);
 			background-size: 200% 100%;
 			background-position: left bottom;
@@ -22,7 +22,7 @@
 
 			padding: 5px;
 
-			width: 200px;
+			width: 220px;
 			height: 50px;
 
 			display: flex;

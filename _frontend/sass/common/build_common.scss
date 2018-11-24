@@ -31,11 +31,6 @@ h1, h2, h3, h4, h5, h6 {
 	margin-top: 0;
 }
 
-p,
-li {
-	line-height: 1.5
-}
-
 ul,
 ol {
 	margin-top: spacer(md);
@@ -53,9 +48,5 @@ h1, h2, h3, h4, h5, h6 {
 @include foundation-flex-grid;
 @include typoSetUtilityClasses;
 
-@import "fonts";
-@import "animations";
 @import "common";
 @import "utils";
-@import "page";
-@import "section";

@@ -1,11 +1,11 @@
 class AssetStorage {
     constructor() {
-        this._storage = new Map();
+        this._textureStorage = new Map();
     }
 
     //======================================================
 
-    loadSprites() {
+    loadTextures() {
         return new Promise((resolve) => {
             const loader = new PIXI.loaders.Loader();
 
@@ -19,17 +19,17 @@ class AssetStorage {
                 .load((ldr, resources) => {
 
                     Object.keys(resources).forEach((res) => {
-                        this._storage.set(res, resources[res].texture);
+                        this._textureStorage.set(res, resources[res].texture);
 
                         const animatedMatches = res.match(/animated:([-\w\/]+):(\d+)/);
 
                         if (animatedMatches) {
                             let animatedSprites = null;
-                            if (!this._storage.has('animated:' + animatedMatches[1])) {
+                            if (!this._textureStorage.has('animated:' + animatedMatches[1])) {
                                 animatedSprites = [];
-                                this._storage.set('animated:' + animatedMatches[1], animatedSprites);
+                                this._textureStorage.set('animated:' + animatedMatches[1], animatedSprites);
                             } else {
-                                animatedSprites = this._storage.get('animated:' + animatedMatches[1]);
+                                animatedSprites = this._textureStorage.get('animated:' + animatedMatches[1]);
                             }
 
                             animatedSprites[animatedMatches[2]] = resources[res].texture;
@@ -42,14 +42,14 @@ class AssetStorage {
         });
     }
 
-    get(assetName) {
-        if (!this._storage.has(assetName)) {
+    getTexture(assetName) {
+        if (!this._textureStorage.has(assetName)) {
             return PIXI.Texture.WHITE;
         }
-        return this._storage.get(assetName);
+        return this._textureStorage.get(assetName);
     }
 
-    getAnimated(assetName) {
-        return this._storage.get('animated:' + assetName);
+    getAnimatedTexture(assetName) {
+        return this._textureStorage.get('animated:' + assetName);
     }
 }

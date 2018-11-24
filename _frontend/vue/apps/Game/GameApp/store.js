@@ -55,7 +55,7 @@ module.exports = new Vuex.Store({
 		fetchAssets(context) {
 			if (!context.state.assetPromise) {
                 const promise = Promise.all([
-                    assetStorage.loadSprites(),
+                    assetStorage.loadTextures(),
                     mapSectionStorage.loadMapSections()
                 ]);
                 context.commit('setAssetPromise', promise);

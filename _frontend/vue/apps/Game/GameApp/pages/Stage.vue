@@ -29,7 +29,7 @@
             window.player = null;
 
             this.$store.dispatch('fetchAssets').then(() => {
-                window.player = new Player(assetStorage.get('sheep'));
+                window.player = new Player(assetStorage.getTexture('sheep'));
                 window.player.position.set(200, 600);
                 application.world.addChild(window.player);
 

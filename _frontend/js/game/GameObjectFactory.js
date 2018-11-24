@@ -1,7 +1,7 @@
 class GameObjectFactory {
     static create(type, data) {
         const objectClass = GameObjectFactory.classList[type];
-        const textures = objectClass.isAnimated ? assetStorage.getAnimated(type) : [assetStorage.get(type)];
+        const textures = objectClass.isAnimated ? assetStorage.getAnimatedTexture(type) : [assetStorage.getTexture(type)];
         return new objectClass(textures, data);
     }
 }

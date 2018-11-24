@@ -9,6 +9,11 @@ const STATS_BAR_HEIGHT = 20;
 const STATS_BAR_WIDTH = 200;
 const STATS_ROW_HEIGHT = 60;
 
+const GREEN_TURTLE_SPEED = 200;
+const PLAYER_MAX_HSPEED = 350;
+const PLAYER_JUMP_VSPEED = -20;
+const PLAYER_GRAVITY = 1;
+
 //routes
 const ROUTES = [
 	'index',

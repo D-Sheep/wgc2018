@@ -11,6 +11,7 @@ class AssetStorage {
 
             loader.add('sheep', 'assets/img/sheep.png');
             loader.add('AirConditioning', 'assets/img/AirConditioning.png');
+            loader.add('GreenTurtle', 'assets/img/GreenTurtle.png');
 
             loader
                 .load((ldr, resources) => {

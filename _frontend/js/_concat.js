@@ -45,14 +45,10 @@ module.exports = {
 	],
 	"helpers": [
 		"js/helpers/Helpers.js", //Helpers have to be first and must not depend on anything
-		"js/helpers/Cookies.js",
 		"js/helpers/PriorityQueue.js",
 		"js/helpers/CallbackQueue.js",
 		"js/helpers/LazyProps.js",
-		"js/helpers/WebPage.js",
-		"js/helpers/Anal.js",
-		"js/helpers/Scroll.js",
-		"js/helpers/FocusedElementObserver.js"
+		"js/helpers/WebPage.js"
 	],
 	"common": [
 		"js/common.js",
@@ -66,7 +62,9 @@ module.exports = {
 	],
 	"game": [
         "js/game/gameobjects/GameObject.js",
+        "js/game/gameobjects/WalkingEnemy.js",
         "js/game/gameobjects/AirConditioning.js",
+        "js/game/gameobjects/GreenTurtle.js",
 
         "js/game/vars.js",
         "js/game/Application.js",

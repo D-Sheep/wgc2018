@@ -1,7 +1,3 @@
-const PLAYER_MAX_HSPEED = 350;
-const PLAYER_JUMP_VSPEED = -20;
-const PLAYER_GRAVITY = 1;
-
 class Player extends PIXI.Sprite {
     constructor(...args) {
         super(...args);

@@ -1,6 +1,8 @@
 {
   "width": 600,
   "objects": [
-    {"type":  "AirConditioning", "position": [400, 200]}
+    {"type":  "AirConditioning", "position": [400, 200]},
+    {"type":  "GreenTurtle", "position": [400, 600], "limit":  [100, 500]},
+    {"type":  "GreenTurtle", "position": [120, 600], "limit":  [100, 300]}
   ]
 }

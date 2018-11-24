@@ -4142,36 +4142,37 @@ if (module.hot) {(function () {  var hotAPI = require("vue-hot-reload-api")
 'use strict';
 
 module.exports = {
-	name: 'Stage',
-	components: {
-		'navigation': require('../../../../components/Navigation.vue')
-	},
-	data: function data() {
-		return {
-			isLoading: false
-		};
-	},
-	mounted: function mounted() {
-		window.application = new Application({
-			view: document.getElementById('app-canvas')
-		});
-		window.assetStorage = new AssetStorage();
-		window.controls = new Controls();
+  name: 'Stage',
+  components: {
+    'navigation': require('../../../../components/Navigation.vue')
+  },
+  data: function data() {
+    return {
+      isLoading: false
+    };
+  },
+  mounted: function mounted() {
+    window.assetStorage = new AssetStorage();
+    window.controls = new Controls();
+    window.application = new Application({
+      view: this.$refs.canvas,
+      width: ROOM_WIDTH,
+      height: ROOM_HEIGHT
+    });
+    assetStorage.loadSprites().then(function () {
+      var player = new Player(assetStorage.get('sheep'));
+      player.position.set(200, 600);
+      application.stage.addChild(player);
+    });
+  },
 
-		assetStorage.loadSprites().then(function () {
-			var player = new Player(assetStorage.get('sheep'));
-			player.position.set(200, 600);
-			application.stage.addChild(player);
-		});
-	},
-
-	methods: {}
+  methods: {}
 };
 })()
 if (module.exports.__esModule) module.exports = module.exports.default
 var __vue__options__ = (typeof module.exports === "function"? module.exports.options: module.exports)
 if (__vue__options__.functional) {console.error("[vueify] functional components are not supported and should be defined in plain js files using render functions.")}
-__vue__options__.render = function render () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('div',{staticClass:"vue-app"},[_c('navigation'),_vm._v(" "),_c('canvas',{attrs:{"id":"app-canvas"}})],1)}
+__vue__options__.render = function render () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('div',{staticClass:"vue-app"},[_c('navigation'),_vm._v(" "),_c('canvas',{ref:"canvas",attrs:{"id":"app-canvas"}})],1)}
 __vue__options__.staticRenderFns = []
 __vue__options__._scopeId = "data-v-6eee4171"
 if (module.hot) {(function () {  var hotAPI = require("vue-hot-reload-api")

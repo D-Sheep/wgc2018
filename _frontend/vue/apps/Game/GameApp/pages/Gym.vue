@@ -1,12 +1,15 @@
 <template>
 	<div class="vue-app">
-		<a href="#" @click.prevent="route = 'lobby'"><- To lobby</a>
+		<a
+			href="#"
+			@click.prevent="route = 'lobby'"
+		><- To lobby</a>
 		<training-options
-			v-if="hasEntered && !isTraining"
+			v-if="!isTraining"
 			@isTraining="setupTraining"
 		/>
 		<training
-			v-if="hasEntered && isTraining"
+			v-if="isTraining"
 			:training="training"
 			:player="player"
 			@trained="resetTraining"
@@ -27,7 +30,6 @@
 		},
 		data() {
 			return {
-				hasEntered: false,
 				isTraining: false,
 				training: {},
 				trained: 0,
@@ -50,13 +52,6 @@
 			}
 		},
 		watch: {
-			hasEntered(value) {
-				if (value) {
-					this.takeMoney();
-				} else {
-					this.route = 'lobby';
-				}
-			},
 			trained(value) {
 				if (value >= MAX_TRAININGS) {
 					this.route = 'lobby';
@@ -67,30 +62,11 @@
 		mounted() {
 			if (!this.canVisit) {
 				this.route = 'lobby';
-				this.notifyAboutFee();
-
-				return;
 			}
 
-			this.warn();
+			this.takeMoney();
 		},
 		methods: {
-			warn() {
-				swal({
-					html: `You are about to enter the gym, and this will cost you ${BASE_GYM_FEE} coins.<br> Are you sure you want to go to the gym?`,
-					showCancelButton: true,
-					focusConfirm: false,
-
-				})
-					.then((result) => {
-						this.hasEntered = result.value;
-					})
-			},
-			notifyAboutFee() {
-				swal({
-					html: `It costs ${BASE_GYM_FEE} coins to hit the gym.`
-				});
-			},
 			notifyAboutMaxTrainings() {
 				swal({
 					html: `For ${BASE_GYM_FEE} coins you can only train ${MAX_TRAININGS} times!`

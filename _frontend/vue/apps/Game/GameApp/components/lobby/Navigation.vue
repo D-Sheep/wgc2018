@@ -1,7 +1,7 @@
 <template>
 	<div class="navigation">
 		<ul>
-			<li @click.prevent="route = item" v-for="(label, item) in navigationItems">{{ label }}</li>
+			<li @click.prevent="navigate(item)" v-for="(label, item) in navigationItems">{{ label }}</li>
 		</ul>
 	</div>
 </template>
@@ -46,6 +46,11 @@
 	module.exports = {
 		name: 'Navigation',
 		props: ['navigationItems'],
+		data() {
+			return {
+				enterGym: false,
+			}
+		},
 		computed: {
 			route: {
 				get() {
@@ -54,7 +59,46 @@
 				set($event) {
 					this.$store.commit('navigateTo', $event);
 				}
+			},
+			player() {
+				return this.$store.state.player;
+			},
+			canVisitGym() {
+				return this.player.states.money >= BASE_GYM_FEE;
 			}
+		},
+		methods: {
+			navigate(route) {
+				if (route === 'gym') {
+					if (this.canVisitGym) {
+						this.warnAboutFee();
+					} else {
+						this.notifyAboutFee();
+					}
+
+					return;
+				}
+
+				this.route = route;
+			},
+			warnAboutFee() {
+				swal({
+					html: `You are about to enter the gym, it this will cost you ${BASE_GYM_FEE} coins.<br> Are you sure you want to go to the gym?`,
+					showCancelButton: true,
+					focusConfirm: false,
+
+				})
+					.then((result) => {
+						if (result.value) {
+							this.route = 'gym';
+						}
+					})
+			},
+			notifyAboutFee() {
+				swal({
+					html: `It costs ${BASE_GYM_FEE} coins to hit the gym.`
+				});
+			},
 		}
 	}
 </script>

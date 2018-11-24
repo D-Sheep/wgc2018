@@ -54,5 +54,19 @@ const Helpers = {
 	getZeroInt: (num, len = 2) => Helpers.reduceNumber(Math.max(0, len - (`${num}`).length), (s) => `0${s}`, `${num}`),
 
 	// apply many functions to one arguments (https://medium.com/front-end-hacking/pipe-and-compose-in-javascript-5b04004ac937)
-	pipe: (...fns) => (x) => fns.reduce((v, f) => f(v), x)
+	pipe: (...fns) => (x) => fns.reduce((v, f) => f(v), x),
+
+	displayAchievement(message) {
+		const toast = swal.mixin({
+			toast: true,
+			position: 'bottom-end',
+			showConfirmButton: false,
+			timer: 4000
+		});
+
+		toast({
+			type: 'success',
+			title: message
+		})
+	}
 };

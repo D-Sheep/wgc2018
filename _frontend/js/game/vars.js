@@ -4,6 +4,9 @@ const KEY_RIGHT = 39;
 const KEY_DOWN = 40;
 const ROOM_WIDTH = 1200;
 const ROOM_HEIGHT = 600;
+const STATS_BAR_HEIGHT = 20;
+const STATS_BAR_WIDTH = 200;
+const STATS_ROW_HEIGHT = 60;
 
 const BASE_MONEY = 78;
 const BASE_INJURY = 50;

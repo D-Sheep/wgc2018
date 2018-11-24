@@ -64,7 +64,8 @@ module.exports = {
 		"js/game/Application.js",
 		"js/game/AssetStorage.js",
 		"js/game/Controls.js",
-		"js/game/Player.js"
+		"js/game/Player.js",
+		"js/game/Stats.js"
 	],
 	"init": [
 		"js/init.js"

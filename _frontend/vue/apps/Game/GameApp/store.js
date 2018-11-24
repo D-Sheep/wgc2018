@@ -19,6 +19,9 @@ module.exports = new Vuex.Store({
 		},
 	},
 	mutations: {
+		updatePlayerStat(state, payload) {
+			state.player.stats[payload.stat] = payload.value;
+		},
 		updatePlayerStats(state, payload) {
 			state.player.stats = payload;
 		}

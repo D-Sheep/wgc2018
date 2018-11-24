@@ -10,6 +10,7 @@ class Player extends PIXI.Sprite {
         this.isInAir = false;
         this.anchor.y = 1;
         this.anchor.x = 0.5;
+        this.stats = {};
 
         const tickerHandler = () => {
             if (controls.isPressed(KEY_LEFT)) {

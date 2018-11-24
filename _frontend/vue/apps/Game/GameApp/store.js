@@ -15,6 +15,7 @@ module.exports = new Vuex.Store({
 			states: {
 				//non-breaking stat, only makes it slightly harder/easier
 				happiness: BASE_HAPPINESS,
+				lifes: BASE_LIFES
 			}
 		},
 	},

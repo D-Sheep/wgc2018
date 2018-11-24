@@ -1,6 +1,13 @@
 <template>
 	<div class="vue-app">
-		<navigation/>
+		<navigation v-if="isDebug"/>
+		<div class="player__states">
+			<ul>
+				<li v-for="(value, slug) in player.states">
+					{{ slug + ': ' + value }}
+				</li>
+			</ul>
+		</div>
 		<div class="player__stats">
 			<ul class="player__stats-graph">
 				<li v-for="(value, slug) in player.stats" :style="{height: getStatBarHeight(value)}">
@@ -14,8 +21,14 @@
 
 <style lang="scss" scoped>
 	.player {
+		&__states {
+			position: fixed;
+			top: 10px;
+			right: 10px;
+		}
+
 		&__stats {
-			position: absolute;
+			position: fixed;
 			bottom: 10px;
 			background: red;
 			height: 300px;
@@ -64,6 +77,7 @@
 		},
 		data() {
 			return {
+				isDebug: window.ENV.isDebug,
 				isLoading: false,
 			};
 		},
@@ -73,15 +87,6 @@
 			}
 		},
 		mounted() {
-			this.interval = setInterval(() => {
-				if (this.player.stats.energy === 1) {
-					clearInterval(this.interval);
-				}
-
-				const modifiedStats = _.cloneDeep(this.player.stats);
-				modifiedStats.energy -= 1;
-				this.$store.commit('updatePlayerStats', modifiedStats);
-			}, 100)
 		},
 		methods: {
 			getStatBarHeight(value) {

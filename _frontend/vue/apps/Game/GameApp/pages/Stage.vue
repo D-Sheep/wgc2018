@@ -50,6 +50,9 @@
 				mapSection.useSection('finish');
 				application.addMapSection(mapSection);
 
+				const bgNoise = window.assetStorage.getSound('city');
+				bgNoise.loop = true;
+				bgNoise.play();
 			});
 		},
 		methods: {

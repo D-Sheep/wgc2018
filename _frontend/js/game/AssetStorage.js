@@ -1,6 +1,7 @@
 class AssetStorage {
 	constructor() {
 		this._textureStorage = new Map();
+		this._soundStorage = new Map();
 	}
 
 	//======================================================
@@ -17,7 +18,6 @@ class AssetStorage {
 
 			loader
 				.load((ldr, resources) => {
-
 					Object.keys(resources).forEach((res) => {
 						this._textureStorage.set(res, resources[res].texture);
 
@@ -42,6 +42,25 @@ class AssetStorage {
 		});
 	}
 
+	loadSounds() {
+		return new Promise((resolve) => {
+			const loader = new PIXI.loaders.Loader();
+
+			loader.add('city', 'assets/sound/city.mp3');
+
+			loader
+				.load((ldr, resources) => {
+					Object.keys(resources).forEach((res) => {
+						this._soundStorage.set(res, resources[res].data);
+						console.log(resources[res]);
+					});
+					loader.destroy();
+					resolve();
+				})
+			;
+		});
+	}
+
 	getTexture(assetName) {
 		if (!this._textureStorage.has(assetName)) {
 			return PIXI.Texture.WHITE;
@@ -51,5 +70,9 @@ class AssetStorage {
 
 	getAnimatedTexture(assetName) {
 		return this._textureStorage.get('animated:' + assetName);
+	}
+
+	getSound(soundName) {
+		return this._soundStorage.get(soundName);
 	}
 }

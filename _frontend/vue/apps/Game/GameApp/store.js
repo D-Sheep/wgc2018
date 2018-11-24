@@ -56,6 +56,7 @@ module.exports = new Vuex.Store({
 			if (!context.state.assetPromise) {
                 const promise = Promise.all([
                     assetStorage.loadTextures(),
+                    assetStorage.loadSounds(),
                     mapSectionStorage.loadMapSections()
                 ]);
                 context.commit('setAssetPromise', promise);

@@ -1,8 +1,8 @@
 class RedTurtle extends WalkingEnemy {
-    constructor(texture, data) {
-        super(texture, data);
+	constructor(texture, data) {
+		super(texture, data);
 
-        this.bottomCenterAnchor();
-        this.speed = RED_TURTLE_SPEED;
-    }
+		this.bottomCenterAnchor();
+		this.speed = RED_TURTLE_SPEED;
+	}
 }

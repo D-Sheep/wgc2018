@@ -1,9 +1,9 @@
 class Ledge extends PIXI.DisplayObject {
-    constructor(x, y, length) {
-        super();
+	constructor(x, y, length) {
+		super();
 
-        this.x = x;
-        this.y = y;
-        this.length = length;
-    }
+		this.x = x;
+		this.y = y;
+		this.length = length;
+	}
 }

@@ -1,7 +1,7 @@
 class Coins extends GameObject {
-    constructor(textures, data) {
-        super(textures, data);
+	constructor(textures, data) {
+		super(textures, data);
 
-        this.bottomCenterAnchor();
-    }
+		this.bottomCenterAnchor();
+	}
 }

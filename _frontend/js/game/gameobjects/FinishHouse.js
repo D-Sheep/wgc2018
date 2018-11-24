@@ -1,7 +1,7 @@
 class FinishHouse extends GameObject {
-    constructor(texture, data) {
-        super(texture, data);
+	constructor(texture, data) {
+		super(texture, data);
 
-        this.bottomCenterAnchor();
-    }
+		this.bottomCenterAnchor();
+	}
 }

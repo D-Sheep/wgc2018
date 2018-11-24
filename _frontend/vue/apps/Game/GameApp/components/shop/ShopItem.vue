@@ -1,16 +1,18 @@
 <template>
-	<div class="shop-item" :class="{'shop-item--disabled': !canBuy || isFull || isOwned}" @click="purchase">
-		<div class="shop-item__icon">
+	<div class="shop-item" :class="{'shop-item--disabled': !canBuy || isFull || isOwned}">
+		<div class="shop-item__icon" @click="purchase">
 			<img :src="item.icon" :title="item.name"/>
 		</div>
-		<div class="shop-item__name">
-			{{ item.name }}
-		</div>
-		<div class="shop-item__price">
-			Price: {{ item.price }}
-		</div>
-		<div class="shop-item__hunger">
-			Refills: {{ item.stat }}
+		<div class="shop-item__info">
+			<div class="shop-item__info-name">
+				{{ item.name }}
+			</div>
+			<div class="shop-item__info-price">
+				Price: {{ item.price }} coins
+			</div>
+			<div class="shop-item__info-refill">
+				Refills: {{ item.stat }}
+			</div>
 		</div>
 	</div>
 </template>
@@ -20,23 +22,30 @@
 		display: inline-block;
 
 		margin: 10px;
-		cursor: pointer;
 		text-align: center;
 
 		&--disabled {
 			opacity: .5;
-			cursor: not-allowed;
+
+			.shop-item__icon {
+				cursor: not-allowed;
+			}
 		}
 
 		&__icon {
+			cursor: pointer;
 			width: 130px;
 			height: 130px;
 			border: 2px dotted black;
 			border-radius: 3px;
 		}
 
-		&__name {
-			font-weight: bold;
+		&__info {
+			margin: 10px;
+
+			&-name {
+				font-weight: bold;
+			}
 		}
 	}
 </style>

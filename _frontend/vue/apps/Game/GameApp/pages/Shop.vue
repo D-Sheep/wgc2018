@@ -1,5 +1,6 @@
 <template>
 	<div class="vue-app">
+		<a href="#" @click.prevent="route = 'lobby'"><- To lobby</a>
 		<div class="shop">
 			<div class="shop__food">
 				<div class="shop__food-header">
@@ -29,6 +30,14 @@
 		flex-direction: column;
 		align-items: center;
 		justify-content: center;
+
+		&__furniture,
+		&__food {
+			&-header {
+				font-weight: bold;
+				margin: 10px;
+			}
+		}
 	}
 </style>
 
@@ -36,17 +45,25 @@
 	module.exports = {
 		name: 'Shop',
 		components: {
-			'shop-item': require('../components/lobby/ShopItem.vue')
+			'shop-item': require('../components/shop/ShopItem.vue')
 		},
 		computed: {
+			route: {
+				get() {
+					return this.$store.state.route;
+				},
+				set($event) {
+					this.$store.commit('navigateTo', $event);
+				}
+			},
 			player() {
 				return this.$store.state.player;
 			},
 			food() {
-				return _.filter(this.$store.state.shopItems, {type: 'food'});
+				return require('../../../../../../assets/items/shop/food.json');
 			},
 			furniture() {
-				return _.filter(this.$store.state.shopItems, {type: 'furniture'});
+				return require('../../../../../../assets/items/shop/furniture.json');
 			}
 		},
 		mounted() {

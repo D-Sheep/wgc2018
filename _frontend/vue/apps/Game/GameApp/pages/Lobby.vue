@@ -1,5 +1,6 @@
 <template>
 	<div class="vue-app">
+		<scene/>
 		<player-stats :stats="player.stats"/>
 		<player-states :states="player.states" :lives="player.ownedItems.length"/>
 	</div>
@@ -14,7 +15,8 @@
 		name: 'Lobby',
 		components: {
 			'player-stats': require('../components/lobby/PlayerStats.vue'),
-			'player-states': require('../components/lobby/PlayerStates.vue')
+			'player-states': require('../components/lobby/PlayerStates.vue'),
+			scene: require('../components/lobby/Scene.vue')
 		},
 		data() {
 			return {

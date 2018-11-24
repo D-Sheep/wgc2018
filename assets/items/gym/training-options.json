@@ -1,0 +1,18 @@
+[
+	{
+		"name": "Back",
+		"reward": 10
+	},
+	{
+		"name": "Abs",
+		"reward": 15
+	},
+	{
+		"name": "Legs",
+		"reward": 20
+	},
+	{
+		"name": "Cardio",
+		"reward": 30
+	}
+]

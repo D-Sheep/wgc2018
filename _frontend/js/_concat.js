@@ -15,6 +15,7 @@ module.exports = {
 		"node_modules/moment/min/moment-with-locales.js",
 		"node_modules/css-element-queries/src/ResizeSensor.js",
 		"node_modules/css-element-queries/src/ElementQueries.js",
+		"node_modules/sweetalert2/dist/sweetalert2.min.js",
         "node_modules/pixi.js/dist/pixi.js"
 	],
 	"libs-gsap": [

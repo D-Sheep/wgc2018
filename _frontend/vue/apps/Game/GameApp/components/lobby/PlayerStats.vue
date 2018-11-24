@@ -3,7 +3,7 @@
 		<ul class="player__stats-graph">
 			<li v-for="(value, slug) in stats" :style="{height: getStatBarHeight(value)}">
 				{{ value }}
-				<span>{{ slug.slice(0, 1) }}</span>
+				<span :title="slug">{{ slug.slice(0, 1) }}</span>
 			</li>
 		</ul>
 	</div>
@@ -14,9 +14,8 @@
 		&__stats {
 			position: fixed;
 			bottom: 10px;
-			background: red;
 			height: 300px;
-			width: 200px;
+			width: 150px;
 		}
 
 		&__stats-graph {
@@ -32,9 +31,11 @@
 			align-items: flex-end;
 
 			li {
+				color: white;
+
 				max-height: calc(100% - 6px);
 				min-height: 15%;
-				width: 30px;
+				width: calc(25% - 4px);
 
 				padding: 2px;
 				margin: 0 2px;
@@ -42,7 +43,7 @@
 				border: 1px solid black;
 
 				vertical-align: bottom;
-				background: blue;
+				background: #007cff;
 
 				display: inline-flex;
 				flex-direction: column;

@@ -1,7 +1,7 @@
 <template>
 	<div class="vue-app">
 		<navigation/>
-		Hello Stage
+		<canvas id="app-canvas"></canvas>
 	</div>
 </template>
 
@@ -20,7 +20,19 @@
 			};
 		},
 		mounted() {
-		},
+            window.application = new Application({
+                view: document.getElementById('app-canvas')
+            });
+            window.assetStorage = new AssetStorage();
+            window.controls = new Controls();
+
+            assetStorage.loadSprites().then(() => {
+                const player = new Player(assetStorage.get('sheep'));
+                player.position.set(200, 600);
+                application.stage.addChild(player);
+            });
+
+        },
 		methods: {}
 	}
 </script>

@@ -32,7 +32,7 @@
 			position: absolute;
 			bottom: 0;
 			right: 0;
-			width: calc(100% - 154px);
+			width: calc(100% - 204px);
 			height: 50px;
 		}
 
@@ -45,7 +45,7 @@
 
 			position: absolute;
 			height: calc(100% - 4px);
-			width: 150px;
+			width: 200px;
 
 			list-style-type: none;
 			padding: 2px 0;

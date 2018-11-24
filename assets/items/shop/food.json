@@ -4,34 +4,34 @@
 		"name": "Hamburger",
 		"stat": 10,
 		"price": 6,
-		"icon": "assets/img/shop/hamburger.png"
+		"icon": "assets/img/food/hamburger.png"
 	},
 	{
 		"type": "food",
 		"name": "Pizza",
 		"stat": 20,
 		"price": 12,
-		"icon": "assets/img/shop/pizza.png"
+		"icon": "assets/img/food/pizza.png"
 	},
 	{
 		"type": "food",
 		"name": "Spaghetti",
 		"stat": 5,
 		"price": 3,
-		"icon": "assets/img/shop/spaghetti.png"
+		"icon": "assets/img/food/spaghetti.png"
 	},
 	{
 		"type": "food",
 		"name": "Meat balls",
 		"stat": 15,
 		"price": 9,
-		"icon": "assets/img/shop/meat_balls.png"
+		"icon": "assets/img/food/meat_balls.png"
 	},
 	{
 		"type": "food",
 		"name": "Chinese soup",
 		"stat": 1,
 		"price": 1,
-		"icon": "assets/img/shop/chinese_soup.png"
+		"icon": "assets/img/food/chinese_soup.png"
 	},
 ]

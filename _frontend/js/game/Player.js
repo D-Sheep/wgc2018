@@ -9,6 +9,11 @@ class Player extends PIXI.extras.AnimatedSprite {
 		this.anchor.x = 0.5;
 		this.play();
 		this.stats = {};
+		this.summary = {
+			money: BASE_MONEY,
+			injury: BASE_INJURY,
+			hunger: BASE_HUNGER
+		};
 
 		const tickerHandler = () => {
 			const ledges = application.getLedges();
@@ -88,6 +93,15 @@ class Player extends PIXI.extras.AnimatedSprite {
 
 		collisionManager.on(this, AirConditioning, (object) => {
 			console.log('hit', object);
+			const newInjuryStat = GameApp.vue.$store.state.player.stats.injury + 5 >= MAX_INJURY ?
+				MAX_INJURY :
+				GameApp.vue.$store.state.player.stats.injury + 5;
+
+			GameApp.vue.$store.commit('updatePlayerStat', {
+				stat: 'injury',
+				value: newInjuryStat
+			});
+			this.summary.injury += 5;
 			object.isCollisionEnabled = false;
 		});
 
@@ -96,6 +110,7 @@ class Player extends PIXI.extras.AnimatedSprite {
 				state: 'money',
 				value: GameApp.vue.$store.state.player.states.money + 3
 			});
+			this.summary.money += 3;
 			object.destroy();
 		});
 	}

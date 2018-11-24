@@ -1,6 +1,10 @@
 <template>
 	<div class="vue-app">
 		<canvas ref="canvas" id="app-canvas"></canvas>
+		<popup
+			v-if="displayPopup"
+			@closePopup="closePopup"
+		/>
 		<overlay/>
 	</div>
 </template>
@@ -13,10 +17,22 @@
 		name: 'Stage',
 		components: {
 			overlay: require('../components/Overlay.vue'),
+			popup: require('../components/stage/Popup.vue')
+		},
+		computed: {
+			route: {
+				get() {
+					return this.$store.state.route;
+				},
+				set($event) {
+					this.$store.commit('navigateTo', $event);
+				}
+			},
 		},
 		data() {
 			return {
 				isLoading: false,
+				displayPopup: false,
 			};
 		},
 		watch: {},
@@ -54,12 +70,20 @@
 				bgNoise.loop = true;
 				bgNoise.play();
 			});
+
+			this.setupEventListeners();
 		},
 		methods: {
 			setupEventListeners() {
 				window.eventHub.$on('levelFinished', () => {
-					console.log('finish');
+					this.displayPopup = true;
+					window.controls.disableControls();
 				});
+			},
+			closePopup() {
+				if (this.displayPopup) {
+					this.route = 'lobby';
+				}
 			}
 		}
 	}

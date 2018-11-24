@@ -1,7 +1,10 @@
 <template>
 	<div class="shop-item" :class="{'shop-item--disabled': !canBuy || isFull || isOwned}">
-		<div class="shop-item__icon" @click="purchase">
-			<img :src="item.icon" :title="item.name"/>
+		<div
+			class="shop-item__icon"
+			:style="{backgroundImage: 'url('+item.icon+')'}"
+			@click="purchase"
+		>
 		</div>
 		<div class="shop-item__info">
 			<div class="shop-item__info-name">
@@ -33,6 +36,10 @@
 		}
 
 		&__icon {
+			background-size: contain;
+			background-position: 50% 50%;
+			background-repeat: no-repeat;
+
 			cursor: pointer;
 			width: 130px;
 			height: 130px;

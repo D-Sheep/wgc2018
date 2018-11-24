@@ -5,14 +5,16 @@ module.exports = new Vuex.Store({
 		player: {
 			stats: {
 				//general
-				money: 0,
-				injury: 0,
-				hunger: 0,
-				strength: 0,
+				money: BASE_MONEY,
+				injury: BASE_INJURY,
+				hunger: BASE_HUNGER,
+				strength: BASE_STRENGTH,
 				//short-time energy
-				energy: 0,
+				energy: BASE_ENERGY,
+			},
+			states: {
 				//non-breaking stat, only makes it slightly harder/easier
-				happiness: 0,
+				happiness: BASE_HAPPINESS,
 			}
 		},
 	},

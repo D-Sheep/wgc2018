@@ -15,10 +15,12 @@ class Player extends PIXI.Sprite {
         const tickerHandler = () => {
             if (controls.isPressed(KEY_LEFT)) {
                 this.x -= application.ticker.deltaTime / application.ticker.FPS * PLAYER_MAX_HSPEED;
+                this.scale.x = -1;
             }
 
             if (controls.isPressed(KEY_RIGHT)) {
                 this.x += application.ticker.deltaTime / application.ticker.FPS * PLAYER_MAX_HSPEED;
+                this.scale.x = 1;
             }
 
             if (this.isInAir) {

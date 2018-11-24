@@ -50,17 +50,17 @@
 	},
 	{
 		"type": "furniture",
-		"name": "Tv",
+		"name": "Radio",
 		"stat": 1,
-		"price": 500,
-		"icon": "assets/img/shop/tv.png"
+		"price": 60,
+		"icon": "assets/img/shop/radio.png"
 	},
 	{
 		"type": "furniture",
-		"name": "Bike",
+		"name": "Picture",
 		"stat": 1,
-		"price": 400,
-		"icon": "assets/img/shop/bike.png"
+		"price": 100,
+		"icon": "assets/img/shop/picture.png"
 	},
 	{
 		"type": "furniture",

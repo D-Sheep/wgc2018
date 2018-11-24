@@ -17,8 +17,6 @@
 
 <style lang="scss" scoped>
 	.training-options {
-		height: 100vh;
-
 		display: flex;
 		align-items: center;
 		justify-content: center;

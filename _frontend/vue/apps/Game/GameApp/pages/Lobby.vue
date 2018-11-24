@@ -1,8 +1,7 @@
 <template>
 	<div class="vue-app">
-		<scene/>
-		<player-stats :stats="player.stats"/>
-		<player-states :states="player.states" :lives="player.ownedItems.length"/>
+		<div class="overlay-spacer"></div>
+		<overlay/>
 	</div>
 </template>
 
@@ -14,19 +13,12 @@
 	module.exports = {
 		name: 'Lobby',
 		components: {
-			'player-stats': require('../components/lobby/PlayerStats.vue'),
-			'player-states': require('../components/lobby/PlayerStates.vue'),
-			scene: require('../components/lobby/Scene.vue')
+			overlay: require('../components/Overlay.vue'),
 		},
 		data() {
 			return {
 				isLoading: false,
 			};
-		},
-		computed: {
-			player() {
-				return this.$store.state.player;
-			}
 		},
 		mounted() {
 		}

@@ -13,10 +13,6 @@
 			background-size: 200% 100%;
 			background-position: left bottom;
 
-			position: absolute;
-			bottom: 20px;
-			left: 0;
-			right: 0;
 			margin-left: auto;
 			margin-right: auto;
 
@@ -59,7 +55,9 @@
 		watch: {
 			finishedTraining(value) {
 				if (value) {
-					const newEnergyValue = this.player.stats.energy + this.training.reward > MAX_ENERGY ? MAX_ENERGY : this.player.stats.energy + this.training.reward;
+					const newEnergyValue = this.player.stats.energy + this.training.reward > MAX_ENERGY ?
+						MAX_ENERGY :
+						this.player.stats.energy + this.training.reward;
 
 					this.$store.commit('updatePlayerStat', {stat: 'energy', value: newEnergyValue});
 					this.trained = 0;

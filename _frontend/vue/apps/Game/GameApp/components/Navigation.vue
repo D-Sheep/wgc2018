@@ -13,8 +13,8 @@
 
 		width: 100%;
 
-		display: flex;
-		justify-content: center;
+		display: inline-flex;
+		justify-content: flex-start;
 		align-items: center;
 
 		ul {
@@ -23,19 +23,30 @@
 			margin: 0;
 
 			li {
+				display: inline-block;
 				cursor: pointer;
-				width: 250px;
-				height: 50px;
+				width: 70px;
+				height: 30px;
 				border: 2px solid burlywood;
 				text-align: center;
 				text-transform: uppercase;
-				line-height: 50px;
-				font-size: 30px;
+				line-height: 30px;
+				font-size: 14px;
 				border-radius: 3px;
-				margin: 10px;
+				margin: 10px 0;
+				margin-right: 10px;
+				background: white;
 
 				&:hover {
 					background: darken(white, 10%);
+				}
+
+				&:first-child {
+					margin-left: 10px;
+				}
+
+				&:last-child {
+					margin-right: 0;
 				}
 			}
 		}

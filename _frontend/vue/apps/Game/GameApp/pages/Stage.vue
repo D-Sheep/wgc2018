@@ -1,7 +1,8 @@
 <template>
-    <div class="vue-app">
-        <canvas ref="canvas" id="app-canvas"></canvas>
-    </div>
+	<div class="vue-app">
+		<canvas ref="canvas" id="app-canvas"></canvas>
+		<overlay/>
+	</div>
 </template>
 
 <style lang="scss" scoped>
@@ -10,6 +11,9 @@
 <script>
 	module.exports = {
 		name: 'Stage',
+		components: {
+			overlay: require('../components/Overlay.vue'),
+		},
 		data() {
 			return {
 				isLoading: false,
@@ -48,6 +52,12 @@
 
 			});
 		},
-		methods: {}
+		methods: {
+			setupEventListeners() {
+				window.eventHub.$on('levelFinished', () => {
+					console.log('finish');
+				});
+			}
+		}
 	}
 </script>

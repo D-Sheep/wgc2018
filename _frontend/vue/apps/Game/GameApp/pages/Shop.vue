@@ -1,6 +1,5 @@
 <template>
 	<div class="vue-app">
-		<a href="#" @click.prevent="route = 'lobby'"><- To lobby</a>
 		<div class="shop">
 			<div class="shop__food">
 				<div class="shop__food-header">
@@ -19,6 +18,8 @@
 				</div>
 			</div>
 		</div>
+		<div class="overlay-spacer"></div>
+		<overlay/>
 	</div>
 </template>
 
@@ -45,6 +46,7 @@
 	module.exports = {
 		name: 'Shop',
 		components: {
+			overlay: require('../components/Overlay.vue'),
 			'shop-item': require('../components/shop/ShopItem.vue')
 		},
 		computed: {

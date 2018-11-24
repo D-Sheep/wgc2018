@@ -80,7 +80,7 @@ class Player extends PIXI.Sprite {
 
 		controls.on('keydown', KEY_ACTION_BUTTON, () => {
 			if (collisionManager.get(this, Finish)) {
-				console.log('finish');
+				window.eventHub.$emit('levelFinished');
 			}
 		});
 

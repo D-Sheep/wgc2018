@@ -15,6 +15,12 @@
 			position: fixed;
 			top: 10px;
 			right: 10px;
+
+			ul {
+				padding: 0;
+				margin: 0;
+				list-style-type: none;
+			}
 		}
 	}
 </style>

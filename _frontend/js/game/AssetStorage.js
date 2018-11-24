@@ -42,6 +42,9 @@ class AssetStorage {
     }
 
     get(assetName) {
+        if (!this._storage.has(assetName)) {
+            return PIXI.Texture.WHITE;
+        }
         return this._storage.get(assetName);
     }
 

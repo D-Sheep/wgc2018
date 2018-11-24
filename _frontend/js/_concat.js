@@ -67,6 +67,8 @@ module.exports = {
         "js/game/gameobjects/AirConditioning.js",
         "js/game/gameobjects/GreenTurtle.js",
         "js/game/gameobjects/Coins.js",
+        "js/game/gameobjects/FinishHouse.js",
+        "js/game/gameobjects/Finish.js",
 
         "js/game/vars.js",
         "js/game/Application.js",

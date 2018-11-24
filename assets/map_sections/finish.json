@@ -1,0 +1,12 @@
+{
+  "width": 600,
+  "objects": [
+    {"type":  "FinishHouse", "position": [300, 600]},
+    {"type":  "Finish", "position": [300, 600]}
+  ],
+  "ledges": [
+
+  ],
+  "blocks": [
+  ]
+}

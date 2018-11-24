@@ -10,6 +10,7 @@ class MapSectionStorage {
             const loader = new PIXI.loaders.Loader();
 
             loader.add('city01', 'assets/map_sections/city01.json');
+            loader.add('finish', 'assets/map_sections/finish.json');
 
             loader
                 .load((ldr, resources) => {

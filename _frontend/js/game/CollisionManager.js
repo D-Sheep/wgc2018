@@ -2,27 +2,37 @@ class CollisionManager {
     constructor() {
         this.callbacks = [];
         application.ticker.add(() => {
-            const gameObjects = application.getGameObjects().filter((gameObject) => gameObject.isCollisionEnabled);
+            const gameObjects = this.getCollidableObjects();
             this.callbacks.forEach((cb) => {
                 const bounds = cb.object.getBounds();
-                gameObjects.forEach((gameObject) => {
-                    if (!(gameObject instanceof cb.otherClass)) {
-                        return;
-                    }
+                gameObjects
+                    .filter((gameObject) => gameObject instanceof cb.otherClass)
+                    .forEach((gameObject) => {
+                        const otherBounds = gameObject.getBounds();
+                        if (!bounds.intersects(otherBounds)) {
+                            return;
+                        }
 
-                    const otherBounds = gameObject.getBounds();
-                    if (!bounds.intersects(otherBounds)) {
-                        return;
-                    }
-
-                    cb.handler(gameObject);
-                });
+                        cb.handler(gameObject);
+                    });
             });
         });
     }
 
     on(object, otherClass, handler) {
         this.callbacks.push({object, otherClass, handler});
+    }
+
+    get(object, otherClass) {
+        const bounds = object.getBounds();
+        return this
+            .getCollidableObjects()
+            .filter((gameObject) => gameObject instanceof otherClass)
+            .find((gameObject) => bounds.intersects(gameObject.getBounds()));
+    }
+
+    getCollidableObjects() {
+        return application.getGameObjects().filter((gameObject) => gameObject.isCollisionEnabled);
     }
 
 }

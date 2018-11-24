@@ -42,11 +42,15 @@
                 window.player.position.set(200, 600);
                 application.world.addChild(window.player);
 
-                for (let i = 0; i < 5; i++) {
+                for (let i = 0; i < 2; i++) {
                     const mapSection = new MapSection();
                     mapSection.useSection('city01');
                     application.addMapSection(mapSection);
                 }
+
+                const mapSection = new MapSection();
+                mapSection.useSection('finish');
+                application.addMapSection(mapSection);
 
             });
         },

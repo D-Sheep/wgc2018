@@ -10,7 +10,6 @@
     {"position":  [0, 350], "length":  100}
   ],
   "blocks": [
-    {"position":  [400, 200], "size":  [100, 90]},
-    {"position":  [0, 500], "size":  [100, 100]}
+    {"position":  [400, 200], "size":  [100, 90]}
   ]
 }

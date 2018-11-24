@@ -78,7 +78,6 @@ module.exports = {
         "js/game/Block.js",
         "js/game/Player.js",
         "js/game/Camera.js",
-        "js/game/Stats.js",
         "js/game/CollisionManager.js",
         "js/game/MapSection.js",
         "js/game/MapSectionStorage.js",

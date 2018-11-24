@@ -78,6 +78,12 @@ class Player extends PIXI.Sprite {
             }
         });
 
+        controls.on('keydown', KEY_ACTION_BUTTON, () => {
+            if (collisionManager.get(this, Finish)) {
+                console.log('finish');
+            }
+        });
+
         collisionManager.on(this, AirConditioning, (object) => {
             console.log('hit', object);
             object.isCollisionEnabled = false;

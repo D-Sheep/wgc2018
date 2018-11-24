@@ -16,12 +16,6 @@
 			};
 		},
 		watch: {
-		    '$store.state.player.stats': {
-		        handler(newVal) {
-		            window.stats.update(newVal);
-				},
-		        deep: true
-			}
 		},
 		mounted() {
             window.controls = new Controls();
@@ -32,23 +26,24 @@
             });
             window.camera = new Camera();
             window.collisionManager = new CollisionManager();
-            window.stats = new Stats();
             window.player = null;
 
             this.$store.dispatch('fetchAssets').then(() => {
-                window.stats.update(this.$store.state.player.stats);
-
                 window.player = new Player(assetStorage.get('sheep'));
                 window.player.position.set(200, 600);
                 application.world.addChild(window.player);
 
+                let mapSection = new MapSection();
+                mapSection.useSection('start');
+                application.addMapSection(mapSection);
+
                 for (let i = 0; i < 2; i++) {
-                    const mapSection = new MapSection();
+                    mapSection = new MapSection();
                     mapSection.useSection('city01');
                     application.addMapSection(mapSection);
                 }
 
-                const mapSection = new MapSection();
+                mapSection = new MapSection();
                 mapSection.useSection('finish');
                 application.addMapSection(mapSection);
 

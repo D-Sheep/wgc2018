@@ -4,6 +4,10 @@ class GameObject extends PIXI.extras.AnimatedSprite {
 
         this.isCollisionEnabled = true;
     }
+
+    bottomCenterAnchor() {
+        this.anchor.set(0.5, 1);
+    }
 }
 
 GameObject.isAnimated = false;

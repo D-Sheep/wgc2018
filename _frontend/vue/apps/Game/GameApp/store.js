@@ -46,7 +46,22 @@ module.exports = new Vuex.Store({
 		},
 		navigateTo(state, payload) {
 			state.route = payload;
+		},
+		setAssetPromise(state, promise) {
+			state.assetPromise = promise;
 		}
 	},
-	actions: {}
+	actions: {
+		fetchAssets(context) {
+			if (!context.state.assetPromise) {
+                const promise = Promise.all([
+                    assetStorage.loadSprites(),
+                    mapSectionStorage.loadMapSections()
+                ]);
+                context.commit('setAssetPromise', promise);
+			}
+
+			return context.state.assetPromise;
+		}
+	}
 });

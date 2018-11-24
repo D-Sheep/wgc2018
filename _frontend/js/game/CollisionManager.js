@@ -4,7 +4,7 @@ class CollisionManager {
         application.ticker.add(() => {
             const gameObjects = application.getGameObjects().filter((gameObject) => gameObject.isCollisionEnabled);
             this.callbacks.forEach((cb) => {
-                const bounds = cb.object.getBounds(false);
+                const bounds = cb.object.getBounds();
                 gameObjects.forEach((gameObject) => {
                     if (!(gameObject instanceof cb.otherClass)) {
                         return;

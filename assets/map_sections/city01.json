@@ -3,7 +3,8 @@
   "objects": [
     {"type":  "AirConditioning", "position": [400, 200]},
     {"type":  "GreenTurtle", "position": [400, 600], "limit":  [100, 500]},
-    {"type":  "GreenTurtle", "position": [120, 600], "limit":  [100, 300]}
+    {"type":  "GreenTurtle", "position": [120, 600], "limit":  [100, 300]},
+    {"type":  "Coins", "position": [300, 600]}
   ],
   "ledges": [
     {"position":  [0, 350], "length":  100}

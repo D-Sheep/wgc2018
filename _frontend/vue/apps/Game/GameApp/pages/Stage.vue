@@ -24,8 +24,6 @@
 			}
 		},
 		mounted() {
-            window.assetStorage = new AssetStorage();
-            window.mapSectionStorage = new MapSectionStorage();
             window.controls = new Controls();
             window.application = new Application({
                 view: this.$refs.canvas,
@@ -36,10 +34,8 @@
             window.collisionManager = new CollisionManager();
             window.stats = new Stats();
             window.player = null;
-            Promise.all([
-                assetStorage.loadSprites(),
-                mapSectionStorage.loadMapSections()
-			]).then(() => {
+
+            this.$store.dispatch('fetchAssets').then(() => {
                 window.stats.update(this.$store.state.player.stats);
 
                 window.player = new Player(assetStorage.get('sheep'));

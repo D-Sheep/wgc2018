@@ -40,8 +40,11 @@
 			}
 		},
 		mounted() {
-			this.$store.commit('updatePlayerState', {state: 'money', value: 40});
-			this.$store.commit('updatePlayerStat', {stat: 'hunger', value: 91});
+            window.assetStorage = new AssetStorage();
+            window.mapSectionStorage = new MapSectionStorage();
+
+            this.$store.commit('updatePlayerState', {state: 'money', value: 40});
+            this.$store.commit('updatePlayerStat', {stat: 'hunger', value: 91});
 		},
 		methods: {}
 	}

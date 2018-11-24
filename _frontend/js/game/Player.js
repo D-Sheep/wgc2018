@@ -82,6 +82,14 @@ class Player extends PIXI.Sprite {
             console.log('hit', object);
             object.isCollisionEnabled = false;
         });
+
+        collisionManager.on(this, Coins, (object) => {
+            GameApp.vue.$store.commit('updatePlayerState', {
+                state: 'money',
+                value: GameApp.vue.$store.state.player.states.money + 3
+            });
+            object.destroy();
+        });
     }
 
     jump() {

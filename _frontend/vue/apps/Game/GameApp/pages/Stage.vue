@@ -107,6 +107,7 @@
 			}
 		},
 		beforeDestroy() {
+			window.application.backgroundMusic.pause();
 			window.application.destroy();
 		},
 		mounted() {

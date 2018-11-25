@@ -11,6 +11,11 @@
 </template>
 
 <style lang="scss" scoped>
+	.vue-container {
+		width: 1920px;
+		height: 1080px;
+		position: relative;
+	}
 </style>
 
 <script>

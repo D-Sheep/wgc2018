@@ -6,6 +6,9 @@
 
 <style lang="scss" scoped>
 	.navigation {
+		position: absolute;
+		z-index: 10;
+
 		a {
 			margin-right: 5px;
 			font-size: 24px;

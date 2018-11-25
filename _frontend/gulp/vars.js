@@ -49,4 +49,6 @@ module.exports = {
 	envConfig: envConfig,
 	getSimpleFilePath: getSimpleFilePath,
 	swallowSassError: swallowSassError,
+	webPageTestAPIKey: 'A.798dc9aa2ea404d14349ee9776bd615c', //API is limited to 200 tests per key per day
+	facebookAccessToken: '1569440559977628|7Yi0hMiVx_7CdngTibTWEKl23GA' //Bistro FB app access token, see https://developers.facebook.com/tools/accesstoken/
 };

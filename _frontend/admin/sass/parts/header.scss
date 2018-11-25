@@ -1,0 +1,17 @@
+
+header {
+	padding: 10px 15px;
+	background-color: $cColorBlue;
+
+	li {
+		display: inline-block;
+		padding: 0 10px;
+		&:last-child {
+			padding-right: 0;
+		}
+	}
+
+	.user-dropdown .text {
+		color:#fff;
+	}
+}

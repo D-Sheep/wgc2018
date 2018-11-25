@@ -55,6 +55,10 @@
 				application.addMapSection(mapSection);
 
 				mapSection = new MapSection();
+				mapSection.useSection('finish');
+				application.addMapSection(mapSection);
+
+				mapSection = new MapSection();
 				mapSection.useSection('musicband');
 				application.addMapSection(mapSection);
 
@@ -70,9 +74,7 @@
 				mapSection.useSection('city03');
 				application.addMapSection(mapSection);
 
-				mapSection = new MapSection();
-				mapSection.useSection('finish');
-				application.addMapSection(mapSection);
+
 
 				application.world.addChild(window.player);
 
@@ -87,7 +89,6 @@
 			setupEventListeners() {
 				window.eventHub.$on('levelFinished', () => {
 					this.displayPopup = true;
-					window.controls.disableControls();
 				});
 			},
 			closePopup() {

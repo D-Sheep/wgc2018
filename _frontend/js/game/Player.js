@@ -129,7 +129,18 @@ class Player extends PIXI.extras.AnimatedSprite {
 
 		controls.on('keydown', KEY_ACTION_BUTTON, () => {
 			if (collisionManager.get(this, Finish)) {
-				window.eventHub.$emit('levelFinished');
+				window.controls.disableControls();
+
+				const tl = new TimelineMax();
+				tl
+					.to(this, 0.5, {alpha: 0})
+					.add(() => {
+						this.sounds.fix.currentTime = 0;
+						this.sounds.fix.play();
+					})
+					.add(() => {
+						window.eventHub.$emit('levelFinished');
+					}, '+=1.5');
 			}
 		});
 

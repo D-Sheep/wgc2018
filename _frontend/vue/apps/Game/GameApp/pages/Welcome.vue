@@ -2,7 +2,7 @@
 	<div class="vue-app">
 		<div class="logo"></div>
 		<div class="play-button" @click.prevent="route = 'stage'"></div>
-		<div class="help-button"></div>
+		<div class="help-button" @click="help"></div>
 	</div>
 </template>
 
@@ -74,6 +74,15 @@
 					this.$store.commit('navigateTo', $event);
 				}
 			},
+		},
+		methods: {
+			help() {
+				swal({
+					type: 'info',
+					title: 'HELP',
+					html: 'In each level, fix a water accident in a house at the end of the level. Avoid touching animals and plants. On your way pick enough money to cover all your expenses. If you don\'t have enough money to pay your bills, executor will take away your properties. If you gather enough money, you can buy stuff. Your goal is to have a fully furnished room.<br><br>Controls:<br>Movement - Arrows<br>Action - enter'
+				});
+			}
 		}
 	}
 </script>

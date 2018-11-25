@@ -105,8 +105,12 @@
 					const newStrengthValue = this.player.stats.strength + this.training.reward > MAX_STRENGTH ?
 						MAX_STRENGTH :
 						this.player.stats.strength + this.training.reward;
+					const newInjuryValue = this.player.stats.injury - this.training.reward <= 0 ?
+						0 :
+						this.player.stats.injury - this.training.reward;
 
 					this.$store.commit('updatePlayerStat', {stat: 'strength', value: newStrengthValue});
+					this.$store.commit('updatePlayerStat', {stat: 'injury', value: newInjuryValue});
 					this.trained = 0;
 					this.$emit('trained');
 				}

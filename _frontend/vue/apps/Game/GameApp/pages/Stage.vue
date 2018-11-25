@@ -78,7 +78,7 @@
 			},
 
 			canAffordHospitalization() {
-				return this.$store.state.player.states.money >= 500;
+				return this.$store.state.player.states.money >= 40;
 			}
 		},
 		data() {

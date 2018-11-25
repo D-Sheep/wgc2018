@@ -1,6 +1,7 @@
 <template>
 	<div class="vue-app">
 		<div class="buttons">
+			<div class="next-level" @click="route = 'stage'"></div>
 			<div class="gym" @click="gotoGym"></div>
 			<div class="shop" @click="route = 'shop'"></div>
 		</div>
@@ -32,7 +33,8 @@
 		position: absolute;
 
 		.gym,
-		.shop {
+		.shop,
+		.next-level {
 			margin: 25px;
 			cursor: pointer;
 
@@ -46,6 +48,12 @@
 
 		.shop {
 			background-image: url('assets/img/lobby/shop.png');
+		}
+
+		.next-level {
+			background-image: url('assets/img/lobby/next_level.png');
+
+			width: 519px;
 		}
 	}
 </style>

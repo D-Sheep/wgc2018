@@ -5,8 +5,15 @@
 			v-if="displayPopup"
 			@closePopup="closePopup"
 		/>
-		<div class="app__game-over" v-if="displayGameOver">
-			<span class="app__game-over-text">{{gameOverReason}}</span>
+		<div class="app__hospitalized" v-if="displayHospitalized">
+			<img class="app__hospitalized-heading" src="assets/img/Hospitalized.png" alt="">
+			<div class="app__hospitalized-texts">
+				<p class="app__hospitalized-reason">{{hospitalizedReason}}</p>
+				<p v-if="canAffordHospitalization" class="app__hospitalized-text">Hospital costs: $40</p>
+				<p v-else class="app__hospitalized-text">No money to pay bills.<br>Reposession imminent.</p>
+
+			</div>
+
 		</div>
 	</div>
 </template>
@@ -16,7 +23,7 @@
 		display: block;
 	}
 
-	.app__game-over {
+	.app__hospitalized {
 		position: absolute;
 		top: 0;
 		bottom: 0;
@@ -26,12 +33,30 @@
 
 		color: #ffffff;
 
-		.app__game-over-text {
+		&-texts {
 			position: absolute;
-			top: 60%;
+			top: 50%;
 			left: 50%;
 			transform: translateX(-50%);
 			font-size: 60px;
+			text-align: center;
+		}
+
+		&-reason {
+			font-size: 60px;
+			margin-bottom: 1.5em;
+		}
+
+		&-text {
+			font-size: 40px;
+			line-height: 1.5em;
+		}
+
+		&-heading {
+			position: absolute;
+			top: 30%;
+			left: 50%;
+			transform: translateX(-50%);
 		}
 	}
 </style>
@@ -51,16 +76,36 @@
 					this.$store.commit('navigateTo', $event);
 				}
 			},
+
+			canAffordHospitalization() {
+				return this.$store.state.player.states.money >= 500;
+			}
 		},
 		data() {
 			return {
 				isLoading: false,
 				displayPopup: false,
-				displayGameOver: false,
-				gameOverReason: ''
+				displayHospitalized: false,
+				hospitalizedReason: ''
 			};
 		},
-		watch: {},
+		watch: {
+			'$store.state.player.stats.injury'(newVal) {
+				if (newVal >= MAX_INJURY) {
+					window.eventHub.$emit('hospitalized', {
+						reason: 'You were severely injured.'
+					});
+				}
+			},
+
+			'$store.state.player.stats.hunger'(newVal) {
+				if (newVal >= MAX_HUNGER) {
+					window.eventHub.$emit('hospitalized', {
+						reason: 'You almost starved to death.'
+					});
+				}
+			}
+		},
 		beforeDestroy() {
 			window.application.destroy();
 		},
@@ -121,20 +166,39 @@
 					window.controls.disableControls();
 				});
 
-				window.eventHub.$on('gameOver', (data) => {
+				window.eventHub.$on('hospitalized', (data) => {
 					window.controls.disableControls();
-					this.displayGameOver = true;
-					this.gameOverReason = data.reason;
+					this.displayHospitalized = true;
+					this.hospitalizedReason = data.reason;
+					clearInterval(window.application.hungerInterval);
 
 					setTimeout(() => {
+						this.healPlayer();
+						if (this.canAffordHospitalization) {
+							this.$store.commit('updatePlayerState', {
+								state: 'money',
+								value: this.$store.state.player.states.money - 40
+							});
+						}
 						this.route = 'lobby';
-					}, 2000);
+						this.$store.commit('pendingReposession', true);
+					}, 4000);
 				});
 			},
 			closePopup() {
 				if (this.displayPopup) {
 					this.route = 'lobby';
 				}
+			},
+			healPlayer() {
+				this.$store.commit('updatePlayerStat', {
+					stat: 'injury',
+					value: 0
+				});
+				this.$store.commit('updatePlayerStat', {
+					stat: 'hunger',
+					value: 0
+				});
 			}
 		}
 	}

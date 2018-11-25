@@ -43,5 +43,6 @@ class Controls {
 
 	disableControls() {
 		this.isDisabled = true;
+		this.keyMap.clear();
 	}
 }

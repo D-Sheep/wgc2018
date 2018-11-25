@@ -1,11 +1,28 @@
 <template>
 	<div class="vue-app">
 		<canvas ref="canvas" id="app-canvas"></canvas>
+		<div class="app__game-over" v-if="displayGameOver">
+			<img class="app__game-over-heading" src="assets/img/GameOver.png" alt="">
+		</div>
 	</div>
 </template>
 
 <style lang="scss" scoped>
+	.app__game-over {
+		position: absolute;
+		top: 0;
+		bottom: 0;
+		left: 0;
+		right: 0;
+		background-color: rgba(#204361, 0.8);
 
+		&-heading {
+			position: absolute;
+			top: 30%;
+			left: 50%;
+			transform: translateX(-50%);
+		}
+	}
 </style>
 
 <script>
@@ -14,11 +31,20 @@
 		data() {
 			return {
 				isLoading: false,
+				displayGameOver: false
 			};
 		},
 		computed: {
 			player() {
 				return this.$store.state.player;
+			},
+			route: {
+				get() {
+					return this.$store.state.route;
+				},
+				set($event) {
+					this.$store.commit('navigateTo', $event);
+				}
 			}
 		},
 		beforeDestroy() {
@@ -39,6 +65,13 @@
 
 			window.eventHub.$on('lobby.itemRemoved', () => {
 				this.placeItems();
+			});
+
+			window.eventHub.$on('gameOver', () => {
+				this.displayGameOver = true;
+				setTimeout(() => {
+					this.route = 'index';
+				}, 2000);
 			});
 		},
 		methods: {

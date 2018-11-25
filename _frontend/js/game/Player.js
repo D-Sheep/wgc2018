@@ -148,9 +148,9 @@ class Player extends PIXI.extras.AnimatedSprite {
 
 		collisionManager.on(this, AirConditioning, (object) => {
 			console.log('hit', object);
-			const newInjuryStat = GameApp.vue.$store.state.player.stats.injury + 5 >= MAX_INJURY ?
+			const newInjuryStat = GameApp.vue.$store.state.player.stats.injury + 50 >= MAX_INJURY ?
 				MAX_INJURY :
-				GameApp.vue.$store.state.player.stats.injury + 5;
+				GameApp.vue.$store.state.player.stats.injury + 50;
 
 			GameApp.vue.$store.commit('updatePlayerStat', {
 				stat: 'injury',

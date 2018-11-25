@@ -19,13 +19,14 @@ module.exports = new Vuex.Store({
 			},
 			ownedItems: [
 				'table',
-				'chair',
+				/*'chair',
 				'fridge',
 				'fan',
 				'lamp',
-				'plushie'
+				'plushie'*/
 			]
 		},
+		reposession: false,
 		route: 'index'
 	},
 	mutations: {
@@ -53,6 +54,9 @@ module.exports = new Vuex.Store({
 		},
 		setAssetPromise(state, promise) {
 			state.assetPromise = promise;
+		},
+		pendingReposession(state, reposession) {
+			state.reposession = reposession;
 		}
 	},
 	actions: {

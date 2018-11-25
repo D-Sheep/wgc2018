@@ -29,6 +29,10 @@ const ROUTES = [
 	'gym'
 ];
 
+const BASE_ITEMS = [
+
+];
+
 //player stats
 const BASE_MONEY = 0;
 const BASE_INJURY = 0;

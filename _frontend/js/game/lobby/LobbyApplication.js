@@ -19,6 +19,13 @@ class LobbyApplication extends PIXI.Application {
 
 		this.stage.addChild(this.itemContainer);
 
+		if (GameApp.vue.$store.state.reposession) {
+			GameApp.vue.$store.commit('pendingReposession', false);
+			setTimeout(() => {
+				this.takeAwayItem(GameApp.vue.$store.state.player.ownedItems[0])
+			}, 1000);
+		}
+
 		this.radioAudio = assetStorage.getSound('radio');
 		this.radioAudio.loop = true;
 		this.radioAudio.currentTime = 0;
@@ -86,6 +93,10 @@ class LobbyApplication extends PIXI.Application {
 			TweenMax.to(this[slug], .3, {
 				alpha: 0, onComplete: () => {
 					this.itemContainer.removeChild(this[slug]);
+
+					if (GameApp.vue.$store.state.player.ownedItems.length <= 0) {
+						window.eventHub.$emit('gameOver');
+					}
 					this.stopRadio();
 				}
 			});

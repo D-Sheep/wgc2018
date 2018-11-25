@@ -19,12 +19,7 @@ module.exports = {
         "node_modules/pixi.js/dist/pixi.js"
 	],
 	"libs-gsap": [
-		"js/libs/gsap/TweenMax.min.js",
-		"js/libs/gsap/plugins/ScrollToPlugin.min.js",
-		"js/libs/gsap/plugins/ModifiersPlugin.min.js",
-		"js/libs/gsap/utils/Draggable.min.js",
-		"js/libs/gsap/utils/SplitText.min.js",
-		"js/libs/gsap/utils/GSDevTools.min.js"
+		"js/libs/gsap/TweenMax.min.js"
 	],
 	"libs-jquery": [
 		"node_modules/jquery/dist/jquery.min.js"
@@ -42,7 +37,10 @@ module.exports = {
 	"libs-pixi": [
         "js/libs/pixi/pixi-rectangle-intersects.js",
         "js/libs/pixi/pixi-point-distance.js",
-        "js/libs/pixi/pixi-point-add.js"
+        "js/libs/pixi/pixi-point-add.js",
+		"node_modules/@pixi/filter-rgb-split/lib/filter-rgb-split.js",
+		"node_modules/@pixi/filter-shockwave/lib/filter-shockwave.js",
+		"node_modules/@pixi/filter-zoom-blur/lib/filter-zoom-blur.js"
 	],
 	"helpers": [
 		"js/helpers/Helpers.js", //Helpers have to be first and must not depend on anything

@@ -45,5 +45,6 @@ const BASE_GYM_FEE = 40;
 const MAX_STRENGTH = 100;
 const MAX_INJURY = 100;
 const MAX_TRAINED = 100;
+const MAX_HUNGER = 100;
 
 const MUSHROOM_MODE_TIMEOUT = 1000 * 10; // 10 seconds

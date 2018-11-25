@@ -77,6 +77,20 @@ class Application extends PIXI.Application {
 			shockwaveTime %= 4;
 			this.shockwaveFilter.time = shockwaveTime;
 		});
+
+		this.hungerInterval = setInterval(() => {
+			GameApp.vue.$store.commit('updatePlayerStat', {
+				stat: 'hunger',
+				value: Math.min(MAX_HUNGER, GameApp.vue.$store.state.player.stats.hunger + 3)
+			});
+
+			if (GameApp.vue.$store.state.player.stats.hunger >= MAX_HUNGER) {
+				clearInterval(this.hungerInterval);
+				eventHub.$emit('gameOver', {
+					reason: 'You starved to death'
+				});
+			}
+		}, 1000);
 	}
 
 	enableMushroomMode() {

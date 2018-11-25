@@ -5,12 +5,34 @@
 			v-if="displayPopup"
 			@closePopup="closePopup"
 		/>
+		<div class="app__game-over" v-if="displayGameOver">
+			<span class="app__game-over-text">{{gameOverReason}}</span>
+		</div>
 	</div>
 </template>
 
 <style lang="scss" scoped>
 	#app-canvas {
 		display: block;
+	}
+
+	.app__game-over {
+		position: absolute;
+		top: 0;
+		bottom: 0;
+		left: 0;
+		right: 0;
+		background-color: rgba(#204361, 0.8);
+
+		color: #ffffff;
+
+		.app__game-over-text {
+			position: absolute;
+			top: 60%;
+			left: 50%;
+			transform: translateX(-50%);
+			font-size: 60px;
+		}
 	}
 </style>
 
@@ -34,6 +56,8 @@
 			return {
 				isLoading: false,
 				displayPopup: false,
+				displayGameOver: false,
+				gameOverReason: ''
 			};
 		},
 		watch: {},
@@ -95,6 +119,16 @@
 				window.eventHub.$on('levelFinished', () => {
 					this.displayPopup = true;
 					window.controls.disableControls();
+				});
+
+				window.eventHub.$on('gameOver', (data) => {
+					window.controls.disableControls();
+					this.displayGameOver = true;
+					this.gameOverReason = data.reason;
+
+					setTimeout(() => {
+						this.route = 'lobby';
+					}, 2000);
 				});
 			},
 			closePopup() {

@@ -9,6 +9,7 @@ class Application extends PIXI.Application {
 		this.stage.addChild(this.sky);
 
 		this.mushroomMode = false;
+		this.mushroomSound = assetStorage.getSound('vymaz');
 
 		this.background = new PIXI.Container();
 		this.background.name = 'background';
@@ -87,12 +88,21 @@ class Application extends PIXI.Application {
 	}
 
 	enableMushroomMode() {
+		if (this.mushroomMode) {
+			return;
+		}
+
 		this.stage.filters = [
 			this.zoomBlurFilter,
 			this.rgbSplitFilter,
 			this.shockwaveFilter
 		];
 
+		this.mushroomSound.volume = 0;
+		this.mushroomSound.currentTime = 0;
+		this.mushroomSound.play();
+
+		TweenMax.to(this.mushroomSound, 1, {volume: 1});
 		TweenMax.to(this.rgbSplitFilter.red, 1, {x: -5, y: -10});
 		TweenMax.to(this.rgbSplitFilter.green, 1, {x: 5, y: 10});
 		TweenMax.to(this.shockwaveFilter, 1, {amplitude: 30});
@@ -105,12 +115,14 @@ class Application extends PIXI.Application {
 	}
 
 	disableMushroomMode() {
+		TweenMax.to(this.mushroomSound, 1, {volume: 0});
 		TweenMax.to(this.rgbSplitFilter.red, 1, {x: 0, y: 0});
 		TweenMax.to(this.rgbSplitFilter.green, 1, {x: 0, y: 0});
 		TweenMax.to(this.shockwaveFilter, 1, {amplitude: 0});
 		TweenMax.to(this.zoomBlurFilter, 1, {
 			strength: 0, onComplete: () => {
 				this.stage.filters = [];
+				this.mushroomSound.pause();
 			}
 		});
 		this.mushroomMode = false;

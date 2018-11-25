@@ -131,7 +131,7 @@
 				application.addMapSection(mapSection);
 
 				mapSection = new MapSection();
-				mapSection.useSection('city04');
+				mapSection.useSection('city05');
 				application.addMapSection(mapSection);
 
 				mapSection = new MapSection();

@@ -1,7 +1,7 @@
-class Coins extends GameObject {
+class Poop extends GameObject {
 	constructor(textures, data) {
 		super(textures, data);
 
-		this.centerAnchor();
+		this.bottomCenterAnchor();
 	}
 }

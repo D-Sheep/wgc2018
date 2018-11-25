@@ -1,15 +1,15 @@
 {
   "width": 600,
   "objects": [
-    {"type":  "AirConditioning", "position": [400, 200]},
-    {"type":  "GreenTurtle", "position": [400, 600], "limit":  [100, 500]},
-    {"type":  "RedTurtle", "position": [120, 600], "limit":  [100, 300]},
-    {"type":  "Coins", "position": [300, 600]}
+    {"type":  "AirConditioning", "position": [400, 450]},
+    {"type":  "GreenTurtle", "position": [400, 0], "limit":  [100, 500]},
+    {"type":  "RedTurtle", "position": [120, 0], "limit":  [100, 300]},
+    {"type":  "Coins", "position": [300, 0]}
   ],
   "ledges": [
     {"position":  [0, 350], "length":  100}
   ],
   "blocks": [
-    {"position":  [400, 200], "size":  [100, 90]}
+    {"position":  [400, 450], "size":  [100, 90]}
   ]
 }

@@ -16,6 +16,8 @@ class WalkingEnemy extends GameObject {
 				this.direction = -1;
 			}
 
+			this.scale.x = this.direction;
+
 			this.x += this.direction * application.ticker.deltaTime / application.ticker.FPS * this.speed;
 		});
 	}

@@ -12,5 +12,6 @@ GameObjectFactory.classList = {
 	'RedTurtle': RedTurtle,
 	'Coins': Coins,
 	'FinishHouse': FinishHouse,
-	'Finish': Finish
+	'Finish': Finish,
+	'RedMushroom': RedMushroom
 };

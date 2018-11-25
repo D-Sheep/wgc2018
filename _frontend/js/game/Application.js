@@ -14,6 +14,11 @@ class Application extends PIXI.Application {
 		this.worldWidth = 0;
 		this.ledges = [];
 		this.blocks = [];
+
+		this.floor = new PIXI.Sprite(assetStorage.getTexture('Floor'));
+		this.floor.anchor.y = 1;
+		this.floor.position.set(0, VIEW_HEIGHT);
+		this.world.addChild(this.floor);
 	}
 
 	addMapSection(section) {

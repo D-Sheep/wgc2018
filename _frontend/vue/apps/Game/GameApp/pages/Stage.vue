@@ -37,17 +37,15 @@
 		},
 		watch: {},
 		mounted() {
-			window.controls = new Controls();
-			window.application = new Application({
-				view: this.$refs.canvas,
-				width: VIEW_WIDTH,
-				height: VIEW_HEIGHT
-			});
-			window.camera = new Camera();
-			window.collisionManager = new CollisionManager();
-			window.player = null;
-
 			this.$store.dispatch('fetchAssets').then(() => {
+				window.controls = new Controls();
+				window.application = new Application({
+					view: this.$refs.canvas,
+					width: VIEW_WIDTH,
+					height: VIEW_HEIGHT
+				});
+				window.camera = new Camera();
+				window.collisionManager = new CollisionManager();
 				window.player = new Player(assetStorage.getAnimatedTexture('Player'));
 				window.player.position.set(200, 400);
 				application.world.addChild(window.player);

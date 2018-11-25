@@ -39,16 +39,16 @@ class Player extends PIXI.extras.AnimatedSprite {
 				return false;
 			});
 
-			if (!isPlayerOnLedge && this.y < VIEW_HEIGHT && !this.wouldClipAtPosition(this.x, this.y + 1)) {
+			if (!isPlayerOnLedge && this.y < GROUND_HEIGHT && !this.wouldClipAtPosition(this.x, this.y + 1)) {
 				this.isInAir = true;
 			}
 
 			if (this.isInAir) {
 				this.vSpeed += PLAYER_GRAVITY;
 
-				if (this.vSpeed > 0 && this.y + this.vSpeed >= VIEW_HEIGHT) {
+				if (this.vSpeed > 0 && this.y + this.vSpeed >= GROUND_HEIGHT) {
 					this.stopFalling();
-					this.y = VIEW_HEIGHT;
+					this.y = GROUND_HEIGHT;
 				}
 
 				const blockAboveBelow = this.wouldClipAtPosition(this.x, this.y + this.vSpeed);
@@ -88,7 +88,6 @@ class Player extends PIXI.extras.AnimatedSprite {
 			}
 
 			if (this.lastX !== this.x) {
-				console.log('moving');
 				const isStartingMovement = this.textures === this.textureStorage.static;
 
 				if (isStartingMovement) {

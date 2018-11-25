@@ -1,9 +1,6 @@
-class Ledge extends PIXI.DisplayObject {
+class Ledge extends PIXI.Point {
 	constructor(x, y, length) {
-		super();
-
-		this.x = x;
-		this.y = y;
+		super(x, y);
 		this.length = length;
 	}
 }

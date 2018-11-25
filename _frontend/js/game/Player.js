@@ -10,6 +10,7 @@ class Player extends PIXI.extras.AnimatedSprite {
 		this.vSpeed = 0;
 		this.isInAir = false;
 		this.animationSpeed = 0.1;
+		this.isInvincible = false;
 		this.anchor.y = 1;
 		this.anchor.x = 0.5;
 		this.lastX = this.x;
@@ -137,6 +138,32 @@ class Player extends PIXI.extras.AnimatedSprite {
 			this.summary.money += 3;
 			object.destroy();
 		});
+
+		collisionManager.on(this, RedTurtle, (object) => {
+			if (this.isInvincible) {
+				return;
+			}
+
+			const newInjuryStat = GameApp.vue.$store.state.player.stats.injury + 5 >= MAX_INJURY ?
+				MAX_INJURY :
+				GameApp.vue.$store.state.player.stats.injury + 5;
+
+			GameApp.vue.$store.commit('updatePlayerStat', {
+				stat: 'injury',
+				value: newInjuryStat
+			});
+			this.summary.injury += 5;
+			this.isInvincible = true;
+			this.injuryJump();
+			setTimeout(() => {
+				this.isInvincible = false;
+			}, PLAYER_INVINCIBILITY_DURATION);
+		});
+	}
+
+	injuryJump() {
+		this.vSpeed = PLAYER_INJURY_JUMP_VSPEED;
+		this.isInAir = true;
 	}
 
 	jump() {

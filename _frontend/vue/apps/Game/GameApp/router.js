@@ -6,17 +6,7 @@ const router = new VueRouter({
 	routes: [
 		{
 			path: '/',
-			redirect: {name: 'index'}
-		},
-		{
-			name: 'index',
-			path: '/index',
 			component: require('./pages/Index.vue'),
-		},
-		{
-			name: 'error',
-			path: '*',
-			component: require('./pages/Error.vue'),
 		},
 	],
 });

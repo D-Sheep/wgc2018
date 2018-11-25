@@ -1,6 +1,7 @@
 {
-	"width": 1000,
+	"width": 1100,
 	"objects": [
+		{"type":  "TallTree", "position": [1000, 0]},
 		{"type":  "Wall", "position": [40, 0]},
 		{"type":  "Coins", "position": [470, 0]}
 	],

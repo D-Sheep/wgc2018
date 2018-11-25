@@ -1,6 +1,8 @@
 {
   "width": 800,
   "objects": [
+    {"type":  "CityBuildingWide", "position": [90, 30]},
+    {"type":  "SmallTree", "position": [800, 30]},
     {"type":  "AirConditioning", "position": [400, 450]},
     {"type":  "Coins", "position": [100, 0]},
     {"type":  "GreenTurtle", "position": [550, 0], "limit":  [500, 800]},

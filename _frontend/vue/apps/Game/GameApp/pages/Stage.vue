@@ -55,7 +55,7 @@
 				application.addMapSection(mapSection);
 
 				mapSection = new MapSection();
-				mapSection.useSection('city05');
+				mapSection.useSection('city01');
 				application.addMapSection(mapSection);
 
 				mapSection = new MapSection();

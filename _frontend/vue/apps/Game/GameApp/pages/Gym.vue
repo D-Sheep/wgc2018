@@ -11,7 +11,6 @@
 			@trained="resetTraining"
 		/>
 		<div class="overlay-spacer"></div>
-		<overlay/>
 	</div>
 </template>
 
@@ -23,7 +22,6 @@
 	module.exports = {
 		name: 'Gym',
 		components: {
-			overlay: require('../components/Overlay.vue'),
 			'training-options': require('../components/gym/TrainingOptions.vue'),
 			training: require('../components/gym/Training.vue')
 		},

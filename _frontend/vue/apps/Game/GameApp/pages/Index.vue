@@ -6,6 +6,7 @@
 		<lobby v-if="route === 'lobby'"/>
 		<shop v-if="route === 'shop'"/>
 		<gym v-if="route === 'gym'"/>
+		<overlay/>
 	</div>
 </template>
 
@@ -17,6 +18,7 @@
 		name: 'Index',
 		components: {
 			navigation: require('../../../../components/Navigation.vue'),
+			overlay: require('../components/Overlay.vue'),
 			welcome: require('./Welcome.vue'),
 			stage: require('./Stage.vue'),
 			lobby: require('./Lobby.vue'),

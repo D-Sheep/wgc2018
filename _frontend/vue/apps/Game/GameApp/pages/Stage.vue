@@ -5,7 +5,6 @@
 			v-if="displayPopup"
 			@closePopup="closePopup"
 		/>
-		<overlay/>
 	</div>
 </template>
 
@@ -16,7 +15,6 @@
 	module.exports = {
 		name: 'Stage',
 		components: {
-			overlay: require('../components/Overlay.vue'),
 			popup: require('../components/stage/Popup.vue')
 		},
 		computed: {

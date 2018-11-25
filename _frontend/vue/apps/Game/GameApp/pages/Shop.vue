@@ -19,7 +19,6 @@
 			</div>
 		</div>
 		<div class="overlay-spacer"></div>
-		<overlay/>
 	</div>
 </template>
 
@@ -46,7 +45,6 @@
 	module.exports = {
 		name: 'Shop',
 		components: {
-			overlay: require('../components/Overlay.vue'),
 			'shop-item': require('../components/shop/ShopItem.vue')
 		},
 		computed: {

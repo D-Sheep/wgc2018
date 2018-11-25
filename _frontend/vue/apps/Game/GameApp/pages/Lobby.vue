@@ -1,7 +1,6 @@
 <template>
 	<div class="vue-app">
 		<div class="overlay-spacer"></div>
-		<overlay/>
 	</div>
 </template>
 
@@ -12,9 +11,6 @@
 <script>
 	module.exports = {
 		name: 'Lobby',
-		components: {
-			overlay: require('../components/Overlay.vue'),
-		},
 		data() {
 			return {
 				isLoading: false,

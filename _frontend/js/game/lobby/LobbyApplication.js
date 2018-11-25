@@ -18,6 +18,12 @@ class LobbyApplication extends PIXI.Application {
 		this.itemContainer.name = 'itemcontainer';
 
 		this.stage.addChild(this.itemContainer);
+
+		this.radioAudio = assetStorage.getSound('radio');
+		this.radioAudio.loop = true;
+		this.radioAudio.currentTime = 0;
+
+		this.playRadio();
 	}
 
 	displayOwnedItem(spriteName, position) {
@@ -33,6 +39,18 @@ class LobbyApplication extends PIXI.Application {
 		this[slug].y = position.y;
 
 		this.itemContainer.addChild(this[slug]);
+	}
+
+	playRadio() {
+		if (GameApp.vue.$store.state.player.ownedItems.indexOf('radio') !== -1) {
+			this.radioAudio.play();
+		}
+	}
+
+	stopRadio() {
+		if (GameApp.vue.$store.state.player.ownedItems.indexOf('radio') === -1) {
+			this.radioAudio.pause();
+		}
 	}
 
 	takeAwayItem(spriteName) {
@@ -68,6 +86,7 @@ class LobbyApplication extends PIXI.Application {
 			TweenMax.to(this[slug], .3, {
 				alpha: 0, onComplete: () => {
 					this.itemContainer.removeChild(this[slug]);
+					this.stopRadio();
 				}
 			});
 		}, 2000);

@@ -46,7 +46,6 @@
 				window.collisionManager = new CollisionManager();
 				window.player = new Player(assetStorage.getAnimatedTexture('Player'));
 				window.player.position.set(200, 400);
-				application.world.addChild(window.player);
 
 				let mapSection = new MapSection();
 				mapSection.useSection('start');
@@ -61,6 +60,8 @@
 				mapSection = new MapSection();
 				mapSection.useSection('finish');
 				application.addMapSection(mapSection);
+
+				application.world.addChild(window.player);
 
 				const bgNoise = window.assetStorage.getSound('city');
 				bgNoise.loop = true;

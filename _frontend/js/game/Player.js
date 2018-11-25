@@ -64,7 +64,6 @@ class Player extends PIXI.extras.AnimatedSprite {
 				}
 			}
 
-
 			this.y += this.vSpeed;
 			this.lastX = this.x;
 
@@ -86,6 +85,8 @@ class Player extends PIXI.extras.AnimatedSprite {
 					this.scale.x = 1;
 				}
 			}
+
+			this.x = Math.min(Math.max(0, this.x), application.worldWidth);
 
 			if (this.lastX !== this.x) {
 				const isStartingMovement = this.textures === this.textureStorage.static;

@@ -24,7 +24,12 @@ class AssetStorage {
 			loader.add('Player-static', 'assets/img/Player-static.png');
 			loader.add('RedMushroom', 'assets/img/RedMushroom.png');
 			loader.add('GreenMushroom', 'assets/img/GreenMushroom.png');
+			loader.add('SmallTree', 'assets/img/SmallTree.png');
+			loader.add('TallTree', 'assets/img/TallTree.png');
 			loader.add('Poop', 'assets/img/Poop.png');
+			loader.add('Flower', 'assets/img/Flower.png');
+			loader.add('CityBuildingWide', 'assets/img/CityBuildingWide.png');
+			loader.add('CityBuildingNarrow', 'assets/img/CityBuildingNarrow.png');
 			loader.add('animated:FinishHouse:0', 'assets/img/FinishHouse0.png');
 			loader.add('animated:FinishHouse:1', 'assets/img/FinishHouse1.png');
 			loader.add('animated:FinishHouse:2', 'assets/img/FinishHouse2.png');
@@ -32,6 +37,8 @@ class AssetStorage {
 			loader.add('animated:FinishHouse:4', 'assets/img/FinishHouse4.png');
 			loader.add('animated:FinishHouse:5', 'assets/img/FinishHouse5.png');
 			loader.add('animated:FinishHouse:6', 'assets/img/FinishHouse6.png');
+			loader.add('animated:Manhole:0', 'assets/img/Manhole0.png');
+			loader.add('animated:Manhole:1', 'assets/img/Manhole1.png');
 
 			loader
 				.load((ldr, resources) => {

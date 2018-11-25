@@ -10,8 +10,16 @@ GameObjectFactory.classList = {
 	'AirConditioning': AirConditioning,
 	'GreenTurtle': GreenTurtle,
 	'RedTurtle': RedTurtle,
+	'Coin': Coin,
 	'Coins': Coins,
 	'FinishHouse': FinishHouse,
 	'Finish': Finish,
-	'RedMushroom': RedMushroom
+	'RedMushroom': RedMushroom,
+	'GreenMushroom': GreenMushroom,
+	'Poop': Poop,
+	'Manhole': Manhole,
+	'SmallTree': SmallTree,
+	'TallTree': SmallTree,
+	'CityBuildingWide': CityBuildingWide,
+	'CityBuildingNarrow': CityBuildingNarrow
 };

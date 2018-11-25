@@ -1,0 +1,12 @@
+HELP
+
+
+In each level, fix a water accident in a house at the end of the level.
+On your way pick enough money to cover your all expenses.
+If you don't have enough money to pay your bills, executor will take away yor properties.
+If you gather enough money, you can buy stuff.
+Your goal is to have fully furnished room. 
+
+Controls:
+Movement - Arrows
+Action - enter

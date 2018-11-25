@@ -14,7 +14,13 @@
 </template>
 
 <style lang="scss" scoped>
+	.vue-app {
+		height: 100%;
 
+		background-image: url('assets/img/gym/bg.jpg');
+		background-position: 50% 50%;
+		background-repeat: no-repeat;
+	}
 </style>
 
 <script>

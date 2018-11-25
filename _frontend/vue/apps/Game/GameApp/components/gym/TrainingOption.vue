@@ -1,40 +1,19 @@
 <template>
-	<div class="training-option" @click="train">
-		<div class="training-option__content">
-			<div class="training-option__name">
-				{{ trainingOption.name }}
-			</div>
-			<div class="training-option__reward">
-				+{{ trainingOption.reward }} energy
-			</div>
-		</div>
+	<div
+		class="training-option"
+		:style="{backgroundImage: 'url(assets/img/gym/'+ trainingOption.name +'.png)'}"
+		@click="train"
+	>
 	</div>
 </template>
 
 <style lang="scss" scoped>
 	.training-option {
-		margin: 10px;
+		margin: 25px;
 		cursor: pointer;
-		text-align: center;
 
-		width: 130px;
-		height: 130px;
-		border: 2px dotted black;
-		border-radius: 3px;
-
-		display: inline-flex;
-		align-items: center;
-		justify-content: center;
-
-		&--disabled {
-			opacity: .5;
-			cursor: not-allowed;
-		}
-
-		&__name {
-			width: 100%;
-			font-weight: bold;
-		}
+		width: 421px;
+		height: 147px;
 	}
 </style>
 
@@ -49,6 +28,9 @@
 					option: this.trainingOption
 				});
 			}
+		},
+		mounted() {
+			console.log('url(assets/img/gym/' + this.trainingOption.name + '.png)');
 		}
 	}
 </script>

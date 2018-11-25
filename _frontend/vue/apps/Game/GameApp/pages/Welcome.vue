@@ -1,5 +1,6 @@
 <template>
 	<div class="vue-app">
+		<div class="logo"></div>
 		<div class="play-button" @click.prevent="route = 'stage'"></div>
 		<div class="help-button"></div>
 	</div>
@@ -16,7 +17,6 @@
 		background-image: url('assets/img/title.png');
 		background-position: 50% 50%;
 		background-repeat: no-repeat;
-		background-size: contain;
 
 		.play-button {
 			position: absolute;
@@ -46,6 +46,18 @@
 			&:hover {
 				cursor: pointer;
 			}
+		}
+
+		.logo {
+			position: absolute;
+
+			top: 123px;
+			right: 330px;
+
+			width: 598px;
+			height: 296px;
+
+			background-image: url('assets/img/logo.png');
 		}
 	}
 </style>

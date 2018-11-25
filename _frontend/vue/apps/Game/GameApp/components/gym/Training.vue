@@ -1,36 +1,83 @@
 <template>
 	<div class="training">
 		<div class="training__progress" :style="{backgroundPositionX: -trained + '%'}">
-			keep pressing the 'UP' arrow
+			keep pressing<br> the "<strong>UP</strong>" arrow
 		</div>
+		<div class="training__hand"></div>
+		<div class="training__arrow"></div>
 	</div>
 </template>
 
 <style lang="scss" scoped>
 	.training {
 		&__progress {
-			background: linear-gradient(to left, greenyellow 50%, white 50%);
+			position: absolute;
+
+			background: linear-gradient(to left, white 50%, transparent 50%);
 			background-size: 200% 100%;
 			background-position: left bottom;
 
+			left: 0;
+			right: 0;
+			top: 145px;
 			margin-left: auto;
 			margin-right: auto;
 
-			padding: 5px;
+			padding: 30px;
 
-			width: 220px;
-			height: 50px;
+			width: 590px;
 
-			display: flex;
-			align-items: center;
-			justify-content: center;
+			vertical-align: middle;
+			line-height: 1.5em;
+
+			font-size: 30px;
 
 			text-align: center;
 
-			border: 2px solid black;
-			border-radius: 3px;
+			color: #65869e;
+
+			border: 4px solid #65869e;
+			border-radius: 80px;
+
+			text-transform: uppercase;
 
 			transition: ease background .1s;
+		}
+
+		&__hand {
+			position: absolute;
+			z-index: 2;
+
+			bottom: 250px;
+			left: 0;
+			right: 0;
+			margin-left: auto;
+			margin-right: auto;
+
+			width: 280px;
+			height: 326px;
+
+			background-image: url('assets/img/gym/hand.gif');
+			background-position: 50% 50%;
+			background-repeat: no-repeat;
+		}
+
+		&__arrow {
+			position: absolute;
+			z-index: 1;
+
+			bottom: 100px;
+			left: 0;
+			right: 0;
+			margin-left: auto;
+			margin-right: auto;
+
+			width: 502px;
+			height: 640px;
+
+			background-image: url('assets/img/gym/arrow.png');
+			background-position: 50% 50%;
+			background-repeat: no-repeat;
 		}
 	}
 </style>

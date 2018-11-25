@@ -1,9 +1,6 @@
 <template>
 	<div class="training-options">
 		<div class="training-options__content">
-			<div class="training-options__header">
-				Choose workout
-			</div>
 			<div class="training-options__wrapper">
 				<training-option
 					v-for="trainingOption in trainingOptions"

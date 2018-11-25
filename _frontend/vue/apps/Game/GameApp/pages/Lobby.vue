@@ -1,5 +1,9 @@
 <template>
 	<div class="vue-app">
+		<div class="buttons">
+			<div class="gym" @click="route = 'gym'"></div>
+			<div class="shop" @click="route = 'shop'"></div>
+		</div>
 		<canvas ref="canvas" id="app-canvas"></canvas>
 		<div class="app__game-over" v-if="displayGameOver">
 			<img class="app__game-over-heading" src="assets/img/GameOver.png" alt="">
@@ -21,6 +25,28 @@
 			top: 30%;
 			left: 50%;
 			transform: translateX(-50%);
+		}
+	}
+
+	.buttons {
+		position: absolute;
+		top: 25px;
+
+		.gym,
+		.shop {
+			margin: 25px;
+			cursor: pointer;
+
+			width: 421px;
+			height: 147px;
+		}
+
+		.gym {
+			background-image: url('assets/img/lobby/gym.png');
+		}
+
+		.shop {
+			background-image: url('assets/img/lobby/shop.png');
 		}
 	}
 </style>
@@ -48,6 +74,7 @@
 			}
 		},
 		beforeDestroy() {
+			window.application.stopRadio();
 			window.application.destroy();
 		},
 		mounted() {

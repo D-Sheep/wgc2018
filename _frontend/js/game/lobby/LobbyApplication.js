@@ -55,9 +55,7 @@ class LobbyApplication extends PIXI.Application {
 	}
 
 	stopRadio() {
-		if (GameApp.vue.$store.state.player.ownedItems.indexOf('radio') === -1) {
-			this.radioAudio.pause();
-		}
+		this.radioAudio.pause();
 	}
 
 	takeAwayItem(spriteName) {
@@ -97,7 +95,9 @@ class LobbyApplication extends PIXI.Application {
 					if (GameApp.vue.$store.state.player.ownedItems.length <= 0) {
 						window.eventHub.$emit('gameOver');
 					}
-					this.stopRadio();
+					if (GameApp.vue.$store.state.player.ownedItems.indexOf('radio') === -1) {
+						this.stopRadio();
+					}
 				}
 			});
 		}, 2000);

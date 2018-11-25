@@ -177,6 +177,11 @@ class Player extends PIXI.extras.AnimatedSprite {
 			this.sounds.pickup.play();
 		});
 
+		collisionManager.on(this, RedMushroom, (object) => {
+			application.enableMushroomMode();
+			object.destroy();
+		});
+
 		collisionManager.on(this, RedTurtle, (object) => {
 			if (this.isInvincible) {
 				return;

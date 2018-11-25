@@ -1,11 +1,14 @@
 {
 	"width": 1000,
 	"objects": [
-		{"type":  "Wall", "position": [40, 0]},
-		{"type":  "Coins", "position": [470, 0]}
+		{"type":  "SmallTree", "position": [100, 0]},
+		{"type":  "TallTree", "position": [270, 0]},
+		{"type":  "TallTree", "position": [550, 0]},
+		{"type":  "SmallTree", "position": [700, 0]},
+		{"type":  "RedMushroom", "position": [400, 0]}
 	],
 	"ledges": [
-		{"position":  [40, 180], "length": 791}
+
 	],
 	"blocks": [
 	]

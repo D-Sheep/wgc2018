@@ -32,7 +32,7 @@ module.exports = {
 		"node_modules/upup/dist/upup.min.js"
 	],
 	"libs-vue": [
-		"node_modules/vue/dist/vue.js"
+		"node_modules/vue/dist/vue.min.js"
 	],
 	"libs-pixi": [
         "js/libs/pixi/pixi-rectangle-intersects.js",

@@ -115,6 +115,10 @@ class Application extends PIXI.Application {
 	}
 
 	disableMushroomMode() {
+		if (!this.mushroomMode) {
+			return;
+		}
+
 		TweenMax.to(this.mushroomSound, 1, {volume: 0});
 		TweenMax.to(this.rgbSplitFilter.red, 1, {x: 0, y: 0});
 		TweenMax.to(this.rgbSplitFilter.green, 1, {x: 0, y: 0});

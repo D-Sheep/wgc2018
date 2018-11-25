@@ -12,7 +12,6 @@ class AssetStorage {
 
 			loader.add('Floor', 'assets/img/Floor.png');
 			loader.add('Clouds', 'assets/img/Clouds.png');
-			loader.add('AirConditioning', 'assets/img/AirConditioning.png');
 			loader.add('animated:GreenTurtle:0', 'assets/img/GreenTurtle0.png');
 			loader.add('animated:GreenTurtle:1', 'assets/img/GreenTurtle1.png');
 			loader.add('animated:RedTurtle:0', 'assets/img/RedTurtle0.png');
@@ -49,6 +48,9 @@ class AssetStorage {
 			loader.add('animated:EpicSaxGuy:3', 'assets/img/EpicSaxGuy3.png');
 			loader.add('animated:EpicSaxGuy:4', 'assets/img/EpicSaxGuy4.png');
 			loader.add('animated:EpicSaxGuy:5', 'assets/img/EpicSaxGuy5.png');
+			loader.add('AirConditioning', 'assets/img/AirConditionig.png');
+			loader.add('AirConditioningFan', 'assets/img/AirConditionigFan.png');
+			loader.add('AirConditioningGrill', 'assets/img/AirConditionigGrill.png');
 
 			//lobby
 			loader.add('LobbyWall', 'assets/img/lobby/LobbyWall.png');

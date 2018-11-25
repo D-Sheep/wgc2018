@@ -3,28 +3,28 @@
 		"type": "food",
 		"name": "Hamburger",
 		"stat": 10,
-		"price": 6,
+		"price": 8,
 		"icon": "assets/img/food/burger.png"
 	},
 	{
 		"type": "food",
 		"name": "Pizza",
 		"stat": 20,
-		"price": 12,
+		"price": 15,
 		"icon": "assets/img/food/pizza.png"
 	},
 	{
 		"type": "food",
 		"name": "Apple",
 		"stat": 5,
-		"price": 3,
+		"price": 4,
 		"icon": "assets/img/food/apple.png"
 	},
 	{
 		"type": "food",
 		"name": "Meat balls",
 		"stat": 15,
-		"price": 9,
+		"price": 12,
 		"icon": "assets/img/food/meat_balls.png"
 	},
 	{
@@ -33,5 +33,5 @@
 		"stat": 1,
 		"price": 1,
 		"icon": "assets/img/food/chinese_soup.png"
-	},
+	}
 ]

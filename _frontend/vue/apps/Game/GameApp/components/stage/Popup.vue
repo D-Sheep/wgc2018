@@ -23,9 +23,9 @@
 	.popup {
 		position: absolute;
 
-		background: white;
-		height: 80vh;
-		width: 400px;
+		background: #94a1ae;
+		height: 600px;
+		width: 1200px;
 
 		top: 50px;
 		left: 0;
@@ -33,10 +33,13 @@
 		margin-left: auto;
 		margin-right: auto;
 
-		border: 4px solid black;
+		border: 4px solid #204361;
 		border-radius: 3px;
 
+		color: #ffffff;
+
 		&-summary {
+			font-size: 25px;
 			text-align: center;
 
 			ul {
@@ -47,13 +50,16 @@
 		}
 
 		&-header {
+			font-weight: bold;
 			padding: 30px 0;
 			width: 100%;
 			text-align: center;
-			font-size: 35px;
+			font-size: 45px;
 		}
 
 		&-close {
+			font-size: 25px;
+
 			display: block;
 			text-align: center;
 			width: 100%;

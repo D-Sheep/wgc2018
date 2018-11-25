@@ -10,7 +10,6 @@
 			:player="player"
 			@trained="resetTraining"
 		/>
-		<div class="overlay-spacer"></div>
 	</div>
 </template>
 

@@ -57,10 +57,6 @@ svg {
 	overflow: visible;
 }
 
-.overlay-spacer {
-	height: 150px;
-}
-
 @include breakpoint (phone down) {
 	body {
 		font-size: 14px;

@@ -7,6 +7,9 @@
 			<div class="shop-item__info-price">
 				{{ item.price }} coins
 			</div>
+			<div class="shop-item__info-refills" v-if="isFood">
+				Refills {{ item.stat }}
+			</div>
 		</div>
 
 		<div
@@ -27,7 +30,7 @@
 		text-align: center;
 
 		&--disabled {
-			opacity: .5;
+			opacity: .3;
 
 			.shop-item__icon {
 				cursor: not-allowed;
@@ -64,16 +67,22 @@
 			canBuy() {
 				return this.player.states.money >= this.item.price;
 			},
+			isFood() {
+				return this.item.type === 'food';
+			},
+			isFurniture() {
+				return this.item.type === 'furniture';
+			},
 			isFull() {
-				return this.item.type === 'food' && this.player.stats.hunger < 1;
+				return this.isFood && this.player.stats.hunger < 1;
 			},
 			isOwned() {
-				return this.item.type === 'furniture' && this.player.ownedItems.indexOf(this.item.name.toLowerCase()) !== -1;
+				return this.isFurniture && this.player.ownedItems.indexOf(this.item.name.toLowerCase()) !== -1;
 			}
 		},
 		methods: {
 			purchase() {
-				if (!this.canBuy || this.isFull) {
+				if (!this.canBuy || this.isFull || this.isOwned) {
 					return;
 				}
 

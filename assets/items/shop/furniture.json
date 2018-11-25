@@ -3,56 +3,56 @@
 		"type": "furniture",
 		"name": "Table",
 		"stat": 1,
-		"price": 100,
+		"price": 90,
 		"icon": "assets/img/furniture/table.png"
 	},
 	{
 		"type": "furniture",
 		"name": "Chair",
 		"stat": 1,
-		"price": 60,
+		"price": 75,
 		"icon": "assets/img/furniture/chair.png"
 	},
 	{
 		"type": "furniture",
 		"name": "Hat",
 		"stat": 1,
-		"price": 5,
+		"price": 25,
 		"icon": "assets/img/furniture/hat.png"
 	},
 	{
 		"type": "furniture",
 		"name": "Fridge",
 		"stat": 1,
-		"price": 400,
+		"price": 300,
 		"icon": "assets/img/furniture/fridge.png"
 	},
 	{
 		"type": "furniture",
 		"name": "Fan",
 		"stat": 1,
-		"price": 40,
+		"price": 150,
 		"icon": "assets/img/furniture/fan.png"
 	},
 	{
 		"type": "furniture",
 		"name": "Lamp",
 		"stat": 1,
-		"price": 10,
-		"icon": "assets/img/furniture/table.png"
+		"price": 40,
+		"icon": "assets/img/furniture/lamp.png"
 	},
 	{
 		"type": "furniture",
 		"name": "Plushie",
 		"stat": 1,
-		"price": 20,
+		"price": 50,
 		"icon": "assets/img/furniture/plushie.png"
 	},
 	{
 		"type": "furniture",
 		"name": "Radio",
 		"stat": 1,
-		"price": 60,
+		"price": 200,
 		"icon": "assets/img/furniture/radio.png"
 	},
 	{
@@ -66,7 +66,7 @@
 		"type": "furniture",
 		"name": "Telescope",
 		"stat": 1,
-		"price": 2000,
+		"price": 250,
 		"icon": "assets/img/furniture/telescope.png"
 	}
 ]

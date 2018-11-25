@@ -12,7 +12,6 @@
 				</div>
 			</div>
 		</div>
-		<div class="overlay-spacer"></div>
 	</div>
 </template>
 
@@ -41,6 +40,10 @@
 				font-weight: bold;
 				margin: 10px;
 			}
+		}
+
+		&__furniture {
+			margin-top: -30px;
 		}
 	}
 </style>

@@ -1,7 +1,6 @@
 <template>
 	<div class="vue-app">
 		<canvas ref="canvas" id="app-canvas"></canvas>
-		<div class="overlay-spacer"></div>
 	</div>
 </template>
 
@@ -55,8 +54,8 @@
 				});
 
 				window.application.displayOwnedItem('Hat', {
-					x: 835,
-					y: 884
+					x: 825,
+					y: 854
 				});
 
 				window.application.displayOwnedItem('Telescope', {

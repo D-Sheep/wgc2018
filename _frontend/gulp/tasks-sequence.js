@@ -7,7 +7,6 @@ let sequence = [
 	[
 		'sprite-common',
 		'sprite-common-mobile',
-		'svg-icons',
 		'vendors'
 	], [
 		'sass',

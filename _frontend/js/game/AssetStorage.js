@@ -29,6 +29,9 @@ class AssetStorage {
 			loader.add('TallTree', 'assets/img/TallTree.png');
 			loader.add('Poop', 'assets/img/Poop.png');
 			loader.add('Flower', 'assets/img/Flower.png');
+			loader.add('Dumpster', 'assets/img/Dumpster.png');
+			loader.add('Trashbags', 'assets/img/Trashbags.png');
+			loader.add('Wall', 'assets/img/Wall.png');
 			loader.add('CityBuildingWide', 'assets/img/CityBuildingWide.png');
 			loader.add('CityBuildingNarrow', 'assets/img/CityBuildingNarrow.png');
 			loader.add('animated:FinishHouse:0', 'assets/img/FinishHouse0.png');
@@ -40,6 +43,21 @@ class AssetStorage {
 			loader.add('animated:FinishHouse:6', 'assets/img/FinishHouse6.png');
 			loader.add('animated:Manhole:0', 'assets/img/Manhole0.png');
 			loader.add('animated:Manhole:1', 'assets/img/Manhole1.png');
+
+			//lobby
+			loader.add('LobbyWall', 'assets/img/lobby/LobbyWall.png');
+			loader.add('Bed', 'assets/img/furniture/bed.png');
+			loader.add('Table', 'assets/img/furniture/table.png');
+			loader.add('Chair', 'assets/img/furniture/chair.png');
+			loader.add('Fridge', 'assets/img/furniture/fridge.png');
+			loader.add('Fan', 'assets/img/furniture/fan.png');
+			loader.add('Lamp', 'assets/img/furniture/lamp.png');
+			loader.add('Plushie', 'assets/img/furniture/plushie.png');
+			loader.add('Hat', 'assets/img/furniture/hat.png');
+			loader.add('Telescope', 'assets/img/furniture/telescope.png');
+			loader.add('Picture', 'assets/img/furniture/picture.png');
+			loader.add('Radio', 'assets/img/furniture/radio.png');
+			loader.add('Tape', 'assets/img/furniture/tape.png');
 
 			loader
 				.load((ldr, resources) => {
@@ -72,6 +90,16 @@ class AssetStorage {
 			const loader = new PIXI.loaders.Loader();
 
 			loader.add('city', 'assets/sound/city.mp3');
+			loader.add('eat', 'assets/sound/eat.mp3');
+			loader.add('fix', 'assets/sound/fix.mp3');
+			loader.add('jump', 'assets/sound/jump.mp3');
+			loader.add('land', 'assets/sound/land.mp3');
+			loader.add('pickup', 'assets/sound/pickup.mp3');
+			loader.add('ring', 'assets/sound/ring.mp3');
+			loader.add('vymaz', 'assets/sound/vymaz.mp3');
+			loader.add('walk', 'assets/sound/walk.mp3');
+			loader.add('warp', 'assets/sound/warp.mp3');
+			loader.add('metalhead', 'assets/sound/metalhead.mp3');
 
 			loader
 				.load((ldr, resources) => {

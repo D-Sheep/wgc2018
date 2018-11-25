@@ -1,5 +1,6 @@
 <template>
 	<div class="vue-app">
+		<canvas ref="canvas" id="app-canvas"></canvas>
 		<div class="overlay-spacer"></div>
 	</div>
 </template>
@@ -16,7 +17,86 @@
 				isLoading: false,
 			};
 		},
+		computed: {
+			player() {
+				return this.$store.state.player;
+			}
+		},
+		beforeDestroy() {
+			window.application.destroy();
+		},
 		mounted() {
+			this.$store
+				.dispatch('fetchAssets')
+				.then(() => {
+					window.application = new LobbyApplication({
+						view: this.$refs.canvas,
+						width: VIEW_WIDTH,
+						height: VIEW_HEIGHT
+					});
+
+					this.placeItems();
+				});
+
+			window.eventHub.$on('lobby.itemRemoved', () => {
+				this.placeItems();
+			});
+		},
+		methods: {
+			hasItem(slug) {
+				return this.player.ownedItems.indexOf(slug) !== -1;
+			},
+			placeItems() {
+				window.application.displayOwnedItem('Fridge', {
+					x: 1660,
+					y: 650
+				});
+
+				window.application.displayOwnedItem('Hat', {
+					x: 835,
+					y: 884
+				});
+
+				window.application.displayOwnedItem('Telescope', {
+					x: 469,
+					y: 436
+				});
+
+				window.application.displayOwnedItem('Table', {
+					x: 16,
+					y: 716
+				});
+
+				window.application.displayOwnedItem('Chair', {
+					x: 147,
+					y: 809
+				});
+
+				window.application.displayOwnedItem('Picture', {
+					x: 1180,
+					y: 293
+				});
+
+				window.application.displayOwnedItem('Radio', {
+					x: 222,
+					y: 532
+				});
+
+				window.application.displayOwnedItem('Lamp', {
+					x: -28,
+					y: 537
+				});
+
+				window.application.displayOwnedItem('Fan', {
+					x: 1690,
+					y: 438
+				});
+
+				window.application.displayOwnedItem('Plushie', {
+					x: 1100,
+					y: 617
+				});
+			}
 		}
 	}
 </script>

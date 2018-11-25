@@ -77,6 +77,10 @@ class Application extends PIXI.Application {
 		TweenMax.to(this.shockwaveFilter, 1, {amplitude: 30});
 		TweenMax.to(this.zoomBlurFilter, 1, {strength: 0.1});
 		this.mushroomMode = true;
+
+		setTimeout(() => {
+			this.disableMushroomMode();
+		}, MUSHROOM_MODE_TIMEOUT)
 	}
 
 	disableMushroomMode() {

@@ -2,6 +2,6 @@ class CityBuildingWide extends GameObject {
 	constructor(textures, data) {
 		super(textures, data);
 
-		this.anchor.y = 0;
+		this.anchor.y = 1;
 	}
 }

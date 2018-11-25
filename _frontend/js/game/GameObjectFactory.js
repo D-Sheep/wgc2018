@@ -21,5 +21,8 @@ GameObjectFactory.classList = {
 	'SmallTree': SmallTree,
 	'TallTree': TallTree,
 	'CityBuildingWide': CityBuildingWide,
-	'CityBuildingNarrow': CityBuildingNarrow
+	'CityBuildingNarrow': CityBuildingNarrow,
+	'Dumpster': Dumpster,
+	'Trashbags': Trashbags,
+	'Wall': Wall,
 };

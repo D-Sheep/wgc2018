@@ -73,6 +73,9 @@ module.exports = {
         "js/game/gameobjects/GreenMushroom.js",
         "js/game/gameobjects/Poop.js",
         "js/game/gameobjects/Manhole.js",
+        "js/game/gameobjects/Dumpster.js",
+        "js/game/gameobjects/Trashbags.js",
+        "js/game/gameobjects/Wall.js",
         "js/game/gameobjects/SmallTree.js",
         "js/game/gameobjects/TallTree.js",
         "js/game/gameobjects/CityBuildingWide.js",
@@ -89,7 +92,9 @@ module.exports = {
         "js/game/CollisionManager.js",
         "js/game/MapSection.js",
         "js/game/MapSectionStorage.js",
-		"js/game/GameObjectFactory.js"
+		"js/game/GameObjectFactory.js",
+
+		"js/game/lobby/LobbyApplication.js"
 	],
 	"init": [
 		"js/init.js"

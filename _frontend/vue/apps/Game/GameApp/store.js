@@ -20,10 +20,10 @@ module.exports = new Vuex.Store({
 			ownedItems: [
 				'table',
 				'chair',
-				'bed',
 				'fridge',
 				'fan',
-				'lamp'
+				'lamp',
+				'plushie'
 			]
 		},
 		route: 'index'
@@ -42,7 +42,11 @@ module.exports = new Vuex.Store({
 			state.player.ownedItems.push(payload);
 		},
 		removePlayerItem(state, payload) {
-			state.player.ownedItems.splice(_.findIndex(state.player.ownedItems, payload), 1);
+			const itemIndex = _.findIndex(state.player.ownedItems, (value) => {
+				return value === payload;
+			});
+
+			state.player.ownedItems.splice(itemIndex, 1);
 		},
 		navigateTo(state, payload) {
 			state.route = payload;
@@ -54,12 +58,12 @@ module.exports = new Vuex.Store({
 	actions: {
 		fetchAssets(context) {
 			if (!context.state.assetPromise) {
-                const promise = Promise.all([
-                    assetStorage.loadTextures(),
-                    assetStorage.loadSounds(),
-                    mapSectionStorage.loadMapSections()
-                ]);
-                context.commit('setAssetPromise', promise);
+				const promise = Promise.all([
+					assetStorage.loadTextures(),
+					assetStorage.loadSounds(),
+					mapSectionStorage.loadMapSections()
+				]);
+				context.commit('setAssetPromise', promise);
 			}
 
 			return context.state.assetPromise;

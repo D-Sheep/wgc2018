@@ -28,6 +28,7 @@ class Player extends PIXI.extras.AnimatedSprite {
 		this.lastX = this.x;
 		this.play();
 		this.stats = {};
+		this.isPlayerOnLedge = false;
 		this.summary = {
 			money: BASE_MONEY,
 			injury: BASE_INJURY,
@@ -36,7 +37,7 @@ class Player extends PIXI.extras.AnimatedSprite {
 
 		const tickerHandler = () => {
 			const ledges = application.getLedges();
-			const isPlayerOnLedge = ledges.some((ledge) => {
+			this.isPlayerOnLedge = ledges.some((ledge) => {
 				if (
 					this.vSpeed >= 0
 					&& ledge.x <= this.x
@@ -52,7 +53,7 @@ class Player extends PIXI.extras.AnimatedSprite {
 				return false;
 			});
 
-			if (!isPlayerOnLedge && this.y < GROUND_HEIGHT && !this.wouldClipAtPosition(this.x, this.y + 1)) {
+			if (!this.isPlayerOnLedge && this.y < GROUND_HEIGHT && !this.wouldClipAtPosition(this.x, this.y + 1)) {
 				this.isInAir = true;
 			}
 
@@ -126,6 +127,13 @@ class Player extends PIXI.extras.AnimatedSprite {
 		controls.on('keydown', KEY_UP, () => {
 			if (!this.isInAir) {
 				this.jump();
+			}
+		});
+
+		controls.on('keydown', KEY_DOWN, () => {
+			if (this.isPlayerOnLedge && !this.wouldClipAtPosition(this.x, this.y + 1)) {
+				this.y += 1;
+				this.isInAir = true;
 			}
 		});
 
@@ -232,8 +240,10 @@ class Player extends PIXI.extras.AnimatedSprite {
 
 	stopFalling() {
 		this.isInAir = false;
+		if (this.vSpeed > 0) {
+			this.sounds.land.currentTime = 0;
+			this.sounds.land.play();
+		}
 		this.vSpeed = 0;
-		this.sounds.land.currentTime = 0;
-		this.sounds.land.play();
 	}
 }

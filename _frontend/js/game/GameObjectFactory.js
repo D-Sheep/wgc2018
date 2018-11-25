@@ -25,4 +25,5 @@ GameObjectFactory.classList = {
 	'Dumpster': Dumpster,
 	'Trashbags': Trashbags,
 	'Wall': Wall,
+	'EpicSaxGuy': EpicSaxGuy,
 };

@@ -55,6 +55,10 @@
 				application.addMapSection(mapSection);
 
 				mapSection = new MapSection();
+				mapSection.useSection('musicband');
+				application.addMapSection(mapSection);
+
+				mapSection = new MapSection();
 				mapSection.useSection('city01');
 				application.addMapSection(mapSection);
 

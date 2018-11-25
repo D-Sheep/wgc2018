@@ -36,6 +36,20 @@ class Application extends PIXI.Application {
 		this.ledges = [];
 		this.blocks = [];
 
+		this.backgroundMusicTracks = [
+			assetStorage.getSound('band_s2'),
+			assetStorage.getSound('band_s2b'),
+			assetStorage.getSound('band_s2bd'),
+			assetStorage.getSound('band_sb'),
+			assetStorage.getSound('band_sbd'),
+			assetStorage.getSound('band_sd')
+		];
+
+		this.backgroundMusic = Helpers.choose(this.backgroundMusicTracks);
+		this.backgroundMusic.loop = true;
+		this.backgroundMusic.currentTime = 0;
+		this.backgroundMusic.play();
+
 		const screenCenter = new PIXI.Point(VIEW_WIDTH / 2, VIEW_HEIGHT / 2);
 
 		this.rgbSplitFilter = new PIXI.filters.RGBSplitFilter(

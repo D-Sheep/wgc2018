@@ -17,6 +17,7 @@ class Player extends PIXI.extras.AnimatedSprite {
 			land: assetStorage.getSound('land'),
 			metalhead: assetStorage.getSound('metalhead'),
 			pickup: assetStorage.getSound('pickup'),
+			fix: assetStorage.getSound('fix'),
 		};
 		this.sounds.walk.loop = true;
 

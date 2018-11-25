@@ -1,0 +1,10 @@
+{
+  "width": 600,
+  "objects": [
+    {"type":  "EpicSaxGuy", "position": [400, 0]}
+  ],
+  "ledges": [
+  ],
+  "blocks": [
+  ]
+}

@@ -43,6 +43,12 @@ class AssetStorage {
 			loader.add('animated:FinishHouse:6', 'assets/img/FinishHouse6.png');
 			loader.add('animated:Manhole:0', 'assets/img/Manhole0.png');
 			loader.add('animated:Manhole:1', 'assets/img/Manhole1.png');
+			loader.add('animated:EpicSaxGuy:0', 'assets/img/EpicSaxGuy0.png');
+			loader.add('animated:EpicSaxGuy:1', 'assets/img/EpicSaxGuy1.png');
+			loader.add('animated:EpicSaxGuy:2', 'assets/img/EpicSaxGuy2.png');
+			loader.add('animated:EpicSaxGuy:3', 'assets/img/EpicSaxGuy3.png');
+			loader.add('animated:EpicSaxGuy:4', 'assets/img/EpicSaxGuy4.png');
+			loader.add('animated:EpicSaxGuy:5', 'assets/img/EpicSaxGuy5.png');
 
 			//lobby
 			loader.add('LobbyWall', 'assets/img/lobby/LobbyWall.png');
@@ -100,6 +106,12 @@ class AssetStorage {
 			loader.add('walk', 'assets/sound/walk.mp3');
 			loader.add('warp', 'assets/sound/warp.mp3');
 			loader.add('metalhead', 'assets/sound/metalhead.mp3');
+			loader.add('band_s2', 'assets/sound/band_s2.mp3');
+			loader.add('band_s2b', 'assets/sound/band_s2b.mp3');
+			loader.add('band_s2bd', 'assets/sound/band_s2bd.mp3');
+			loader.add('band_sbd', 'assets/sound/band_sbd.mp3');
+			loader.add('band_sb', 'assets/sound/band_sb.mp3');
+			loader.add('band_sd', 'assets/sound/band_sd.mp3');
 
 			loader
 				.load((ldr, resources) => {

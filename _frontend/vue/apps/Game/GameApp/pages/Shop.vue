@@ -12,6 +12,8 @@
 				</div>
 			</div>
 		</div>
+
+		<div class="home"></div>
 	</div>
 </template>
 
@@ -23,6 +25,18 @@
 		background-image: url('assets/img/shop.png');
 		background-position: 50% 50%;
 		background-repeat: no-repeat;
+	}
+
+	.home {
+		position: absolute;
+
+		background-image: url('assets/img/home.png');
+
+		margin: 25px;
+		cursor: pointer;
+
+		width: 421px;
+		height: 147px;
 	}
 
 	.shop {

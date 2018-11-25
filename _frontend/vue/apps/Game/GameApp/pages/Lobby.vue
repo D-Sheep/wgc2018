@@ -30,7 +30,6 @@
 
 	.buttons {
 		position: absolute;
-		top: 25px;
 
 		.gym,
 		.shop {

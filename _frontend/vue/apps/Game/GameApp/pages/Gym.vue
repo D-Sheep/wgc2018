@@ -10,7 +10,7 @@
 			:player="player"
 			@trained="resetTraining"
 		/>
-		<div class="home"></div>
+		<div class="home" @click="route = 'lobby'"></div>
 	</div>
 </template>
 

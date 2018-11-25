@@ -28,9 +28,6 @@
 					option: this.trainingOption
 				});
 			}
-		},
-		mounted() {
-			console.log('url(assets/img/gym/' + this.trainingOption.name + '.png)');
 		}
 	}
 </script>

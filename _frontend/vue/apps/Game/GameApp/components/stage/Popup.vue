@@ -1,70 +1,77 @@
 <template>
-	<div class="popup">
-		<div class="popup-header">
-			Level Complete!
-		</div>
-		<div class="popup-summary">
+	<div class="level__complete">
+		<img class="level__complete-heading" src="assets/img/level_complete.png" alt="">
+		<div class="level__complete-texts">
 			<ul>
 				<li>You got {{ summary.money }} coins</li>
 				<li>You suffered {{ summary.injury }} damage</li>
 			</ul>
 		</div>
-		<a
-			href="#"
-			class="popup-close"
-			@click.prevent="$emit('closePopup')"
-		>
-			Continue
-		</a>
+		<div class="level__complete-continue" @click="$emit('closePopup')">
+
+		</div>
 	</div>
 </template>
 
 <style lang="scss" scoped>
-	.popup {
+	.level__complete {
 		position: absolute;
-
-		background: #94a1ae;
-		height: 600px;
-		width: 1200px;
-
-		top: 50px;
+		top: 0;
+		bottom: 0;
 		left: 0;
 		right: 0;
-		margin-left: auto;
-		margin-right: auto;
-
-		border: 4px solid #204361;
-		border-radius: 3px;
+		background-color: rgba(#204361, 0.8);
 
 		color: #ffffff;
 
-		&-summary {
-			font-size: 25px;
+		&-texts {
+			position: absolute;
+			top: 50%;
+			left: 50%;
+			transform: translateX(-50%);
+			font-size: 60px;
 			text-align: center;
 
 			ul {
-				list-style-type: none;
 				padding: 0;
 				margin: 0;
+				list-style-type: none;
 			}
 		}
 
-		&-header {
-			font-weight: bold;
-			padding: 30px 0;
-			width: 100%;
-			text-align: center;
-			font-size: 45px;
+		&-reason {
+			font-size: 60px;
+			margin-bottom: 1.5em;
 		}
 
-		&-close {
-			font-size: 25px;
+		&-text {
+			font-size: 40px;
+			line-height: 1.5em;
+		}
 
-			display: block;
-			text-align: center;
-			width: 100%;
+		&-heading {
+			position: absolute;
+			top: 30%;
+			left: 50%;
+			transform: translateX(-50%);
+		}
 
-			margin-top: 15px;
+		&-continue {
+			position: absolute;
+
+			bottom: 200px;
+			left: 0;
+			right: 0;
+			margin-left: auto;
+			margin-right: auto;
+
+			background-image: url('assets/img/continue.png');
+			width: 491px;
+			height: 112px;
+
+			&:hover {
+				cursor: pointer;
+			}
 		}
 	}
 </style>

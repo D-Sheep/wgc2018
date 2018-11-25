@@ -170,6 +170,7 @@
 				window.eventHub.$on('levelFinished', () => {
 					this.displayPopup = true;
 					window.controls.disableControls();
+					clearTimeout(window.application.hungerInterval);
 				});
 
 				window.eventHub.$on('hospitalized', (data) => {
@@ -185,9 +186,10 @@
 								state: 'money',
 								value: this.$store.state.player.states.money - 40
 							});
+						} else {
+							this.$store.commit('pendingReposession', true);
 						}
 						this.route = 'lobby';
-						this.$store.commit('pendingReposession', true);
 					}, 4000);
 				});
 			},

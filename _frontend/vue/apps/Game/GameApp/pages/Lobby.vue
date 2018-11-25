@@ -1,7 +1,7 @@
 <template>
 	<div class="vue-app">
 		<div class="buttons">
-			<div class="gym" @click="route = 'gym'"></div>
+			<div class="gym" @click="gotoGym"></div>
 			<div class="shop" @click="route = 'shop'"></div>
 		</div>
 		<canvas ref="canvas" id="app-canvas"></canvas>
@@ -70,6 +70,9 @@
 				set($event) {
 					this.$store.commit('navigateTo', $event);
 				}
+			},
+			canVisitGym() {
+				return this.player.states.money >= BASE_GYM_FEE;
 			}
 		},
 		beforeDestroy() {
@@ -160,6 +163,15 @@
 					x: 1100,
 					y: 617
 				});
+			},
+			gotoGym() {
+				if (!this.canVisitGym) {
+					swal({
+						html: `You need at least ${BASE_GYM_FEE} coins to hit the gym!`
+					});
+				} else {
+					this.route = 'gym';
+				}
 			}
 		}
 	}

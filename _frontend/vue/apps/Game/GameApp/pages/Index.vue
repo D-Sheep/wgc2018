@@ -51,8 +51,8 @@
 			window.mapSectionStorage = new MapSectionStorage();
 
 			this.$store.dispatch('fetchAssets');
+			this.$store.commit('updatePlayerState', {state: 'money', value: 0});
 
-			this.$store.commit('updatePlayerState', {state: 'money', value: 500});
 		},
 		methods: {}
 	}

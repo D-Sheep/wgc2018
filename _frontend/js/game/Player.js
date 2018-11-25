@@ -173,9 +173,9 @@ class Player extends PIXI.extras.AnimatedSprite {
 		collisionManager.on(this, Coins, (object) => {
 			GameApp.vue.$store.commit('updatePlayerState', {
 				state: 'money',
-				value: GameApp.vue.$store.state.player.states.money + 3
+				value: GameApp.vue.$store.state.player.states.money + 10
 			});
-			this.summary.money += 3;
+			this.summary.money += 10;
 			object.destroy();
 
 			this.sounds.pickup.currentTime = 0;

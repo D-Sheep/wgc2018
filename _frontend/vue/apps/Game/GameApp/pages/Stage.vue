@@ -122,29 +122,35 @@
 				window.player = new Player(assetStorage.getAnimatedTexture('Player'));
 				window.player.position.set(200, 400);
 
+				const sections = [
+					'city01',
+					'city02',
+					'city03',
+					'city04',
+					'city05'
+                ];
+
 				let mapSection = new MapSection();
 				mapSection.useSection('start');
 				application.addMapSection(mapSection);
+
+				const countBefore = Helpers.rnd(5, 10);
+				for (let i = 0; i < countBefore; i++) {
+					mapSection = new MapSection();
+					mapSection.useSection(Helpers.choose(sections));
+					application.addMapSection(mapSection);
+                }
 
 				mapSection = new MapSection();
 				mapSection.useSection('musicband');
 				application.addMapSection(mapSection);
 
-				mapSection = new MapSection();
-				mapSection.useSection('city05');
-				application.addMapSection(mapSection);
-
-				mapSection = new MapSection();
-				mapSection.useSection('city03');
-				application.addMapSection(mapSection);
-
-				mapSection = new MapSection();
-				mapSection.useSection('city01');
-				application.addMapSection(mapSection);
-
-				mapSection = new MapSection();
-				mapSection.useSection('city02');
-				application.addMapSection(mapSection);
+				const countAfter = Helpers.rnd(5, 10);
+				for (let i = 0; i < countAfter; i++) {
+					mapSection = new MapSection();
+					mapSection.useSection(Helpers.choose(sections));
+					application.addMapSection(mapSection);
+				}
 
 				mapSection = new MapSection();
 				mapSection.useSection('finish');

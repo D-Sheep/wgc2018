@@ -3,7 +3,8 @@
 	"objects": [
 		{"type":  "TallTree", "position": [1000, 0]},
 		{"type":  "Wall", "position": [40, 0]},
-		{"type":  "Coins", "position": [470, 0]}
+		{"type":  "Coins", "position": [470, 0]},
+		{"type":  "RedTurtle", "position": [150, 0], "limit":  [100, 800]}
 	],
 	"ledges": [
 		{"position":  [40, 180], "length": 791}

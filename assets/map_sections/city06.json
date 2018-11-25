@@ -1,0 +1,14 @@
+{
+	"width": 800,
+	"objects": [
+		{"type":  "Dumpster", "position": [373, 0]},
+		{"type":  "Trashbags", "position": [190, 0]},
+		{"type":  "Trashbags", "position": [320, 0]}
+	],
+	"ledges": [
+		{"position":  [190, 155], "length":  140}
+	],
+	"blocks": [
+		{"position":  [373, 0], "size":  [368, 310]}
+	]
+}

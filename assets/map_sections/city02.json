@@ -1,6 +1,7 @@
 {
 	"width": 800,
 	"objects": [
+		{"type":  "CityBuildingNarrow", "position": [90, 30]},
 		{"type":  "Manhole", "position": [200, 0]},
 		{"type":  "Coins", "position": [600, 0]}
 	],

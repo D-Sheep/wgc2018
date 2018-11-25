@@ -137,17 +137,16 @@ class Player extends PIXI.extras.AnimatedSprite {
 			}
 		});
 
-		collisionManager.on(this, Finish, () => {
+		collisionManager.on(this, Finish, (object) => {
+			object.isCollisionEnabled = false;
 			window.controls.disableControls();
 			application.disableMushroomMode();
+			this.sounds.fix.currentTime = 0;
+			this.sounds.fix.play();
 
 			const tl = new TimelineMax();
 			tl
 				.to(this, 0.5, {alpha: 0})
-				.add(() => {
-					this.sounds.fix.currentTime = 0;
-					this.sounds.fix.play();
-				})
 				.add(() => {
 					window.eventHub.$emit('levelFinished');
 				}, '+=1.5');

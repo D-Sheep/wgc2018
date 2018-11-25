@@ -1,5 +1,5 @@
 {
-  "width": 800,
+  "width": 1300,
   "objects": [
     {"type":  "CityBuildingWide", "position": [90, 30]},
     {"type":  "SmallTree", "position": [800, 30]},

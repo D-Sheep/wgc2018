@@ -10,8 +10,8 @@
 /backend/vendor
 
 /assets/admin/elfinder
-/assets/dist
-/assets/vue
+
+
 /.htaccess
 /index.php
 /robots.txt

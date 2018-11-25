@@ -70,6 +70,7 @@
 			window.eventHub.$on('gameOver', () => {
 				this.displayGameOver = true;
 				setTimeout(() => {
+					this.$store.commit('setPlayerItems', BASE_ITEMS.slice());
 					this.route = 'index';
 				}, 2000);
 			});

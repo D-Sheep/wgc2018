@@ -30,7 +30,12 @@ const ROUTES = [
 ];
 
 const BASE_ITEMS = [
-
+	'plushie',
+	'chair',
+	'table',
+	'fan',
+	'fridge',
+	'hat'
 ];
 
 //player stats

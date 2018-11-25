@@ -17,14 +17,7 @@ module.exports = new Vuex.Store({
 				//general
 				money: BASE_MONEY
 			},
-			ownedItems: [
-				'table',
-				/*'chair',
-				'fridge',
-				'fan',
-				'lamp',
-				'plushie'*/
-			]
+			ownedItems: BASE_ITEMS.slice()
 		},
 		reposession: false,
 		route: 'index'
@@ -38,6 +31,9 @@ module.exports = new Vuex.Store({
 		},
 		updatePlayerState(state, payload) {
 			state.player.states[payload.state] = payload.value;
+		},
+		setPlayerItems(state, payload) {
+			state.player.ownedItems = payload;
 		},
 		addPlayerItem(state, payload) {
 			state.player.ownedItems.push(payload);

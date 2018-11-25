@@ -41,6 +41,21 @@ class AssetStorage {
 			loader.add('animated:Manhole:0', 'assets/img/Manhole0.png');
 			loader.add('animated:Manhole:1', 'assets/img/Manhole1.png');
 
+			//lobby
+			loader.add('LobbyWall', 'assets/img/lobby/LobbyWall.png');
+			loader.add('Bed', 'assets/img/furniture/bed.png');
+			loader.add('Table', 'assets/img/furniture/table.png');
+			loader.add('Chair', 'assets/img/furniture/chair.png');
+			loader.add('Fridge', 'assets/img/furniture/fridge.png');
+			loader.add('Fan', 'assets/img/furniture/fan.png');
+			loader.add('Lamp', 'assets/img/furniture/lamp.png');
+			loader.add('Plushie', 'assets/img/furniture/plushie.png');
+			loader.add('Hat', 'assets/img/furniture/hat.png');
+			loader.add('Telescope', 'assets/img/furniture/telescope.png');
+			loader.add('Picture', 'assets/img/furniture/picture.png');
+			loader.add('Radio', 'assets/img/furniture/radio.png');
+			loader.add('Tape', 'assets/img/furniture/tape.png');
+
 			loader
 				.load((ldr, resources) => {
 					Object.keys(resources).forEach((res) => {

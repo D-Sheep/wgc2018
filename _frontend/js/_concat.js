@@ -89,7 +89,9 @@ module.exports = {
         "js/game/CollisionManager.js",
         "js/game/MapSection.js",
         "js/game/MapSectionStorage.js",
-		"js/game/GameObjectFactory.js"
+		"js/game/GameObjectFactory.js",
+
+		"js/game/lobby/LobbyApplication.js"
 	],
 	"init": [
 		"js/init.js"

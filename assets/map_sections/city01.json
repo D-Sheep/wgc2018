@@ -1,11 +1,10 @@
 {
-  "width": 600,
+  "width": 800,
   "objects": [
-    {"type":  "Manhole", "position": [100, 0]},
     {"type":  "AirConditioning", "position": [400, 450]},
-    {"type":  "Coins", "position": [300, 0]},
-    {"type":  "GreenTurtle", "position": [400, 0], "limit":  [100, 500]},
-    {"type":  "RedTurtle", "position": [120, 0], "limit":  [100, 300]}
+    {"type":  "Coins", "position": [100, 0]},
+    {"type":  "GreenTurtle", "position": [550, 0], "limit":  [500, 800]},
+    {"type":  "RedTurtle", "position": [150, 0], "limit":  [100, 300]}
   ],
   "ledges": [
     {"position":  [0, 350], "length":  100}

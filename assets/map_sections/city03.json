@@ -1,0 +1,12 @@
+{
+	"width": 800,
+	"objects": [
+		{"type":  "Manhole", "position": [500, 0]},
+		{"type":  "Coins", "position": [300, 0]}
+	],
+	"ledges": [
+		{"position":  [0, 350], "length":  100}
+	],
+	"blocks": [
+	]
+}

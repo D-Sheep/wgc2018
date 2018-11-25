@@ -34,6 +34,9 @@
 			};
 		},
 		watch: {},
+		beforeDestroy() {
+			window.application.destroy();
+		},
 		mounted() {
 			this.$store.dispatch('fetchAssets').then(() => {
 				window.controls = new Controls();
@@ -51,11 +54,17 @@
 				mapSection.useSection('start');
 				application.addMapSection(mapSection);
 
-				for (let i = 0; i < 2; i++) {
-					mapSection = new MapSection();
-					mapSection.useSection('city01');
-					application.addMapSection(mapSection);
-				}
+				mapSection = new MapSection();
+				mapSection.useSection('city01');
+				application.addMapSection(mapSection);
+
+				mapSection = new MapSection();
+				mapSection.useSection('city02');
+				application.addMapSection(mapSection);
+
+				mapSection = new MapSection();
+				mapSection.useSection('city03');
+				application.addMapSection(mapSection);
 
 				mapSection = new MapSection();
 				mapSection.useSection('finish');

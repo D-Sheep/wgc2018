@@ -26,4 +26,5 @@ GameObjectFactory.classList = {
 	'Trashbags': Trashbags,
 	'Wall': Wall,
 	'EpicSaxGuy': EpicSaxGuy,
+	'BassGirl': BassGirl
 };

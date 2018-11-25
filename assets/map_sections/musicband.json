@@ -1,7 +1,8 @@
 {
   "width": 600,
   "objects": [
-    {"type":  "EpicSaxGuy", "position": [400, 0]}
+    {"type":  "EpicSaxGuy", "position": [400, 0]},
+    {"type":  "BassGirl", "position": [260, 0]}
   ],
   "ledges": [
   ],

@@ -127,7 +127,7 @@
 				application.addMapSection(mapSection);
 
 				mapSection = new MapSection();
-				mapSection.useSection('city01');
+				mapSection.useSection('musicband');
 				application.addMapSection(mapSection);
 
 				mapSection = new MapSection();

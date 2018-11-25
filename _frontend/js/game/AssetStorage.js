@@ -51,6 +51,10 @@ class AssetStorage {
 			loader.add('AirConditioning', 'assets/img/AirConditionig.png');
 			loader.add('AirConditioningFan', 'assets/img/AirConditionigFan.png');
 			loader.add('AirConditioningGrill', 'assets/img/AirConditionigGrill.png');
+			loader.add('animated:BassGirl:0', 'assets/img/BassGirl0.png');
+			loader.add('animated:BassGirl:1', 'assets/img/BassGirl1.png');
+			loader.add('animated:BassGirl:2', 'assets/img/BassGirl2.png');
+			loader.add('animated:BassGirl:3', 'assets/img/BassGirl3.png');
 
 			//lobby
 			loader.add('LobbyWall', 'assets/img/lobby/LobbyWall.png');

@@ -81,6 +81,7 @@ module.exports = {
         "js/game/gameobjects/CityBuildingWide.js",
         "js/game/gameobjects/CityBuildingNarrow.js",
         "js/game/gameobjects/EpicSaxGuy.js",
+        "js/game/gameobjects/BassGirl.js",
 
         "js/game/vars.js",
         "js/game/Application.js",

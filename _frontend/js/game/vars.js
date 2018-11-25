@@ -40,7 +40,7 @@ const BASE_ENERGY = 100;
 const BASE_HAPPINESS = 0;
 
 //general
-const MAX_TRAININGS = 1;
+const MAX_TRAININGS = 3;
 const BASE_GYM_FEE = 40;
 const MAX_STRENGTH = 100;
 const MAX_INJURY = 100;

@@ -27,6 +27,7 @@
 		display: flex;
 		align-items: center;
 		padding-left: 50px;
+		background-color: #204361;
 
 		&-item {
 			margin-right: 50px;

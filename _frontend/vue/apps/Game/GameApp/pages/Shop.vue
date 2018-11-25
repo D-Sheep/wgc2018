@@ -2,17 +2,11 @@
 	<div class="vue-app">
 		<div class="shop">
 			<div class="shop__food">
-				<div class="shop__food-header">
-					Food
-				</div>
 				<div class="shop__food-items">
 					<shop-item v-for="item in food" :item="item" :player="player"/>
 				</div>
 			</div>
 			<div class="shop__furniture">
-				<div class="shop__furniture-header">
-					Furniture
-				</div>
 				<div class="shop__furniture-items">
 					<shop-item v-for="item in furniture" :item="item" :player="player"/>
 				</div>
@@ -23,13 +17,23 @@
 </template>
 
 <style lang="scss" scoped>
-	.shop {
-		height: 100vh;
+	.vue-app {
+		height: 100%;
+		width: 100%;
 
-		display: flex;
-		flex-direction: column;
-		align-items: center;
-		justify-content: center;
+		background-image: url('assets/img/shop.png');
+		background-position: 50% 50%;
+		background-repeat: no-repeat;
+	}
+
+	.shop {
+		height: 100%;
+		width: 820px;
+
+		top: 40px;
+		left: 810px;
+
+		position: absolute;
 
 		&__furniture,
 		&__food {

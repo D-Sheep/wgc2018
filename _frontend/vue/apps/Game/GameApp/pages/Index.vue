@@ -6,7 +6,7 @@
 		<lobby v-if="route === 'lobby'"/>
 		<shop v-if="route === 'shop'"/>
 		<gym v-if="route === 'gym'"/>
-		<overlay/>
+		<overlay v-if="route !== 'index'"/>
 	</div>
 </template>
 

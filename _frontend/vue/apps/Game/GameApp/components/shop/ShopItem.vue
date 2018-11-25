@@ -1,21 +1,19 @@
 <template>
 	<div class="shop-item" :class="{'shop-item--disabled': !canBuy || isFull || isOwned}">
-		<div
-			class="shop-item__icon"
-			:style="{backgroundImage: 'url('+item.icon+')'}"
-			@click="purchase"
-		>
-		</div>
 		<div class="shop-item__info">
 			<div class="shop-item__info-name">
 				{{ item.name }}
 			</div>
 			<div class="shop-item__info-price">
-				Price: {{ item.price }} coins
+				{{ item.price }} coins
 			</div>
-			<div class="shop-item__info-refill">
-				Refills: {{ item.stat }}
-			</div>
+		</div>
+
+		<div
+			class="shop-item__icon"
+			:style="{backgroundImage: 'url('+item.icon+')'}"
+			@click="purchase"
+		>
 		</div>
 	</div>
 </template>
@@ -25,6 +23,7 @@
 		display: inline-block;
 
 		margin: 10px;
+		margin-top: 65px;
 		text-align: center;
 
 		&--disabled {
@@ -47,6 +46,7 @@
 		}
 
 		&__info {
+			font-size: 25px;
 			margin: 10px;
 
 			&-name {

@@ -4,7 +4,7 @@
 		"name": "Hamburger",
 		"stat": 10,
 		"price": 6,
-		"icon": "assets/img/food/hamburger.png"
+		"icon": "assets/img/food/burger.png"
 	},
 	{
 		"type": "food",
@@ -15,10 +15,10 @@
 	},
 	{
 		"type": "food",
-		"name": "Spaghetti",
+		"name": "Apple",
 		"stat": 5,
 		"price": 3,
-		"icon": "assets/img/food/spaghetti.png"
+		"icon": "assets/img/food/apple.png"
 	},
 	{
 		"type": "food",

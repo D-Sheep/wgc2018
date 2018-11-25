@@ -11,6 +11,15 @@ class Player extends PIXI.extras.AnimatedSprite {
 		this.isInAir = false;
 		this.animationSpeed = 0.1;
 		this.isInvincible = false;
+		this.sounds = {
+			walk: assetStorage.getSound('walk'),
+			jump: assetStorage.getSound('jump'),
+			land: assetStorage.getSound('land'),
+			metalhead: assetStorage.getSound('metalhead'),
+			pickup: assetStorage.getSound('pickup'),
+		};
+		this.sounds.walk.loop = true;
+
 		this.anchor.y = 1;
 		this.anchor.x = 0.5;
 		this.lastX = this.x;
@@ -96,10 +105,17 @@ class Player extends PIXI.extras.AnimatedSprite {
 					this.textures = this.textureStorage.moving;
 					this.gotoAndPlay(0);
 					this.animationSpeed = 0.1;
+					this.sounds.walk.play();
 				}
 			} else {
+				if (!this.sounds.walk.paused) {
+					this.sounds.walk.currentTime = 0;
+					this.sounds.walk.pause();
+				}
 				this.textures = this.textureStorage.static;
 			}
+
+			this.sounds.walk.muted = this.isInAir;
 		};
 
 		application.ticker.add(tickerHandler);
@@ -128,6 +144,11 @@ class Player extends PIXI.extras.AnimatedSprite {
 			});
 			this.summary.injury += 5;
 			object.isCollisionEnabled = false;
+			setTimeout(() => {
+				object.isCollisionEnabled = true;
+			}, 300);
+			this.sounds.metalhead.currentTime = 0;
+			this.sounds.metalhead.play();
 		});
 
 		collisionManager.on(this, Coins, (object) => {
@@ -137,6 +158,9 @@ class Player extends PIXI.extras.AnimatedSprite {
 			});
 			this.summary.money += 3;
 			object.destroy();
+
+			this.sounds.pickup.currentTime = 0;
+			this.sounds.pickup.play();
 		});
 
 		collisionManager.on(this, RedTurtle, (object) => {
@@ -169,6 +193,8 @@ class Player extends PIXI.extras.AnimatedSprite {
 	jump() {
 		this.vSpeed = PLAYER_JUMP_VSPEED;
 		this.isInAir = true;
+		this.sounds.jump.currentTime = 0;
+		this.sounds.jump.play();
 	}
 
 	wouldClipAtPosition(x, y) {
@@ -185,5 +211,7 @@ class Player extends PIXI.extras.AnimatedSprite {
 	stopFalling() {
 		this.isInAir = false;
 		this.vSpeed = 0;
+		this.sounds.land.currentTime = 0;
+		this.sounds.land.play();
 	}
 }

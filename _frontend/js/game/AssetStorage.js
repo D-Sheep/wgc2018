@@ -90,6 +90,16 @@ class AssetStorage {
 			const loader = new PIXI.loaders.Loader();
 
 			loader.add('city', 'assets/sound/city.mp3');
+			loader.add('eat', 'assets/sound/eat.mp3');
+			loader.add('fix', 'assets/sound/fix.mp3');
+			loader.add('jump', 'assets/sound/jump.mp3');
+			loader.add('land', 'assets/sound/land.mp3');
+			loader.add('pickup', 'assets/sound/pickup.mp3');
+			loader.add('ring', 'assets/sound/ring.mp3');
+			loader.add('vymaz', 'assets/sound/vymaz.mp3');
+			loader.add('walk', 'assets/sound/walk.mp3');
+			loader.add('warp', 'assets/sound/warp.mp3');
+			loader.add('metalhead', 'assets/sound/metalhead.mp3');
 
 			loader
 				.load((ldr, resources) => {

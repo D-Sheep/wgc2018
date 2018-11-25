@@ -8,6 +8,7 @@
 	.navigation {
 		a {
 			margin-right: 5px;
+			font-size: 24px;
 
 			&:last-child {
 				margin-right: 0;

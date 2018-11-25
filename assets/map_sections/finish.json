@@ -1,8 +1,8 @@
 {
   "width": 600,
   "objects": [
-    {"type":  "FinishHouse", "position": [300, 600]},
-    {"type":  "Finish", "position": [300, 600]}
+    {"type":  "FinishHouse", "position": [300, 30]},
+    {"type":  "Finish", "position": [300, 30]}
   ],
   "ledges": [
 

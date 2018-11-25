@@ -2,6 +2,19 @@ class Application extends PIXI.Application {
 	constructor(...args) {
 		super(...args);
 
+		this.background = new PIXI.Container();
+		this.background.name = 'background';
+		this.stage.addChild(this.background);
+
+		this.clouds = new PIXI.extras.TilingSprite(assetStorage.getTexture('Clouds'), 1920, 233);
+		this.clouds.y = 200;
+		this.stage.addChild(this.clouds);
+
+		this.floor = new PIXI.Sprite(assetStorage.getTexture('Floor'));
+		this.floor.anchor.y = 1;
+		this.floor.position.set(0, VIEW_HEIGHT);
+		this.stage.addChild(this.floor);
+
 		this.hud = new PIXI.Container();
 		this.hud.name = 'hud';
 		this.world = new PIXI.Container();
@@ -14,6 +27,10 @@ class Application extends PIXI.Application {
 		this.worldWidth = 0;
 		this.ledges = [];
 		this.blocks = [];
+
+		this.ticker.add(() => {
+			this.clouds.tilePosition.x -= 0.5;
+		});
 	}
 
 	addMapSection(section) {

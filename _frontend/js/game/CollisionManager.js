@@ -1,14 +1,18 @@
 class CollisionManager {
 	constructor() {
 		this.callbacks = [];
+
 		application.ticker.add(() => {
 			const gameObjects = this.getCollidableObjects();
+
 			this.callbacks.forEach((cb) => {
 				const bounds = cb.object.getBounds();
+
 				gameObjects
 					.filter((gameObject) => gameObject instanceof cb.otherClass)
 					.forEach((gameObject) => {
 						const otherBounds = gameObject.getBounds();
+
 						if (!bounds.intersects(otherBounds)) {
 							return;
 						}
@@ -25,6 +29,7 @@ class CollisionManager {
 
 	get(object, otherClass) {
 		const bounds = object.getBounds();
+
 		return this
 			.getCollidableObjects()
 			.filter((gameObject) => gameObject instanceof otherClass)

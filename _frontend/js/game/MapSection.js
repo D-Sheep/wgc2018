@@ -14,18 +14,21 @@ class MapSection extends PIXI.Container {
 		this.sectionWidth = section.width;
 		section.objects.forEach((objectData) => {
 			const object = GameObjectFactory.create(objectData.type, objectData);
-			object.position.set(...objectData.position);
+			object.position.set(...this.flipY(objectData.position));
 			this.addChild(object);
 		});
 		section.ledges.forEach((ledgeData) => {
-			const ledge = new Ledge(...ledgeData.position, ledgeData.length);
+			const ledge = new Ledge(...this.flipY(ledgeData.position), ledgeData.length);
 			this.ledges.push(ledge);
-			this.addChild(ledge);
 		});
 		section.blocks.forEach((blockData) => {
-			const block = new Block(...blockData.position, ...blockData.size);
+			const block = new Block(blockData.position[0], GROUND_HEIGHT - blockData.position[1] - blockData.size[1], ...blockData.size);
 			this.blocks.push(block);
 			this.addChild(block);
 		});
+	}
+
+	flipY(position) {
+		return [position[0], GROUND_HEIGHT - position[1]];
 	}
 }

@@ -1,12 +1,25 @@
-class Player extends PIXI.Sprite {
-	constructor(...args) {
-		super(...args);
+class Player extends PIXI.extras.AnimatedSprite {
+	constructor(textures) {
+		super(textures);
+
+		this.textureStorage = {
+			moving: textures,
+			static: [assetStorage.getTexture('Player-static')]
+		};
 
 		this.vSpeed = 0;
 		this.isInAir = false;
+		this.animationSpeed = 0.1;
 		this.anchor.y = 1;
 		this.anchor.x = 0.5;
+		this.lastX = this.x;
+		this.play();
 		this.stats = {};
+		this.summary = {
+			money: BASE_MONEY,
+			injury: BASE_INJURY,
+			hunger: BASE_HUNGER
+		};
 
 		const tickerHandler = () => {
 			const ledges = application.getLedges();
@@ -26,16 +39,16 @@ class Player extends PIXI.Sprite {
 				return false;
 			});
 
-			if (!isPlayerOnLedge && this.y < VIEW_HEIGHT && !this.wouldClipAtPosition(this.x, this.y + 1)) {
+			if (!isPlayerOnLedge && this.y < GROUND_HEIGHT && !this.wouldClipAtPosition(this.x, this.y + 1)) {
 				this.isInAir = true;
 			}
 
 			if (this.isInAir) {
 				this.vSpeed += PLAYER_GRAVITY;
 
-				if (this.vSpeed > 0 && this.y + this.vSpeed >= VIEW_HEIGHT) {
+				if (this.vSpeed > 0 && this.y + this.vSpeed >= GROUND_HEIGHT) {
 					this.stopFalling();
-					this.y = VIEW_HEIGHT;
+					this.y = GROUND_HEIGHT;
 				}
 
 				const blockAboveBelow = this.wouldClipAtPosition(this.x, this.y + this.vSpeed);
@@ -52,21 +65,39 @@ class Player extends PIXI.Sprite {
 			}
 
 			this.y += this.vSpeed;
+			this.lastX = this.x;
 
 			const xMotion = application.ticker.deltaTime / application.ticker.FPS * PLAYER_MAX_HSPEED;
+			const keyLeft = controls.isPressed(KEY_LEFT);
+			const keyRight = controls.isPressed(KEY_RIGHT);
 
-			if (controls.isPressed(KEY_LEFT)) {
+
+			if (keyLeft) {
 				if (!this.wouldClipAtPosition(this.x - xMotion, this.y)) {
 					this.x -= xMotion;
 					this.scale.x = -1;
 				}
 			}
 
-			if (controls.isPressed(KEY_RIGHT)) {
+			if (keyRight) {
 				if (!this.wouldClipAtPosition(this.x + xMotion, this.y)) {
 					this.x += xMotion;
 					this.scale.x = 1;
 				}
+			}
+
+			this.x = Math.min(Math.max(0, this.x), application.worldWidth);
+
+			if (this.lastX !== this.x) {
+				const isStartingMovement = this.textures === this.textureStorage.static;
+
+				if (isStartingMovement) {
+					this.textures = this.textureStorage.moving;
+					this.gotoAndPlay(0);
+					this.animationSpeed = 0.1;
+				}
+			} else {
+				this.textures = this.textureStorage.static;
 			}
 		};
 
@@ -86,6 +117,15 @@ class Player extends PIXI.Sprite {
 
 		collisionManager.on(this, AirConditioning, (object) => {
 			console.log('hit', object);
+			const newInjuryStat = GameApp.vue.$store.state.player.stats.injury + 5 >= MAX_INJURY ?
+				MAX_INJURY :
+				GameApp.vue.$store.state.player.stats.injury + 5;
+
+			GameApp.vue.$store.commit('updatePlayerStat', {
+				stat: 'injury',
+				value: newInjuryStat
+			});
+			this.summary.injury += 5;
 			object.isCollisionEnabled = false;
 		});
 
@@ -94,6 +134,7 @@ class Player extends PIXI.Sprite {
 				state: 'money',
 				value: GameApp.vue.$store.state.player.states.money + 3
 			});
+			this.summary.money += 3;
 			object.destroy();
 		});
 	}

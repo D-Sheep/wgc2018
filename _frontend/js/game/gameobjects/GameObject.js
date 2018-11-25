@@ -8,6 +8,10 @@ class GameObject extends PIXI.extras.AnimatedSprite {
 	bottomCenterAnchor() {
 		this.anchor.set(0.5, 1);
 	}
+
+	centerAnchor() {
+		this.anchor.set(0.5, 0.5);
+	}
 }
 
 GameObject.isAnimated = false;

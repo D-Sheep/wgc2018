@@ -55,11 +55,11 @@
 		watch: {
 			finishedTraining(value) {
 				if (value) {
-					const newEnergyValue = this.player.stats.energy + this.training.reward > MAX_ENERGY ?
-						MAX_ENERGY :
-						this.player.stats.energy + this.training.reward;
+					const newStrengthValue = this.player.stats.strength + this.training.reward > MAX_STRENGTH ?
+						MAX_STRENGTH :
+						this.player.stats.strength + this.training.reward;
 
-					this.$store.commit('updatePlayerStat', {stat: 'energy', value: newEnergyValue});
+					this.$store.commit('updatePlayerStat', {stat: 'strength', value: newStrengthValue});
 					this.trained = 0;
 					this.$emit('trained');
 				}

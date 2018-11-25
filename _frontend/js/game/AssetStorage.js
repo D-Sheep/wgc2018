@@ -112,6 +112,8 @@ class AssetStorage {
 			loader.add('band_sbd', 'assets/sound/band_sbd.mp3');
 			loader.add('band_sb', 'assets/sound/band_sb.mp3');
 			loader.add('band_sd', 'assets/sound/band_sd.mp3');
+			loader.add('turtle', 'assets/sound/turtle.mp3');
+			loader.add('fckmylife', 'assets/sound/fckmylife.mp3');
 
 			loader
 				.load((ldr, resources) => {

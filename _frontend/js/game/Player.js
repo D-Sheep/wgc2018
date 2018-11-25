@@ -18,6 +18,8 @@ class Player extends PIXI.extras.AnimatedSprite {
 			metalhead: assetStorage.getSound('metalhead'),
 			pickup: assetStorage.getSound('pickup'),
 			fix: assetStorage.getSound('fix'),
+			fckmylife: assetStorage.getSound('fckmylife'),
+			turtle: assetStorage.getSound('turtle'),
 		};
 		this.sounds.walk.loop = true;
 
@@ -198,6 +200,9 @@ class Player extends PIXI.extras.AnimatedSprite {
 	}
 
 	injuryJump() {
+		this.sounds.fckmylife.currentTime = 0;
+		this.sounds.fckmylife.volume = 0.7;
+		this.sounds.fckmylife.play();
 		this.vSpeed = PLAYER_INJURY_JUMP_VSPEED;
 		this.isInAir = true;
 	}

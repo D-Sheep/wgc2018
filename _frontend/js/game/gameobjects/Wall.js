@@ -1,4 +1,4 @@
-class CityBuildingNarrow extends GameObject {
+class Wall extends GameObject {
 	constructor(textures, data) {
 		super(textures, data);
 

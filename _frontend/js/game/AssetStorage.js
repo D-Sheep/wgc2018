@@ -29,6 +29,9 @@ class AssetStorage {
 			loader.add('TallTree', 'assets/img/TallTree.png');
 			loader.add('Poop', 'assets/img/Poop.png');
 			loader.add('Flower', 'assets/img/Flower.png');
+			loader.add('Dumpster', 'assets/img/Dumpster.png');
+			loader.add('Trashbags', 'assets/img/Trashbags.png');
+			loader.add('Wall', 'assets/img/Wall.png');
 			loader.add('CityBuildingWide', 'assets/img/CityBuildingWide.png');
 			loader.add('CityBuildingNarrow', 'assets/img/CityBuildingNarrow.png');
 			loader.add('animated:FinishHouse:0', 'assets/img/FinishHouse0.png');

@@ -2,11 +2,17 @@ class Player extends PIXI.extras.AnimatedSprite {
 	constructor(textures) {
 		super(textures);
 
+		this.textureStorage = {
+			moving: textures,
+			static: [assetStorage.getTexture('Player-static')]
+		};
+
 		this.vSpeed = 0;
 		this.isInAir = false;
 		this.animationSpeed = 0.1;
 		this.anchor.y = 1;
 		this.anchor.x = 0.5;
+		this.lastX = this.x;
 		this.play();
 		this.stats = {};
 		this.summary = {
@@ -58,22 +64,40 @@ class Player extends PIXI.extras.AnimatedSprite {
 				}
 			}
 
+
 			this.y += this.vSpeed;
+			this.lastX = this.x;
 
 			const xMotion = application.ticker.deltaTime / application.ticker.FPS * PLAYER_MAX_HSPEED;
+			const keyLeft = controls.isPressed(KEY_LEFT);
+			const keyRight = controls.isPressed(KEY_RIGHT);
 
-			if (controls.isPressed(KEY_LEFT)) {
+
+			if (keyLeft) {
 				if (!this.wouldClipAtPosition(this.x - xMotion, this.y)) {
 					this.x -= xMotion;
 					this.scale.x = -1;
 				}
 			}
 
-			if (controls.isPressed(KEY_RIGHT)) {
+			if (keyRight) {
 				if (!this.wouldClipAtPosition(this.x + xMotion, this.y)) {
 					this.x += xMotion;
 					this.scale.x = 1;
 				}
+			}
+
+			if (this.lastX !== this.x) {
+				console.log('moving');
+				const isStartingMovement = this.textures === this.textureStorage.static;
+
+				if (isStartingMovement) {
+					this.textures = this.textureStorage.moving;
+					this.gotoAndPlay(0);
+					this.animationSpeed = 0.1;
+				}
+			} else {
+				this.textures = this.textureStorage.static;
 			}
 		};
 

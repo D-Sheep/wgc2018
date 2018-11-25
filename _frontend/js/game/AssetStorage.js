@@ -19,6 +19,7 @@ class AssetStorage {
 			loader.add('animated:Player:1', 'assets/img/Player1.png');
 			loader.add('animated:Player:2', 'assets/img/Player2.png');
 			loader.add('animated:Player:3', 'assets/img/Player3.png');
+			loader.add('Player-static', 'assets/img/Player-static.png');
 
 			loader
 				.load((ldr, resources) => {

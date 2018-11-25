@@ -8,6 +8,8 @@
 
 <style lang="scss" scoped>
 	.navigation {
+		position: absolute;
+		z-index: 10;
 		padding: 0;
 		margin: 0;
 

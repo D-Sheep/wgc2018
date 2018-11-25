@@ -1,80 +1,89 @@
 <template>
 	<div class="player__stats">
-
-		<div class="player__stats-navigation">
-			<navigation :navigation-items="{shop: 'Shop', gym: 'Gym'}"/>
+		<div class="player__stats-item" v-for="(value, slug) in stats">
+			<span class="player__stats-icon" :class="'player__stats-icon--' + slug"></span>
+			<span class="player__stats-bar-wrap">
+				<span class="player__stats-bar" :style="{width: getStatBarWidth(value)}"></span>
+			</span>
+		</div>
+		<div class="player__stats-item">
+			<span class="player__stats-icon player__stats-icon--money"></span>
+			<span class="player__stats-number">{{states.money}}</span>
 		</div>
 
-		<ul class="player__stats-graph">
-
-			<li v-for="(value, slug) in stats" :style="{height: getStatBarHeight(value)}">
-				{{ value }}
-				<span :title="slug">{{ slug.slice(0, 1) }}</span>
-			</li>
-
-		</ul>
-
+		<div class="player__stats-item">
+			<span class="player__stats-icon player__stats-icon--lives"></span>
+			<span class="player__stats-number">{{lives}}</span>
+		</div>
 	</div>
 </template>
 
 <style lang="scss" scoped>
 	.player__stats {
-		position: fixed;
+		position: absolute;
 		width: 100%;
-		height: 162px;
 		bottom: 0;
+		height: 100px;
+		display: flex;
+		align-items: center;
+		padding-left: 50px;
 
-		&-navigation {
-			background: white;
-
-			border-top: 2px solid black;
-			border-right: 2px solid black;
-			position: absolute;
-			bottom: 0;
-			right: 0;
-			width: calc(100% - 204px);
-			height: 50px;
+		&-item {
+			margin-right: 50px;
+			display: inline-flex;
+			align-items: center;
 		}
 
-		&-graph {
-			background: white;
+		&-icon {
+			display: inline-block;
+			width: 50px;
+			height: 50px;
+			background-size: contain;
+			background-position: center;
+			background-repeat: no-repeat;
+			margin-right: 10px;
 
-			border-top: 2px solid black;
-			border-left: 2px solid black;
-			border-right: 2px solid black;
-
-			position: absolute;
-			height: calc(100% - 4px);
-			width: 200px;
-
-			list-style-type: none;
-			padding: 2px 0;
-			margin: 0;
-
-			display: inline-flex;
-			align-items: flex-end;
-
-			li {
-				transition: ease height .3s;
-				color: white;
-
-				max-height: calc(100% - 16px);
-				min-height: 20%;
-				width: calc(25% - 16px);
-
-				padding: 2px;
-				margin: 6px 8px;
-
-				border: 1px solid black;
-
-				vertical-align: bottom;
-				background: #007cff;
-
-				display: inline-flex;
-				flex-direction: column;
-				align-items: center;
-				justify-content: space-between;
+			&--energy {
+				background-image: url("assets/img/icons/energy.png");
 			}
+			&--hunger {
+				background-image: url("assets/img/icons/hunger.png");
+			}
+			&--injury {
+				background-image: url("assets/img/icons/injury.png");
+			}
+			&--strength {
+				background-image: url("assets/img/icons/strength.png");
+			}
+			&--money {
+				background-image: url("assets/img/icons/money.png");
+			}
+			&--lives {
+				background-image: url("assets/img/icons/lives.png");
+			}
+		}
+
+		&-number {
+			font-size: 40px;
+			color: #65869e;
+		}
+
+		&-bar {
+			display: inline-block;
+			background-color: #65869e;
+			height: 40px;
+
+			&-wrap {
+				height: 40px;
+				display: inline-block;
+				width: 200px;
+				border: 4px solid white;
+				background-color: #204361;
+			}
+		}
+
+		> :last-child {
+			margin-right: 0;
 		}
 	}
 </style>
@@ -82,7 +91,7 @@
 <script>
 	module.exports = {
 		name: 'PlayerStats',
-		props: ['stats'],
+		props: ['stats', 'states', 'lives'],
 		components: {
 			navigation: require('./Navigation.vue')
 		},
@@ -97,8 +106,8 @@
 			}
 		},
 		methods: {
-			getStatBarHeight(value) {
-				return (20 + 80 * value / 100) + '%';
+			getStatBarWidth(value) {
+				return value + '%';
 			},
 		}
 	}

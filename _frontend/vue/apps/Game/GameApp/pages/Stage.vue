@@ -9,6 +9,9 @@
 </template>
 
 <style lang="scss" scoped>
+	#app-canvas {
+		display: block;
+	}
 </style>
 
 <script>

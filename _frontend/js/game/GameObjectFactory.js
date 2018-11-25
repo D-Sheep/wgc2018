@@ -19,7 +19,7 @@ GameObjectFactory.classList = {
 	'Poop': Poop,
 	'Manhole': Manhole,
 	'SmallTree': SmallTree,
-	'TallTree': SmallTree,
+	'TallTree': TallTree,
 	'CityBuildingWide': CityBuildingWide,
 	'CityBuildingNarrow': CityBuildingNarrow
 };

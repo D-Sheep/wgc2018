@@ -82,7 +82,7 @@ class Application extends PIXI.Application {
 		this.hungerInterval = setInterval(() => {
 			GameApp.vue.$store.commit('updatePlayerStat', {
 				stat: 'hunger',
-				value: Math.min(MAX_HUNGER, GameApp.vue.$store.state.player.stats.hunger + 0.2)
+				value: Math.min(MAX_HUNGER, GameApp.vue.$store.state.player.stats.hunger + 0.6)
 			});
 		}, 1000);
 	}

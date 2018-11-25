@@ -2,13 +2,11 @@
 	"width": 800,
 	"objects": [
 		{"type":  "Manhole", "position": [200, 0]},
-		{"type":  "Coins", "position": [600, 0]},
-		{"type":  "AirConditioning", "position": [600, 450]}
+		{"type":  "Coins", "position": [600, 0]}
 	],
 	"ledges": [
 		{"position":  [0, 350], "length":  100}
 	],
 	"blocks": [
-		{"position":  [600, 460], "size":  [100, 90]}
 	]
 }

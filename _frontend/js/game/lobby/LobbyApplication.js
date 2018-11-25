@@ -14,13 +14,10 @@ class LobbyApplication extends PIXI.Application {
 		this.bed.y = 650;
 		this.stage.addChild(this.bed);
 
-		this.hud = new PIXI.Container();
-		this.hud.name = 'hud';
-		this.world = new PIXI.Container();
-		this.world.name = 'world';
+		this.itemContainer = new PIXI.Container();
+		this.itemContainer.name = 'itemcontainer';
 
-		this.stage.addChild(this.world);
-		this.stage.addChild(this.hud);
+		this.stage.addChild(this.itemContainer);
 	}
 
 	displayOwnedItem(spriteName, position) {
@@ -35,7 +32,7 @@ class LobbyApplication extends PIXI.Application {
 		this[slug].x = position.x;
 		this[slug].y = position.y;
 
-		this.stage.addChild(this[slug]);
+		this.itemContainer.addChild(this[slug]);
 	}
 
 	takeAwayItem(spriteName) {
@@ -43,7 +40,7 @@ class LobbyApplication extends PIXI.Application {
 
 		if (slug === 'will to live') {
 			swal({
-				text: 'How can something that I never had be taken away?'
+				text: 'How can you take something that I never had?'
 			});
 		}
 
@@ -63,14 +60,14 @@ class LobbyApplication extends PIXI.Application {
 
 		TweenMax.fromTo(tape, .3, {alpha: 0}, {alpha: 1});
 
+		this[slug].on('removed', () => {
+			window.eventHub.$emit('lobby.itemRemoved');
+		});
+
 		setTimeout(() => {
 			TweenMax.to(this[slug], .3, {
 				alpha: 0, onComplete: () => {
-					this.stage.removeChild(this[slug]);
-
-					this[slug].on('removed', () => {
-						window.eventHub.$emit('lobby.itemRemoved');
-					});
+					this.itemContainer.removeChild(this[slug]);
 				}
 			});
 		}, 2000);

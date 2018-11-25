@@ -14,6 +14,8 @@ class MapSectionStorage {
 			loader.add('city01', 'assets/map_sections/city01.json');
 			loader.add('city02', 'assets/map_sections/city02.json');
 			loader.add('city03', 'assets/map_sections/city03.json');
+			loader.add('city04', 'assets/map_sections/city04.json');
+			loader.add('city05', 'assets/map_sections/city05.json');
 			loader.add('finish', 'assets/map_sections/finish.json');
 
 			loader

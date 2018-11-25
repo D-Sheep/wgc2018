@@ -1,12 +1,15 @@
 {
 	"width": 800,
 	"objects": [
-		{"type":  "Manhole", "position": [500, 0]},
-		{"type":  "Coins", "position": [300, 0]}
+		{"type":  "Coins", "position": [20, 0]},
+		{"type":  "Dumpster", "position": [373, 0]},
+		{"type":  "Trashbags", "position": [190, 0]},
+		{"type":  "Trashbags", "position": [320, 0]}
 	],
 	"ledges": [
-		{"position":  [0, 350], "length":  100}
+		{"position":  [190, 155], "length":  140}
 	],
 	"blocks": [
+		{"position":  [373, 0], "size":  [368, 310]}
 	]
 }

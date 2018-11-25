@@ -47,7 +47,7 @@
 
 			this.$store.dispatch('fetchAssets');
 
-			this.$store.commit('updatePlayerState', {state: 'money', value: 40});
+			this.$store.commit('updatePlayerState', {state: 'money', value: 100});
 			this.$store.commit('updatePlayerStat', {stat: 'hunger', value: 91});
 		},
 		methods: {}

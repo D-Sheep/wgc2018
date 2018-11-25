@@ -43,10 +43,12 @@
 			});
 		},
 		methods: {
-			hasItem(slug) {
+			playerHasItem(slug) {
 				return this.player.ownedItems.indexOf(slug) !== -1;
 			},
 			placeItems() {
+				window.application.itemContainer.removeChildren();
+
 				window.application.displayOwnedItem('Fridge', {
 					x: 1660,
 					y: 650
@@ -77,20 +79,23 @@
 					y: 293
 				});
 
-				window.application.displayOwnedItem('Radio', {
-					x: 222,
-					y: 532
-				});
+				const radioPos = this.playerHasItem('table') ?
+					{x: 222, y: 532} :
+					{x: 222, y: 781};
 
-				window.application.displayOwnedItem('Lamp', {
-					x: -28,
-					y: 537
-				});
+				window.application.displayOwnedItem('Radio', radioPos);
 
-				window.application.displayOwnedItem('Fan', {
-					x: 1690,
-					y: 438
-				});
+				const lampPos = this.playerHasItem('table') ?
+					{x: -28, y: 537} :
+					{x: -28, y: 781};
+
+				window.application.displayOwnedItem('Lamp', lampPos);
+
+				const fanPos = this.playerHasItem('fridge') ?
+					{x: 1690, y: 438} :
+					{x: 1690, y: 741};
+
+				window.application.displayOwnedItem('Fan', fanPos);
 
 				window.application.displayOwnedItem('Plushie', {
 					x: 1100,

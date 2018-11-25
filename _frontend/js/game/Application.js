@@ -101,9 +101,11 @@ class Application extends PIXI.Application {
 		TweenMax.to(this.rgbSplitFilter.red, 1, {x: 0, y: 0});
 		TweenMax.to(this.rgbSplitFilter.green, 1, {x: 0, y: 0});
 		TweenMax.to(this.shockwaveFilter, 1, {amplitude: 0});
-		TweenMax.to(this.zoomBlurFilter, 1, {strength: 0, onComplete: () => {
+		TweenMax.to(this.zoomBlurFilter, 1, {
+			strength: 0, onComplete: () => {
 				this.stage.filters = [];
-		}});
+			}
+		});
 		this.mushroomMode = false;
 	}
 

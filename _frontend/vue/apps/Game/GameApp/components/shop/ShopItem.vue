@@ -43,7 +43,6 @@
 			cursor: pointer;
 			width: 130px;
 			height: 130px;
-			border: 2px dotted black;
 			border-radius: 3px;
 		}
 

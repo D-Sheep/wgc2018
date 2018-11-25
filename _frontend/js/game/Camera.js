@@ -18,7 +18,6 @@ class Camera {
 
 	centerAt(x) {
 		this.offset = Math.min(Math.max(0, x - VIEW_WIDTH / 2), application.worldWidth - VIEW_WIDTH);
-		application.floor.x = this.offset;
 	}
 
 	getCenterOffset() {

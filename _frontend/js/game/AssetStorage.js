@@ -11,6 +11,7 @@ class AssetStorage {
 			const loader = new PIXI.loaders.Loader();
 
 			loader.add('Floor', 'assets/img/Floor.png');
+			loader.add('Clouds', 'assets/img/Clouds.png');
 			loader.add('AirConditioning', 'assets/img/AirConditioning.png');
 			loader.add('animated:GreenTurtle:0', 'assets/img/GreenTurtle0.png');
 			loader.add('animated:GreenTurtle:1', 'assets/img/GreenTurtle1.png');
